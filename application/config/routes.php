@@ -1,14 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-################---> Views <---###############
+################--->My Views <---###############
 
 $route['default_controller'] = 'Views';
 
 
-################---> Controllers <---############
+################--->My Controllers <---############
 
-$route['Cabecera'] = '';
+
+
 
 
 ########---->No Touch <----########
