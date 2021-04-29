@@ -31,7 +31,7 @@
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown3">SERVICIOS
                         <i class="material-icons right">arrow_drop_down</i></a>
                 </li>
-                <li><a href="#">TECNOLOGÍA</a></li>
+                <li><a href="http://www.tecnology.vvsecurity.cl/">TECNOLOGÍA</a></li>
                 <li><a href="#">CONTACTO</a></li>
                 <li>
                     <!-- Modal Trigger -->
@@ -133,8 +133,8 @@
             <h4 class="center-align">ACCESOS DIRECTOS</h4>
             <br>
             <div class="row ">
-                <div class="col offset-s2 s8 l2 center-align offset-l1">
-                    <div class="card center-align">
+                <div class="col s8 l2 center-align hoverable ">
+                    <div class="card center-align ">
                         <div class="card-image">
                             <a
                                 href="https://www.vvsecurity.cl/wp-login.php?redirect_to=https%3A%2F%2Fwww.vvsecurity.cl%2Fwp-admin%2F&reauth=1">Web
@@ -144,8 +144,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col offset-s2 s8 l2">
-                    <div class="card center-align">
+                <div class="col s8 l2 hoverable">
+                    <div class="card center-align ">
                         <div class="card-image">
                             <a href="https://www.controlroll.com/login.aspx">Control Roll
                                 <img class="responsive-img" src="<?php echo base_url() ?>assets/img/ControlRoll.png">
@@ -153,8 +153,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col offset-s2 s8 l2">
-                    <div class="card center-align">
+                <div class="col  s8 l2 hoverable">
+                    <div class="card center-align ">
                         <div class="card-image">
                             <a href="https://www.vvsecurity.cl:2096/">Web Mail
                                 <img class="responsive-img " src="<?php echo base_url() ?>assets/img/WebMail.png">
@@ -162,8 +162,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col offset-s2 s8 l2">
-                    <div class="card center-align">
+                <div class="col  s8 l2 hoverable">
+                    <div class="card center-align ">
                         <div class="card-image">
                             <a href="https://erp.laudus.cl/PortalEmpleados/">Laudus
                                 <img class="responsive-img " src="<?php echo base_url() ?>assets/img/Laudus.png">
@@ -171,11 +171,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col offset-s2 s8 l2">
-                    <div class="card center-align">
+                <div class="col  s8 l2 hoverable">
+                    <div class="card center-align ">
                         <div class="card-image">
                             <a href="http://vvsecurity.duckdns.org/">Iniciar Sesión
                                 <img class="responsive-img" src="<?php echo base_url() ?>assets/img/Tecnologia.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col  s8 l2 hoverable">
+                    <div class="card center-align ">
+                        <div class="card-image">
+                            <a href="#">Certificado ISO
+                                <img class="responsive-img" src="<?php echo base_url() ?>assets/img/CertificadoISO.png">
                             </a>
                         </div>
                     </div>

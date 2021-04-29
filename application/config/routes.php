@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 ################--->My Views <---###############
 
@@ -15,4 +15,4 @@ $route['default_controller'] = 'Views';
 ########---->No Touch <----########
 
 $route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+$route['translate_uri_dashes'] = false;

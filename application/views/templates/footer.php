@@ -54,29 +54,48 @@
             <div class="col l3 s12">
                 <h5 class="white-text">Contactanos</h5>
                 <ul>
-                    <li><a class="white-text valign-wrapper hoverable" href="https://www.vvsecurity.cl/contacto/"><i
-                                class="material-icons left tiny">contact_mail</i>Formulario de Contacto</a></li>
+                    <li>
+                        <a class="white-text valign-wrapper hoverable" href="https://www.vvsecurity.cl/contacto/"><i
+                                class="material-icons left tiny">contact_mail</i>Formulario de Contacto</a>
+                    </li>
                     <br>
-                    <li><a class="white-text valign-wrapper "><i class="material-icons left tiny">phone</i>
-                            <strong>+56 2 27261164</strong></a></li>
+                    <li>
+                        <a class="white-text valign-wrapper "><i class="material-icons left tiny">phone</i>
+                            <strong>+56 2 27261164</strong></a>
+                    </li>
                     <br>
-                    <li><a class="white-text valign-wrapper "><i class="material-icons left tiny">call</i>
-                            <strong>+56 2 27261168</strong></a></li>
+                    <li>
+                        <a class="white-text valign-wrapper "><i class="material-icons left tiny">call</i>
+                            <strong>+56 2 27261168</strong></a>
+                    </li>
                     <br>
-                    <li><a class="white-text valign-wrapper"><i
-                                class="material-icons left tiny">mail</i>tecnologia@vvsecurity.cl</a></li>
+                    <li>
+                        <a class="white-text valign-wrapper"><i
+                                class="material-icons left tiny">mail</i>tecnologia@vvsecurity.cl</a>
+                    </li>
                     <br>
-                    <li><a class="white-text valign-wrapper hoverable"
-                            href="https://www.vvsecurity.cl/trabaja-con-nosotros/"><i
-                                class="material-icons left tiny">inbox</i>Trabaja con nosotros</a></li>
+                    <li>
+                        <a class="white-text valign-wrapper hoverable"
+                            href="https://www.vvsecurity.cl/trabaja-con-nosotros/">
+                            <i class="material-icons left tiny">inbox</i>Trabaja con Nosotros</a>
+                    </li>
+                    <br>
+                    <li>
+                        <!-- Modal Trigger -->
+                        <a class=" white-text waves-effect waves-light modal-trigger" href="#modal1">
+                            <i class="material-icons left tiny"">open_in_new</i>Accesos Directos</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
-        <div class="container">
-        </div>
-    </div>
+    <!--
+         <div class=" footer-copyright">
+                                <div class="container">
+
+                                </div>
+            </div>
+            -->
 </footer>
 
 </html>

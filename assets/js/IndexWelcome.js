@@ -5,13 +5,12 @@ new Vue({
 	},
 	created: function() {
 		// metodos que se deben inicializan con la pagina.php
+		this.RotarCarousel();
 	},
 	mounted: function() {
 		//importaciones que debe poseer la pagina.php para uso de combobox y chk modal ..
 		$(".parallax").parallax();
 		$(".button-collapse").sideNav();
-		$(".slider").slider();
-		$(".carousel").carousel();
 		$(".modal").modal();
 		$(".dropdown-button").dropdown({
 			inDuration: 300,
@@ -22,6 +21,13 @@ new Vue({
 			alignment: "left", // Displays dropdown with edge aligned to the left of button
 			stopPropagation: true // Stops event propagation
 		});
+		$(".carousel").carousel({
+			fullWidth: true,
+			duration: 500
+		});
+		setInterval(function() {
+			$(".carousel").carousel("next");
+		}, 8000);
 	},
 	methods: {
 		// creación de métodos para funcionalidad, etc...
