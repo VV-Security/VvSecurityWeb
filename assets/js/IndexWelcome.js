@@ -27,7 +27,7 @@ new Vue({
 		});
 		setInterval(function() {
 			$(".carousel").carousel("next");
-		}, 8000);
+		}, 10000);
 	},
 	methods: {
 		// creación de métodos para funcionalidad, etc...
