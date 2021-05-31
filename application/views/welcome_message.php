@@ -60,12 +60,13 @@
 
                 <div class="content-img">
 
-                    <img src="<?php echo base_url() ?>assets/img/ISO9001.jpg">
+                    <img src="<?php echo base_url() ?>assets/img/ISO9001.png">
 
                     <div class="content-txt">
+                        <h2>Certificado PEC</h2>
+                        <p>Cumple estándar de seguridad</p>
                         <h2>Norma ISO 9001 : 2015</h2>
-                        <p>Certificados como empresa en la norma ISO 9001: 2015, la cual nos identifica como una
-                            institución de calidad, con mejora constante de nuestros servicios de nuestro servicios</p>
+                        <p>Certificados como institución de calidad</p>
                     </div>
 
                     <div class="content-1"></div>
