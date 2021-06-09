@@ -89,13 +89,7 @@
             </div>
         </div>
     </div>
-    <!--
-         <div class=" footer-copyright">
-                                <div class="container">
 
-                                </div>
-            </div>
-            -->
 </footer>
 
 </html>
