@@ -285,9 +285,53 @@
     </div>
     <!--############### end 2 ACCESOS ################-->
 
-
+    <br><br><br>
     <!--############### begin DIFERENCIALES ################-->
+    <!-- <h1>TARJETAS 3D CON HTML5 y CSS3</h1> -->
+    <div class="contenedor">
+        <br><br><br>
+        <div class="contenedor_tarjeta">
+            <a href="#">
+                <figure id="tarjeta">
+                    <img src="<?php echo base_url()?>assets/img/GGSS1.png" class="frontal" alt="">
+                    <figcaption class="trasera">
+                        <h2 class="titulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, vero!</h2>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cupiditate voluptates ipsum
+                            suscipit, aspernatur eum, amet nemo architecto nihil corrupti.</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
 
+        <div class="contenedor_tarjeta">
+            <a href="#">
+                <figure id="tarjeta">
+                    <img src="img/b.jpg" class="frontal" alt="">
+                    <figcaption class="trasera">
+                        <h2 class="titulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, vero!</h2>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cupiditate voluptates ipsum
+                            suscipit, aspernatur eum, amet nemo architecto nihil corrupti.</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div class="contenedor_tarjeta">
+            <a href="#">
+                <figure id="tarjeta">
+                    <img src="img/c.jpg" class="frontal" alt="">
+                    <figcaption class="trasera">
+                        <h2 class="titulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, vero!</h2>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cupiditate voluptates ipsum
+                            suscipit, aspernatur eum, amet nemo architecto nihil corrupti.</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
     <!--############### end DIFERENCIALES ################-->
 
 
