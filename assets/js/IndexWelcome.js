@@ -12,17 +12,6 @@ new Vue({
 		$(".button-collapse").sideNav();
 		$(".modal").modal();
 		$(".dropdown").dropdown();
-		// inicializacion de forma automatica del dropdown con el cursor, pero no sirve con los moviles
-		//$(".dropdown-button").dropdown({
-		//	inDuration: 300,
-		//	outDuration: 225,
-		//	hover: false, // Activate on hover
-		//	gutter: 0, // Spacing from edge
-		//	belowOrigin: true, // Displays dropdown below the button
-		//	alignment: "left", // Displays dropdown with edge aligned to the left of button
-		//	stopPropagation: true // Stops event propagation
-		//});
-
 		$(".carousel").carousel({
 			fullWidth: true,
 			duration: 500

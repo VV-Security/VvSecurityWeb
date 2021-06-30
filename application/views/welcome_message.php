@@ -27,8 +27,6 @@
         </div>
     </div>
     <!--############### end CAROUSEL ################-->
-    <br><br>
-    <br><br>
     <br>
     <br>
     <div class="row">
@@ -39,13 +37,12 @@
     </div>
     <br>
     <br>
-    <br>
-    <br>
     <!--############### begin ACCESOS  ################-->
     <div class="row">
-        <div class="col l12 s12">
-            <div class="col l4 s12">
+        <div class="col l12">
+            <div class="col l6">
                 <div class="content-img">
+
                     <img class="responsive-img" src="<?php echo base_url() ?>assets/img/c19.png">
 
                     <div class="content-txt">
@@ -61,7 +58,7 @@
                     <div class="content-4"></div>
                 </div>
             </div>
-            <div class="col l4 s12">
+            <div class="col l6">
 
                 <div class="content-img">
 
@@ -81,7 +78,8 @@
 
                 </div>
             </div>
-            <div class="col l4 s12">
+            <!-- 
+            <div class="col l4 offset-l1">
 
                 <div class="content-img">
 
@@ -105,18 +103,18 @@
 
                 </div>
             </div>
+             -->
 
         </div>
     </div>
     <!--############### end ACCESOS  ################-->
     <br>
-    <br> <br>
+
     <br>
     <br>
     <!--############### begin SERVICIOS ################-->
     <div class="row">
         <div class="col l10 offset-l1">
-            <br> <br>
             <br>
             <br> <br>
             <br>
@@ -210,22 +208,16 @@
 
     </div>
     <!--############### end SERVICIOS ################-->
-    <br><br>
+
     <br><br>
     <br><br>
     <!--############### begin PARALLAX ################-->
-    <div class="parallax-container">
-        <div class="parallax">
-            <img src="<?php echo base_url() ?>assets/img/Enpavonado 2 parallax.png" class="responsive-img" />
-        </div>
-    </div>
+
     <!--############### end PARALLAX ################-->
 
 
 
     <!--############### begin 2 ACCESOS ################-->
-    <br><br>
-    <br><br>
     <br><br>
     <div class="row">
         <div class="col s12 l4">
@@ -239,7 +231,7 @@
                 </div>
                 <div class="card-content">
                     <p>
-                    <h5> Desde este aquí sera redirigido a la pagina donde podrá ingresar las sugerencias,
+                    <h5> Desde aquí sera redirigido a la pagina donde podrá ingresar las sugerencias,
                         felicitaciones o reclamos.</h5>
                     </p>
                 </div>
@@ -288,50 +280,61 @@
     <br><br><br>
     <!--############### begin DIFERENCIALES ################-->
     <!-- <h1>TARJETAS 3D CON HTML5 y CSS3</h1> -->
+    <img src="<?php echo base_url() ?>assets/img/Enpavonado 2 parallax.png" class="responsive-img">
+
     <div class="contenedor">
         <br><br><br>
         <div class="contenedor_tarjeta">
-            <a href="#">
+            <div class="card-panel">
                 <figure id="tarjeta">
-                    <img src="<?php echo base_url()?>assets/img/GGSS1.png" class="frontal" alt="">
+                    <img src="<?php echo base_url()?>assets/img/prestigio.png" class="frontal" alt="">
                     <figcaption class="trasera">
-                        <h2 class="titulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, vero!</h2>
+                        <h2 class="titulo">V&V Security sinónimo de prestigio, nos diferencia y nos une.</h2>
                         <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cupiditate voluptates ipsum
-                            suscipit, aspernatur eum, amet nemo architecto nihil corrupti.</p>
                     </figcaption>
                 </figure>
-            </a>
+            </div>
         </div>
 
         <div class="contenedor_tarjeta">
-            <a href="#">
+            <div class="card-panel">
                 <figure id="tarjeta">
-                    <img src="img/b.jpg" class="frontal" alt="">
+                    <img src="<?php echo base_url()?>assets/img/eficacia.png" class="frontal" alt="">
                     <figcaption class="trasera">
-                        <h2 class="titulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, vero!</h2>
+                        <h2 class="titulo">Eficacia garantizada con tecnología de última generación y profesionales
+                            altamente cualificados.</h2>
                         <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cupiditate voluptates ipsum
-                            suscipit, aspernatur eum, amet nemo architecto nihil corrupti.</p>
                     </figcaption>
                 </figure>
-            </a>
+            </div>
         </div>
-
         <div class="contenedor_tarjeta">
-            <a href="#">
+            <div class="card-panel">
                 <figure id="tarjeta">
-                    <img src="img/c.jpg" class="frontal" alt="">
+                    <img src="<?php echo base_url()?>assets/img/integrales.png" class="frontal" alt="">
+                    <figcaption class="trasera">
+                        <h2 class="titulo">Soluciones integrales estudiadas, diseñadas y ejecutadas a medida,
+                            adaptándonos con versatilidad a todos los sectores para cubrir, con rigor, las necesidades
+                            de todos nuestros clientes.</h2>
+                        <hr>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="contenedor_tarjeta">
+            <div class="card-panel">
+                <figure id="tarjeta">
+                    <img src="<?php echo base_url()?>assets/img/personalizado.png" class="frontal" alt="">
                     <figcaption class="trasera">
                         <h2 class="titulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, vero!</h2>
                         <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cupiditate voluptates ipsum
-                            suscipit, aspernatur eum, amet nemo architecto nihil corrupti.</p>
                     </figcaption>
                 </figure>
-            </a>
+            </div>
         </div>
     </div>
+    </img>
+
     <!--############### end DIFERENCIALES ################-->
 
 

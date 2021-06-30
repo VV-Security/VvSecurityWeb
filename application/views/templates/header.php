@@ -218,9 +218,4 @@
     </div>
 </head>
 
-<body class="">
-
-    <!--
-    <body class="blue lighten-5">
-
-         -->
+<body>
