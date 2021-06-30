@@ -326,7 +326,7 @@
                 <figure id="tarjeta">
                     <img src="<?php echo base_url()?>assets/img/personalizado.png" class="frontal" alt="">
                     <figcaption class="trasera">
-                        <h2 class="titulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, vero!</h2>
+                        <h2 class="titulo">Trato personalizado, transparente y cuidada atención al cliente.</h2>
                         <hr>
                     </figcaption>
                 </figure>
