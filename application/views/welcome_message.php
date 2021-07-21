@@ -341,7 +341,7 @@
 
     <pre>
 
-                {{$data}}
+            {{$data}}
     </pre>
 
 </main>

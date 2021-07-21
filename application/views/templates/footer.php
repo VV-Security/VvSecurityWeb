@@ -14,7 +14,7 @@
                 </div>
                 <h5 class="white-text">Compañia V&V Security</h5>
                 <p class="grey-text text-lighten-4">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Somos una empresa con una amplia gama de servicios, dirigidos a
+                    &nbsp;&nbsp;&nbsp;&nbsp;Somos una empresa con una amplia gama de servicios, dirigidos a
                     satisfacer
                     los requerimientos de protección mediante el uso de servicios informáticos, físicos y servicios
                     especiales.
@@ -83,7 +83,7 @@
                     <li>
                         <!-- Modal Trigger -->
                         <a class=" white-text waves-effect waves-light modal-trigger" href="#modal1">
-                            <i class="material-icons left tiny"">open_in_new</i>Accesos Directos</a>
+                            <i class="material-icons left tiny">open_in_new</i>Accesos Directos</a>
                     </li>
                 </ul>
             </div>
