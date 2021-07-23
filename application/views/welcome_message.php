@@ -354,4 +354,3 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/indexWelcome.js"></script>
 </body>
-<?php $this->load->view('templates/footer'); ?>
