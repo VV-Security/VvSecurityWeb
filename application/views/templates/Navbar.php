@@ -9,7 +9,6 @@
     <title>V&V SECURITY</title>
 
     <!-- Material Design Bootstrap -->
-    <link href="<?php echo base_url() ?>assets/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.8.9.min.css">
