@@ -7,32 +7,19 @@
 
                 <!--Grid column-->
                 <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                    <h6 class="mb-0 white-text animated wow tada">Sed convallis tortor quis dui congue, eget
-                        dignissim neque scelerisque.</h6>
+                    <h6 class="mb-0 white-text animated wow tada">¡Síguenos en nuestras redes sociales!</h6>
                 </div>
                 <!--Grid column-->
 
                 <!--Grid column-->
                 <div class="col-md-6 col-lg-7 text-center text-md-right">
                     <!--Facebook-->
-                    <a class="fb-ic ml-0">
-                        <i class="fa fa-facebook white-text mr-lg-4"> </i>
-                    </a>
-                    <!--Twitter-->
-                    <a class="tw-ic">
-                        <i class="fa fa-twitter white-text mr-lg-4"> </i>
-                    </a>
-                    <!--Google +-->
-                    <a class="gplus-ic">
-                        <i class="fa fa-google-plus white-text mr-lg-4"> </i>
-                    </a>
-                    <!--Linkedin-->
-                    <a class="li-ic">
-                        <i class="fa fa-linkedin white-text mr-lg-4"> </i>
-                    </a>
+                    <a href="https://www.facebook.com/VV-Security-110513300859475">
+                    <i class="fab fa-facebook-square white-text ml-2 fa-2x"></i>
+                    </a>    
                     <!--Instagram-->
-                    <a class="ins-ic">
-                        <i class="fa fa-instagram white-text mr-lg-4"> </i>
+                    <a href="https://www.instagram.com/vvsecurity/">
+                    <i class="fab fa-instagram white-text fa-2x"></i>
                     </a>
                 </div>
                 <!--Grid column-->
