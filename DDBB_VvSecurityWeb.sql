@@ -62,7 +62,7 @@ create table Matriz_Servicio(
 	Jornada varchar(20) not null,
 	Turno varchar(20) not null,
 	HorarioLaboral time not null,
-	Obervaciones text not null,
+	Observaciones text not null,
 	TipoServicio_Id int,
 	ServicioBasicos_Id int,
 	Extras_Id int,
@@ -75,6 +75,9 @@ create table Matriz_Servicio(
 	constraint fk_Servicio_Referencias_Id foreign key  (Referencias_Id) references Referencia(Id)
 
 );
+
+	INSERT INTO Matriz_Servicio (Ubicacion, Duracion, Referencia_Ubi, Jornada, Turno, HorarioLaboral, Observaciones, TipoServicio_Id, ServicioBasicos_Id, Extras_Id, Referencias_Id)
+		 					VALUES ('Ubicacion MR TEST', 'Duracion MR TEST', 'Referencia_Ubi RM TEST','Jornada RM TEST', 'turno RM TEST', '08:00:00', 'Observaciones RM TEST',1,1,1,1);
 
 create table Requerimiento(
 	Id int not null auto_increment,
@@ -124,6 +127,8 @@ create table Matriz_Requerimientos(
 
 );
 
+INSERT INTO Matriz_Requerimientos (EmpresaCtrlRoll_Id, Requerimiento_Id, Estado_Id)
+													 VALUES (1      					 , 1 							 , 1);
 
 create table Persona_Natural(
 	Id int not null auto_increment,
@@ -158,7 +163,7 @@ create table Representante_Legal(
 	constraint pk_Representante_Legal primary key (Id)
 );
 
-INSERT INTO Representante_Legal(Rut,Primero,Segundo,Paterno,Materno,Fono,Mail) values('22222-2','PrimeroTEST','SegundoTEST','PaternoTEST','MaternoTEST','+569333333','MailTEST@MailTEST.CL');
+INSERT INTO Representante_Legal(Rut,Primero,Segundo,Paterno,Materno,Fono,Mail) VALUES ('22222-2','PrimeroTEST','SegundoTEST','PaternoTEST','MaternoTEST','+569333333','MailTEST@MailTEST.CL');
 
 create table Empresa(
 	Id int not null auto_increment,
@@ -177,7 +182,8 @@ create table Empresa(
 
 );
 
-
+INSERT INTO empresa ( `Rut`   , `Razon_Social`         ,`Giro_Comercial`          , `Fono`    , `Direccion` 			  , `Numero`, `Comuna`  		  , `Ciudad`			, `Representante_Id`)
+			  VALUES 			('11111-1','Razon Social Emp. TEST','Giro Comercial Emp. TEST','987654321','Direccion Emp. TEST','852 T'  ,'Comuna Emp. TEST',' Ciudad TEST','1');
 
 create table Cargos(
 	Id int not null auto_increment,
@@ -203,6 +209,9 @@ create table Contacto (
 
 );
 
+	INSERT INTO contacto (Primer					  	, Segundo							, Paterno            , Materno             , Fono			 , Mail					 , Cargo_Id)
+	VALUES      ('Primero Cont. TEST' , 'Segundo Cont. TEST','Paterno Cont. TEST', 'Materno Cont. TEST','987654321', 'mail@test.cl',1);
+
 create table Matriz_Cotizante(
 	Id int not null auto_increment,
 	Empresa_Id int not null,
@@ -216,6 +225,10 @@ create table Matriz_Cotizante(
 	constraint fk_Matriz_Cotizante_Natural_Id	foreign key (Natural_Id) 		  references Persona_Natural	(Id),
 	constraint fk_Matriz_Cotizante_Servicio_Id	foreign key (Servicio_Id)		references Matriz_Servicio	(Id)
 );
+
+		INSERT INTO Matriz_Cotizante(Empresa_Id, Contacto_Id, Natural_Id, Servicio_Id)
+													VALUES( 1			 	 ,	1					,	1			    ,	1);
+
 create table Departamento(
 	Id int not null auto_increment,
 	nombre varchar(100) not null,
@@ -232,6 +245,7 @@ create table Usuarios(
 	Segundo varchar(200) not null,
 	Paterno varchar(200) not null,
 	Materno varchar(200) not null,
+	Clave varchar(1000) not null,
 	Mail varchar(200) not null,
 	Departamento_Id int not null,
 
@@ -240,6 +254,9 @@ create table Usuarios(
 
 
 );
+
+	INSERT INTO Usuarios (Rut    , Primero						, Segundo						 , Paterno	 , Materno				   , Clave					, Mail, Departamento_Id)
+								VALUES ('666-6', 'Primero User TEST', 'Segundo User TEST','Paterno User TEST','Materno User TEST', '123 User TEST', 'mailUser@User.cl', 1)
 
 
 create table Categorias(
@@ -262,6 +279,7 @@ create table Noticias(
 	constraint pk_Noticias primary key (Id),
 	constraint fk_Noticias_Categoria_Id foreign key (Categoria_Id) references Categorias (Id)
 );
-
+ INSERT INTO Noticias( Fecha_registro, Titulo							 , img										, Contenido								, Categoria_Id)
+ 							VALUES ('2021/05/21', 'Titulo Noticia TEST', 'rutaImg Noticia TEST' , 'Contenido Noticia TEST', 1);
 -- constraint pk_[Nombre tabla local] primary key ('Id referencia')
 -- constraint fk_[Nombre Tabla local]_[columna en local nombre] foreign key ('columna en local nombre') references 'tabla referencia'(Id referencia)
