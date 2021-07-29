@@ -86,6 +86,8 @@
                                         visión</a>
                                     <a class="dropdown-item"
                                         href="<?php echo site_url() ?>/Nosotros#Organigrama">Organigrama</a>
+                                        <a class="dropdown-item"
+                                href="<?php echo site_url() ?>/Nosotros#Responsabilidad">Responsabilidad Corporativa</a>
                                     <a class="dropdown-item" href="<?php echo site_url() ?>/Sucursales">Sucursales</a>
                             </li>
 

@@ -264,3 +264,9 @@ header,
 
 	background: #3c40c6 !important;
 }
+
+.bg-modals{
+	background-image: url('http://localhost/VvSecurityWeb/assets/img/logo_softguard_blanco.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+}

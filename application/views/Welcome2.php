@@ -52,9 +52,84 @@
 <!--Main layout-->
 <main>
     <div class="container">
+    <section class="text-center my-5 wow fadeIn">
+<h2 class="h1-responsive font-weight-bold my-5 white-text">Siéntete seguro en todo momento con nuestra app Smartpanics </h2>
+            <!-- Section description -->
+            <p class="lead grey-text w-responsive mx-auto mb-5">SmartPanics es una aplicación que te permite reportar incidencias a las autoridades de manera fácil y rápida con múltiples funciones que te protegerán a ti y tus dependencias.</p>
+    <div class="conteiner">
+        <div class="row ">
+            <div class="col-9 mx-auto ">
+            <img class="img-fluid" src="<?php echo base_url() ?>assets/img/todo.png" alt="Fotos de servicios de seguridad">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<hr class="my-5">
+
+<section class="text-center my-5 wow fadeIn">
+<h2 class="h1-responsive font-weight-bold my-5 white-text">Siéntete seguro en todo momento con nuestra app Smartpanics </h2>
+            <!-- Section description -->
+            <p class="lead grey-text w-responsive mx-auto mb-5">SmartPanics es una aplicación que te permite reportar incidencias a las autoridades de manera fácil y rápida con múltiples funciones que te protegerán a ti y tus dependencias.</p>
+    <div class="conteiner">
+        <div class="row ">
+            <div class="col-9 mx-auto ">
+            <img class="img-fluid" src="<?php echo base_url() ?>assets/img/NuevoSmartPanics.png" alt="Fotos de servicios de seguridad">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="text-center mt-5 wow fadeIn">
+<div class="row">
+    <div class="col-6">
+        <h3 class="h3-responsive font-weight-bold my-5 white-text">
+            titulo
+        </h3>
+        <p class="lead grey-text w-responsive mx-auto mb-5">
+spl_autoload_register
+        </p>
+    </div>
+    <div class="col-6 rounded-left img-card" style="height: 550px; background-image: url('<?php echo base_url() ?>assets/img/tab1.jpg')">
+    </div>
+</div>
+</section>
+
+<section class="text-center wow fadeIn">
+<div class="row">
+<div class="col-6 rounded-left img-card" style="height: 550px; background-image: url('<?php echo base_url() ?>assets/img/incendio.jpg')">
+    </div>
+    <div class="col-6">
+        <h3 class="h3-responsive font-weight-bold my-5 white-text">
+            titulo
+        </h3>
+        <p class="lead grey-text w-responsive mx-auto mb-5">
+spl_autoload_register
+        </p>
+    </div>
+   
+</div>
+</section>
+
+<section class="text-center wow fadeIn">
+<div class="row">
+    <div class="col-6">
+        <h3 class="h3-responsive font-weight-bold my-5 white-text">
+            titulo
+        </h3>
+        <p class="lead grey-text w-responsive mx-auto mb-5">
+spl_autoload_register
+        </p>
+    </div>
+    <div class="col-6 rounded-left img-card" style="height: 550px; background-image: url('<?php echo base_url() ?>assets/img/ataque.jpg')">
+    </div>
+</div>
+</section>
 
 
-        <!-- Section: Features v.1 -->
+  <!-- Section: Features v.1 -->
         <section class="text-center my-5 wow fadeIn">
 
             <!-- Section heading -->
