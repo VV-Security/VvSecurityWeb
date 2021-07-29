@@ -1,9 +1,234 @@
 <div class="container-fluid  text-white">
+<style>
+    .clash-card {
+  background: white;
+  width: 300px;
+  display: inline-block;
+  margin: auto;
+  border-radius: 19px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+}
 
+.clash-card__image {
+  position: relative;
+  height: 230px;
+  margin-bottom: 35px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.clash-card__image--barbarian {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg");
+}
+.clash-card__image--barbarian img {
+  width: 400px;
+  position: absolute;
+  top: -65px;
+  left: -70px;
+}
+
+.clash-card__image--archer {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg");
+}
+.clash-card__image--archer img {
+  width: 400px;
+  position: absolute;
+  top: -34px;
+  left: -37px;
+}
+
+.clash-card__image--giant {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg");
+}
+.clash-card__image--giant img {
+  width: 340px;
+  position: absolute;
+  top: -30px;
+  left: -25px;
+}
+
+.clash-card__image--goblin {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg");
+}
+.clash-card__image--goblin img {
+  width: 370px;
+  position: absolute;
+  top: -21px;
+  left: -37px;
+}
+
+.clash-card__image--wizard {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg");
+}
+.clash-card__image--wizard img {
+  width: 345px;
+  position: absolute;
+  top: -28px;
+  left: -10px;
+}
+
+.clash-card__level {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.clash-card__level--barbarian {
+  color: #EC9B3B;
+}
+
+.clash-card__level--archer {
+  color: #EE5487;
+}
+
+.clash-card__level--giant {
+  color: #F6901A;
+}
+
+.clash-card__level--goblin {
+  color: #82BB30;
+}
+
+.clash-card__level--wizard {
+  color: #4FACFF;
+}
+
+.clash-card__unit-name {
+  font-size: 26px;
+  color: black;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.clash-card__unit-description {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.clash-card__unit-stats--barbarian {
+  background: #EC9B3B;
+}
+.clash-card__unit-stats--barbarian .one-third {
+  border-right: 1px solid #BD7C2F;
+}
+
+.clash-card__unit-stats--archer {
+  background: #EE5487;
+}
+.clash-card__unit-stats--archer .one-third {
+  border-right: 1px solid #D04976;
+}
+
+.clash-card__unit-stats--giant {
+  background: #F6901A;
+}
+.clash-card__unit-stats--giant .one-third {
+  border-right: 1px solid #de7b09;
+}
+
+.clash-card__unit-stats--goblin {
+  background: #82BB30;
+}
+.clash-card__unit-stats--goblin .one-third {
+  border-right: 1px solid #71a32a;
+}
+
+.clash-card__unit-stats--wizard {
+  background: #4FACFF;
+}
+.clash-card__unit-stats--wizard .one-third {
+  border-right: 1px solid #309eff;
+}
+
+.clash-card__unit-stats {
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+.clash-card__unit-stats .one-third {
+  width: 33%;
+  float: left;
+  padding: 20px 15px;
+}
+.clash-card__unit-stats sup {
+  position: absolute;
+  bottom: 4px;
+  font-size: 45%;
+  margin-left: 2px;
+}
+.clash-card__unit-stats .stat {
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.clash-card__unit-stats .stat-value {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+}
+.clash-card__unit-stats .no-border {
+  border-right: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.slick-prev {
+  left: 100px;
+  z-index: 999;
+}
+
+.slick-next {
+  right: 100px;
+  z-index: 999;
+}
+</style>
     <div class="  " id="Servicio1">
+
+
+    <div class="container"><div class="row"><div class="col-4">  <div class="clash-card archer">
+      <div class="clash-card__image clash-card__image--archer">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer.png" alt="archer" />
+      </div>
+      <div class="clash-card__level clash-card__level--archer">Level 5</div>
+      <div class="clash-card__unit-name">The Archer</div>
+      <div class="clash-card__unit-description">
+        The Archer is a female warrior with sharp eyes. She wears a short, light green dress, a hooded cape, a leather belt and an attached small pouch.
+      </div>
+
+      <div class="clash-card__unit-stats clash-card__unit-stats--archer clearfix">
+        <div class="one-third">
+          <div class="stat">25<sup>S</sup></div>
+          <div class="stat-value">Training</div>
+        </div>
+
+        <div class="one-third">
+          <div class="stat">24</div>
+          <div class="stat-value">Speed</div>
+        </div>
+
+        <div class="one-third no-border">
+          <div class="stat">300</div>
+          <div class="stat-value">Cost</div>
+        </div>
+
+      </div>
+
+    </div> <!-- end clash-card archer--></div></div></div>
+
+
         <h1 class="mt-5 h1">Servicios de seguridad</h1>
-
-
 
         <div class="row featurette my-5">
             <div class="col-md-7">
@@ -93,64 +318,8 @@
 
 
 
+
     <div class=" " id="Servicio4" style="display: none;">
-        <h1 class="mt-5 h1">Servicios de Capacitación</h1>
-
-        <div class="row featurette my-5">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Curso de Formación y Perfeccionamiento Guardias.</h2>
-                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                    prose here.</p>
-            </div>
-            <div class="col-md-5 ">
-                <img src="https://www.vvsecurity.cl/wp-content/uploads/2019/02/capa01.png"
-                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
-            </div>
-        </div>
-        <hr class="my-5">
-        <div class="row featurette  my-5">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Curso de Jefe de Seguridad</h2>
-                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                    prose here.</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img src="https://www.vvsecurity.cl/wp-content/uploads/2019/02/capa01.png"
-                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
-            </div>
-        </div>
-        <hr class="my-5">
-        <div class="row featurette my-5 ">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Curso de Supervisor</h2>
-                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                    prose here.</p>
-            </div>
-            <div class="col-md-5">
-                <img src="https://www.vvsecurity.cl/wp-content/uploads/2019/02/capa01.png"
-                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
-            </div>
-        </div>
-        <hr class="my-5">
-        <div class="row featurette my-5">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Curso de Procedimiento y Técnicas Practicas Aplicadas a Seguridad.</h2>
-                <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                    prose here.</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img src="https://www.vvsecurity.cl/wp-content/uploads/2019/02/capa01.png"
-                    class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto">
-            </div>
-        </div>
-
-    </div>
-
-
-
-
-
-    <div class=" " id="Servicio5" style="display: none;">
         <h1 class="mt-5 h1">Arriendo de casetas de vigilancia</h1>
 
         <div class="row featurette my-5">
@@ -239,8 +408,7 @@
 
 
 
-
-    <div class=" " id="Servicio6" style="display: none;">
+    <div class=" " id="Servicio5" style="display: none;">
         <h1 class="mt-5 h1">Arriendo de Radios</h1>
         <div class="row featurette">
             <div class="col-md-7">

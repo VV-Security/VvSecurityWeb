@@ -40,12 +40,9 @@
                 <a id="SB3" class="list-group-item list-group-item-action list-group-item-dark bg-VV white-text">Aseo
                     Industrial</a>
                 <a id="SB4"
-                    class="list-group-item list-group-item-action list-group-item-dark bg-VV white-text">Servicios
-                    de Capacitación</a>
-                <a id="SB5"
                     class="list-group-item list-group-item-action list-group-item-dark bg-VV white-text">Arriendo
                     de casetas de vigilancia</a>
-                <a id="SB6"
+                <a id="SB5"
                     class="list-group-item list-group-item-action list-group-item-dark bg-VV white-text">Arriendo
                     de Radios</a>
             </div>
@@ -110,16 +107,16 @@
                                     Servicios
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item"
+                                    <a onclick="Seguridad()"  class="dropdown-item"
                                         href="<?php echo site_url() ?>/Servicios#Seguridad">Seguridad</a>
-                                    <a class="dropdown-item" href="<?php echo site_url() ?>/Servicios#Drones">Drones</a>
-                                    <a class="dropdown-item"
+                                    <a onclick="Drones()"  class="dropdown-item" href="<?php echo site_url() ?>/Servicios#Drones">Drones</a>
+                                    <a onclick="AseoIndustrial()"  class="dropdown-item"
                                         href="<?php echo site_url() ?>/Servicios#AseoIndustrial">Aseo
                                         Industrial</a>
-                                    <a class="dropdown-item"
+                                    <a onclick="CasetaVigilancia()"  class="dropdown-item"
                                         href="<?php echo site_url() ?>/Servicios#CasetaVigilancia">Caseta
                                         Vigilancia</a>
-                                    <a class="dropdown-item" href="<?php echo site_url() ?>/Servicios#Radios">Arriendo
+                                    <a  onclick="Radios()"  class="dropdown-item" href="<?php echo site_url() ?>/Servicios#Radios">Arriendo
                                         de
                                         Radios</a>
                             </li>
