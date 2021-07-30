@@ -182,7 +182,7 @@ create table Empresa(
 
 );
 
-INSERT INTO empresa ( `Rut`   , `Razon_Social`         ,`Giro_Comercial`          , `Fono`    , `Direccion` 			  , `Numero`, `Comuna`  		  , `Ciudad`			, `Representante_Id`)
+INSERT INTO Empresa ( `Rut`   , `Razon_Social`         ,`Giro_Comercial`          , `Fono`    , `Direccion` 			  , `Numero`, `Comuna`  		  , `Ciudad`			, `Representante_Id`)
 			  VALUES 			('11111-1','Razon Social Emp. TEST','Giro Comercial Emp. TEST','987654321','Direccion Emp. TEST','852 T'  ,'Comuna Emp. TEST',' Ciudad TEST','1');
 
 create table Cargos(
@@ -247,6 +247,7 @@ create table Usuarios(
 	Materno varchar(200) not null,
 	Clave varchar(1000) not null,
 	Mail varchar(200) not null,
+	Estado int not null,
 	Departamento_Id int not null,
 
 	constraint pk_user primary key (Id),
@@ -255,8 +256,8 @@ create table Usuarios(
 
 );
 
-	INSERT INTO Usuarios (Rut    , Primero						, Segundo						 , Paterno	 , Materno				   , Clave					, Mail, Departamento_Id)
-								VALUES ('666-6', 'Primero User TEST', 'Segundo User TEST','Paterno User TEST','Materno User TEST', '123 User TEST', 'mailUser@User.cl', 1)
+	INSERT INTO Usuarios ( Rut   , Primero						, Segundo					  , Paterno	 			 	  , Materno				   , Clave ,  Mail							,Estado, Departamento_Id)
+								VALUES ('666-6','Primero User TEST', 'Segundo User TEST','Paterno User TEST','Materno User TEST', '123', 'mailUser@User.cl' ,1		 , 1);
 
 
 create table Categorias(
