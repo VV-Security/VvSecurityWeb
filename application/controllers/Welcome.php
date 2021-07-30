@@ -13,10 +13,35 @@ class Welcome extends CI_Controller
 
     #################--->           usuarios Crud tabla            <---#################
 
-    public function Usuario()
+    public function VerUsuario()
     {
-        echo json_encode($this->Crud_User->Usuarios());
+        echo json_encode($this->Crud_User->SelectUsuarios());
     }
+    public function ActualizarUsuario()
+    {
+        $Id = $this->input->post("id");
+        $Rut = $this->input->post("rut");
+        $Primero = $this->input->post("primero");
+        $Segundo = $this->input->post("segundo");
+        $Paterno = $this->input->post("paterno");
+        $Materno = $this->input->post("materno");
+        $Clave = $this->input->post("clave");
+        $Mail = $this->input->post("mail");
+        $Estado = $this->input->post("estado");
+        $Departamento_Id = $this->input->post("depto_id");
+
+        if (isset($Id) || isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno)
+        || isset($Materno) || isset($Clave) || isset ($Mail) || isset($Estado) || isset($Departamento_Id)) 
+        {
+           $this->Crud_User->UpdateUsuario($Id, $Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id);
+            
+           echo json_encode(array("msg" => "Usuario Registrado Con Éxito"));
+        }else {
+            echo json_encode(array("msg" => "No se Pudo Crear Usuario"));
+        }        
+    }
+    
+}
 
 
     #################--->          cargos Crud tabla               <---#################

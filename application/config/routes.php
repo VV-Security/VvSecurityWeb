@@ -39,7 +39,8 @@ $route['Capacitaciones'] = 'Vistas/Capacitaciones';
 ################--->My Controllers <---############
     #------------> Usuarios CRUD <--------------#
     
-    $route['usuario'] = 'Welcome/Usuario';
+    $route['usuario'] = 'Welcome/VerUsuario';
+    $route['insertarU'] = 'Welcome/ActualizarUsuario';
     
  
     #------------> Departamentos CRUD <--------------#
