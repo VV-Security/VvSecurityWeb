@@ -146,67 +146,86 @@ new WOW().init();
 <div class="hiddendiv common"></div>
 <script type="text/javascript">
 // MDB Lightbox Init
-$(function() {
-    $("#mdb-lightbox-ui").load(
-        'https://mdbootstrap.com/api/snippets/static/mdb-addons/mdb-lightbox-ui.html');
+$(function(){
+    $("#mdb-lightbox-ui").load('https://mdbootstrap.com/api/snippets/static/mdb-addons/mdb-lightbox-ui.html');
+});
 
+        $(document).ready(function() {
+            NavegarUrl();
+        });
 
+ function NavegarUrl(){
+    var  url = window.location;
+            url = url.toString()
+            var id = url.split("#")[1];
 
-    $("#SB1").click(function(e) {
-        e.preventDefault();
+            switch (id) {
+
+    case "Seguridad":Seguridad(); break;
+        
+    case "Drones": Drones(); break;
+
+    case "AseoIndustrial":AseoIndustrial(); break;
+
+    case "CasetaVigilancia":CasetaVigilancia(); break;
+
+    case "Radios":Radios(); break;
+
+  default:Seguridad(); break;
+
+}
+ }
+
+function Seguridad(){   
         $("#Servicio1").show(1000);
         $("#Servicio2").hide();
         $("#Servicio3").hide();
         $("#Servicio4").hide();
         $("#Servicio5").hide();
-        $("#Servicio6").hide();
-    });
+    }
 
-    $("#SB2").click(function(e) {
+    function Drones(){
         $("#Servicio1").hide();
         $("#Servicio2").show(1000);
         $("#Servicio3").hide();
         $("#Servicio4").hide();
         $("#Servicio5").hide();
-        $("#Servicio6").hide();
-    })
+    }
 
-    $("#SB3").click(function(e) {
+    function AseoIndustrial(){
         $("#Servicio1").hide();
         $("#Servicio2").hide();
         $("#Servicio3").show(1000);
         $("#Servicio4").hide();
         $("#Servicio5").hide();
-        $("#Servicio6").hide();
-    })
+    }
 
-    $("#SB4").click(function(e) {
+    function CasetaVigilancia(){
         $("#Servicio1").hide();
         $("#Servicio2").hide();
         $("#Servicio3").hide();
         $("#Servicio4").show(1000);
         $("#Servicio5").hide();
-        $("#Servicio6").hide();
-    })
+    }
 
-    $("#SB5").click(function(e) {
+    function Radios(){
         $("#Servicio1").hide();
         $("#Servicio2").hide();
         $("#Servicio3").hide();
         $("#Servicio4").hide();
         $("#Servicio5").show(1000);
-        $("#Servicio6").hide();
-    })
 
-    $("#SB6").click(function(e) {
-        $("#Servicio1").hide();
-        $("#Servicio2").hide();
-        $("#Servicio3").hide();
-        $("#Servicio4").hide();
-        $("#Servicio5").hide();
-        $("#Servicio6").show(1000);
-    })
+    }
 
+    $("#SB1").click(function(e) {Seguridad();});
+
+    $("#SB2").click(function(e) {Drones();});
+
+    $("#SB3").click(function(e) {AseoIndustrial();});
+
+    $("#SB4").click(function(e) {CasetaVigilancia();});
+
+    $("#SB5").click(function(e) {Radios();});
 
 
     $("#Bt-Angeles").click(function(e) {
@@ -242,7 +261,7 @@ $(function() {
             n = 1
         }
     });
-});
+
 </script>
 </body>
 
