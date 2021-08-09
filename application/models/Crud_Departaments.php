@@ -5,20 +5,20 @@ class Crud_Departaments extends CI_Model
 {
     public function SelectDepartamento()
     {
-        return $this->db->get("Departamento")->result();
+        return $this->db->get("departamento")->result();
     }
     public function InsertDepartamento($Nombre)
     {
         $datos = array(
-            "nombre" => $Nombre
+            "Nombre" => $Nombre
         );
         return $this->db->insert("departamentos", $datos);
     }
     public function UpdateDepartamento($Id, $Nombre)
     {
         $datos = array(
-            "id" => $Id,
-            "nombre" => $Nombre
+            "Id" => $Id,
+            "Nombre" => $Nombre
         );
 
         return $this->db->update("departamento", $datos);
