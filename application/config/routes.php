@@ -31,8 +31,8 @@ $route['Requerimientos'] = 'Vistas/Requerimientos';
 $route['Capacitaciones'] = 'Vistas/Capacitaciones';
 
 
-
-
+ #------------> Intranet Vistas <--------------#
+ $route['login'] = 'Vistas/Login';
 
 
 

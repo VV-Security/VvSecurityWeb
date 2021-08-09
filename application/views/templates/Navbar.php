@@ -10,7 +10,7 @@
 
     <!-- Material Design Bootstrap -->
     <!-- Your custom styles (optional) -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
     <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.8.9.min.css">
     <link rel="stylesheet"
         href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/general/snippets-assets/datatables.min.css">

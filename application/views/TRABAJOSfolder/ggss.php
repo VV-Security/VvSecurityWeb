@@ -6,7 +6,7 @@
 <h2 class="text-center h2 text-white my-5">Formulario</h2>
 <div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-7">
+        <div class="col-6">
             <form>
                 <!-- Name input -->
                 <div class="form-outline mb-4">
@@ -50,10 +50,21 @@
                         Send me a copy of this message
                     </label>
                 </div>
-
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">ENVIAR</button>
             </form>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body row">
+                    <div class="col-4">
+                     <img src="<?php echo base_url() ?>assets/img/User.png" alt="" class="img-fluid">       
+                    </div>
+                    <div class="col-8">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
