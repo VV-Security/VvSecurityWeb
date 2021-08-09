@@ -176,6 +176,20 @@ $(function(){
 }
  }
 
+ 
+ $(document).ready(function() {
+$( "#Nombres" ).keyup(function() {
+    $("#NombresCard").text($("#Nombres").val());
+});
+$( "#Apellidos" ).keyup(function() {
+    $("#ApellidosCard").text($("#Apellidos").val());
+});
+$( "#Tel" ).keyup(function() {
+    $("#TelCard").text($("#Tel").val());
+});
+ });
+
+
 function Seguridad(){   
         $("#Servicio1").show(1000);
         $("#Servicio2").hide();

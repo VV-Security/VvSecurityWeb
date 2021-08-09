@@ -10,20 +10,23 @@
             <form>
                 <!-- Name input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="form4Example1" class="form-control" />
-                    <label class="form-label text-white" for="form4Example1">Nombre completo</label>
+                    <input type="text" id="Nombres" class="form-control" />
+                    <label class="form-label text-white" for="form4Example1">Nombres</label>
                 </div>
-
+                <div class="form-outline mb-4">
+                    <input type="text" id="Apellidos" class="form-control" />
+                    <label class="form-label text-white" for="form4Example1">Apellidos</label>
+                </div>
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                     <input type="email" id="form4Example2" class="form-control" />
-                    <label class="form-label text-white" for="form4Example2">Dirección de correo electrónico</label>
+                    <label class="form-label text-white" id="Correo" for="form4Example2">Dirección de correo electrónico</label>
                 </div>
 
                 <!-- Tel input -->
                 <div class="form-outline mb-4">
                     <input type="text" id="Tel" class="form-control" />
-                    <label class="form-label text-white" for="Tel">teléfono</label>
+                    <label class="form-label text-white" id="Tel" for="Tel">teléfono</label>
                 </div>
 
                 <!-- Name COMUNA -->
@@ -58,13 +61,33 @@
             <div class="card">
                 <div class="card-body row">
                     <div class="col-4">
-                     <img src="<?php echo base_url() ?>assets/img/User.png" alt="" class="img-fluid">       
+                        <img src="<?php echo base_url() ?>assets/img/Logo VvSecurity_Color_cuadrado.png" alt="" class="img-fluid">
+                        <div class="media">
+                        <i class="fas fa-envelope"></i>
+                            <div class="media-body">
+                               <p id="CorreoCard">Ejemplo@ejemplo.cl</p>
+                            </div>
+                        </div>
+                        <div class="media">
+                        <i class="fas fa-phone"></i>+56
+                            <div class="media-body">
+                               <p id="TelCard">9 9999 9999</p>
+                            </div>
+                        </div>
+                            <p>Comuna:</p>
+                            <p id="comuna"></p>
                     </div>
                     <div class="col-8">
-
+                        <h2 id="NombresCard" class="h2">----------------</h2>
+                        <h2 id="ApellidosCard" class="h2">----------------</h2>
+                        <h2 id="Cometario">---------</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+
+</script>
