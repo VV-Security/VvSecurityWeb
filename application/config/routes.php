@@ -30,28 +30,52 @@ $route['Contactar'] = 'Vistas/Contactar';
 $route['Requerimientos'] = 'Vistas/Requerimientos';
 $route['Capacitaciones'] = 'Vistas/Capacitaciones';
 
-
- #------------> Intranet Vistas <--------------#
- $route['login'] = 'Vistas/Login';
-
-
+#|#####################################################################################################|
+#|#####################################################################################################|
+#|#####################################################################################################|
+#|#####################################################################################################|
 
 ################--->My Controllers <---############
+
     #------------> Usuarios CRUD <--------------#
     
-    $route['usuario'] = 'Welcome/VerUsuario';
-    $route['insertarU'] = 'Welcome/ActualizarUsuario';
+    $route['User'] = 'Welcome/VerUsuario';
+    $route['insertUser'] = 'Welcome/CrearUsuario';
+    $route['updateUser'] = 'Welcome/ActualizarUsuario';
+    $route['deleteUser'] = 'Welcome/EliminarUsuario';
     
  
     #------------> Departamentos CRUD <--------------#
-    #------------> Cargos CRUD <--------------#
+
+    $route['Depts'] = 'Welcome/VerDepartamentos';
+    $route['insertDepts'] = 'Welcome/CrearDepartamentos';
+    $route['updateDepts'] = 'Welcome/ActualizarDepartamentos';
+    $route['deleteDepts'] = 'Welcome/EliminarDepartamentos';
+
+    #------------------> Cargos CRUD <-----------------------#
     #------------> Contacto CRUD <--------------#
     #------------> Persona_Natural CRUD <--------------#
     #------------> Matriz_Cotizante CRUD <--------------#
+
     #------------> Matriz_Servicio CRUD <--------------#
+    
+    $route['Ms'] = 'Welcome/VerMatrizServicio';
+    $route['insertMs'] = 'Welcome/CrearMatrizServicio';
+    $route['updateMs'] = 'Welcome/ActualizarMatrizServicio';
+    $route['deleteMs'] = 'Welcome/EliminarMatrizServicio';
+
     #------------> Tipo_Servicio CRUD <--------------#
     #------------> Referencia CRUD <--------------#
+    
     #------------> Empresa CRUD <--------------#
+  
+    $route['Emp'] = 'Welcome/VerEmpresa';
+    $route['insertEmp'] = 'Welcome/CrearEmpresa';
+    $route['updateEmp'] = 'Welcome/ActualizarEmpresa';
+    $route['deleteEmp'] = 'Welcome/EliminarEmpresa';
+
+
+
     #------------> Matriz_Requerimientos CRUD <--------------#
     #------------> Estados CRUD <--------------#
     #------------> Servicios_Basicos CRUD <--------------#
