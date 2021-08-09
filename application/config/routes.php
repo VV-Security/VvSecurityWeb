@@ -53,6 +53,15 @@ $route['Capacitaciones'] = 'Vistas/Capacitaciones';
     $route['deleteDepts'] = 'Welcome/EliminarDepartamentos';
 
     #------------------> Cargos CRUD <-----------------------#
+  
+    $route['Cargo'] = 'Welcome/VerCargos';
+    $route['insertCargo'] = 'Welcome/CrearCargos';
+    $route['updateCargo'] = 'Welcome/ActualizarCargos';
+    $route['deleteCargo'] = 'Welcome/EliminarCargos';
+
+
+
+
     #------------> Contacto CRUD <--------------#
     #------------> Persona_Natural CRUD <--------------#
     #------------> Matriz_Cotizante CRUD <--------------#
