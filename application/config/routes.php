@@ -67,6 +67,13 @@ $route['Login'] = 'Vistas/Login';
 
     #------------> Contacto CRUD <--------------#
     #------------> Persona_Natural CRUD <--------------#
+
+    $route['RL'] = 'Welcome/VerRepresentante';
+    $route['insertRL'] = 'Welcome/CrearRepresentante';
+    $route['updateRL'] = 'Welcome/ActualizarRepresentante';
+    $route['deleteRL'] = 'Welcome/EliminarRepresentante';
+
+
     #------------> Matriz_Cotizante CRUD <--------------#
 
     #------------> Matriz_Servicio CRUD <--------------#
@@ -92,7 +99,14 @@ $route['Login'] = 'Vistas/Login';
     #------------> Estados CRUD <--------------#
     #------------> Servicios_Basicos CRUD <--------------#
     #------------> Extras CRUD <--------------#
+
     #------------> Representante_Legal CRUD <--------------#
+    
+    $route['PN'] = 'Welcome/verPersonaNatural';
+    $route['insertPN'] = 'Welcome/CrearPersonaNatural';
+    $route['updatePN'] = 'Welcome/ActualizarPersonaNatural';
+    $route['deletePN'] = 'Welcome/EliminarPersonaNatural';
+
     #------------> Empresa_ctrlroll CRUD <--------------#
     #------------> Requerimiento CRUD <--------------#
     #------------> Noticias CRUD <--------------#
