@@ -163,4 +163,8 @@ class Vistas extends CI_Controller
    
         $this->load->view('templates/footerers');
     }
+    public function Login()
+    {
+        $this->load->view('INTRANETfolder/Login');
+    }
 }
