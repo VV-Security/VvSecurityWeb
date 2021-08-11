@@ -62,9 +62,6 @@ $route['Login'] = 'Vistas/Login';
     $route['updateCargo'] = 'Welcome/ActualizarCargos';
     $route['deleteCargo'] = 'Welcome/EliminarCargos';
 
-
-
-
     #------------> Contacto CRUD <--------------#
     #------------> Persona_Natural CRUD <--------------#
 
@@ -98,6 +95,13 @@ $route['Login'] = 'Vistas/Login';
     #------------> Matriz_Requerimientos CRUD <--------------#
     #------------> Estados CRUD <--------------#
     #------------> Servicios_Basicos CRUD <--------------#
+
+    $route['SV'] = 'Welcome/VerServiciosB';
+    $route['insertSV'] = 'Welcome/CrearServiciosB';
+    $route['updateSV'] = 'Welcome/VerServiciosB';
+    $route['deleteSV'] = 'Welcome/VerServiciosB';
+
+
     #------------> Extras CRUD <--------------#
 
     #------------> Representante_Legal CRUD <--------------#

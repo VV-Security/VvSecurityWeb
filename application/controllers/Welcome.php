@@ -13,6 +13,7 @@ class Welcome extends CI_Controller
         $this->load->model("Crud_Cargos");
         $this->load->model("Crud_PersonaNatural");
         $this->load->model("Crud_RepresentanteLegal");
+        $this->load->model('Crud_ServiciosBasicos');
     }
 
     #################--->          departamento Crud tabla         <---#################
@@ -157,9 +158,6 @@ class Welcome extends CI_Controller
         }
     }
     
-
-    #################--->          contacto Crud tabla             <---#################
-
     #################--->       persona_natural Crud tabla         <---#################
     
     public function VerPersonaNatural()
@@ -179,9 +177,9 @@ class Welcome extends CI_Controller
         $Comuna = $this->input->post('comuna');
         $Ciudad = $this->input->post('name');
         $Mail = $this->input->post('mail');
-        
+       
         if (isset($Rut) || isset($Primer) || isset($Segundo) || isset($Paterno) || isset($Materno) ||
-        isset($Fono) || isset($Direccion) || isset($Numero) || isset($Comuna) || isset($Ciudad) || isset($Mail)) {
+       isset($Fono) || isset($Direccion) || isset($Numero) || isset($Comuna) || isset($Ciudad) || isset($Mail)) {
             $this->Crud_PersonaNatural->InsertPersonalN(
                 $Rut,
                 $Primer,
@@ -216,7 +214,7 @@ class Welcome extends CI_Controller
         $Mail = $this->input->post('mail');
 
         if (isset($Id) ||isset($Rut) || isset($Primer) || isset($Segundo) || isset($Paterno) || isset($Materno) ||
-        isset($Fono) || isset($Direccion) || isset($Numero) || isset($Comuna) || isset($Ciudad) || isset($Mail)) {
+       isset($Fono) || isset($Direccion) || isset($Numero) || isset($Comuna) || isset($Ciudad) || isset($Mail)) {
             $this->Crud_PersonaNatural->UpdatePersonalN(
                 $Id,
                 $Rut,
@@ -247,11 +245,6 @@ class Welcome extends CI_Controller
         }
     }
 
-
-    #################--->         referencia Crud tabla            <---#################
- 
-    #################--->         tipo_servicio Crud tabla         <---#################
-
     #################--->      representante_legal Crud tabla      <---#################
 
     public function VerRepresentante()
@@ -269,7 +262,7 @@ class Welcome extends CI_Controller
         $Mail = $this->input->post('mail');
 
         if (isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno) ||
-         isset($Materno) || isset($Fono) || isset($Mail)) {
+       isset($Materno) || isset($Fono) || isset($Mail)) {
             $this->Crud_RepresentanteLegal->SelectRepresentante();
             echo json_encode(array("msg" => "Representante Legal Creado"));
         } else {
@@ -288,9 +281,9 @@ class Welcome extends CI_Controller
         $Mail = $this->input->post('mail');
 
         if (isset($Id) || isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno) ||
-         isset($Materno) || isset($Fono) || isset($Mail)) {
+       isset($Materno) || isset($Fono) || isset($Mail)) {
             $this->Crud_RepresentanteLegal->UpdateRepresentante($Id, $Rut, $Primero, $Segundo, $Paterno, $Materno, $Fono, $Mail);
-            
+          
             echo json_encode(array("msg" => "Representante Legal Actualizado"));
         } else {
             echo json_encode(array("msg" => "No Actualiza Representante Legal"));
@@ -306,10 +299,7 @@ class Welcome extends CI_Controller
             echo json_encode(array("msg" => "No Eliminado el Representante Legal"));
         }
     }
-
-
-    
-
+  
     #################--->          empresa Crud tabla              <---#################
 
     public function VerEmpresa()
@@ -329,19 +319,19 @@ class Welcome extends CI_Controller
         $RespresentanteId  = $this->input->post('representanteId');
 
         if ($Rut || $RazonSocial || $GiroComercial || $Fono || $Direccion || $Numero
-        || $Comuna || $Ciudad || $RespresentanteId) {
-            
-            /*Nombre Crud Función->*/$this->Crud_User->InsertEmpresa(
-                $Rut,
-                $RazonSocial,
-                $GiroComercial,
-                $Fono,
-                $Direccion,
-                $Numero,
-                $Comuna,
-                $Ciudad,
-                $RespresentanteId
-            );
+      || $Comuna || $Ciudad || $RespresentanteId) {
+          
+          /*Nombre Crud Función->*/$this->Crud_User->InsertEmpresa(
+              $Rut,
+              $RazonSocial,
+              $GiroComercial,
+              $Fono,
+              $Direccion,
+              $Numero,
+              $Comuna,
+              $Ciudad,
+              $RespresentanteId
+          );
 
             echo json_encode(array("msg"=> "Empresa agregada"));
         } else {
@@ -362,20 +352,20 @@ class Welcome extends CI_Controller
         $RespresentanteId  = $this->input->post('representanteId');
 
         if ($Id || $Rut || $RazonSocial || $GiroComercial || $Fono || $Direccion || $Numero
-        || $Comuna || $Ciudad || $RespresentanteId) {
-            
-            /*Nombre Crud Función->*/$this->Crud_User->UpdateEmpresa(
-                $Id,
-                $Rut,
-                $RazonSocial,
-                $GiroComercial,
-                $Fono,
-                $Direccion,
-                $Numero,
-                $Comuna,
-                $Ciudad,
-                $RespresentanteId
-            );
+      || $Comuna || $Ciudad || $RespresentanteId) {
+          
+          /*Nombre Crud Función->*/$this->Crud_User->UpdateEmpresa(
+              $Id,
+              $Rut,
+              $RazonSocial,
+              $GiroComercial,
+              $Fono,
+              $Direccion,
+              $Numero,
+              $Comuna,
+              $Ciudad,
+              $RespresentanteId
+          );
 
             echo json_encode(array("msg"=> "Empresa Actualizada"));
         } else {
@@ -392,10 +382,6 @@ class Welcome extends CI_Controller
             echo json_encode(array("msg"=> "Eliminación Empresa Rechazada"));
         }
     }
-
-    #################--->        tipo_servicio Crud tabla          <---#################
-    
-    #################--->        referencia Crud tabla             <---#################
 
     #################--->        matriz_servicio Crud tabla        <---#################
 
@@ -416,23 +402,23 @@ class Welcome extends CI_Controller
         $ServiciosBasicos_Id  = $this->input->post("serviciosBasicos_id");
         $Extras_Id  = $this->input->post("extras_id");
         $Referencia_Id  = $this->input->post("referencia_id");
-
+ 
         if (isset($Ubicacion) || isset($Duracion) || isset($Referencia_Ubi) || isset($Jornada)
-        || isset($Turno) || isset($HorarioLaboral) || isset($Observaciones) || isset($TipoServicio_Id)
-        || isset($ServiciosBasicos_Id) || isset($Extras_Id) || isset($Referencia_Id)) {
-             
-            /*Nombre Crud Función->*/ $this->Crud_MatrizServicio->InsertMatrizServicio(
-                $Ubicacion,
-                $Duracion,
-                $Referencia_Ubi,
-                $Jornada,
-                $Turno,
-                $HorarioLaboral,
-                $Observaciones,
-                $TipoServicio_Id,
-                $ServiciosBasicos_Id,
-            );
-
+         || isset($Turno) || isset($HorarioLaboral) || isset($Observaciones) || isset($TipoServicio_Id)
+         || isset($ServiciosBasicos_Id) || isset($Extras_Id) || isset($Referencia_Id)) {
+              
+             /*Nombre Crud Función->*/ $this->Crud_MatrizServicio->InsertMatrizServicio(
+                 $Ubicacion,
+                 $Duracion,
+                 $Referencia_Ubi,
+                 $Jornada,
+                 $Turno,
+                 $HorarioLaboral,
+                 $Observaciones,
+                 $TipoServicio_Id,
+                 $ServiciosBasicos_Id,
+             );
+ 
             echo json_encode(array("msg"=> "Matriz de Servicio Creada con exito!!"));
         } else {
             echo json_encode(array("msg"=> "No se creo Matriz de Servicio!!"));
@@ -452,24 +438,24 @@ class Welcome extends CI_Controller
         $ServiciosBasicos_Id  = $this->input->post("serviciosBasicos_id");
         $Extras_Id  = $this->input->post("extras_id");
         $Referencia_Id  = $this->input->post("referencia_id");
-
+ 
         if (isset($Id) || isset($Ubicacion) || isset($Duracion) || isset($Referencia_Ubi) || isset($Jornada)
-        || isset($Turno) || isset($HorarioLaboral) || isset($Observaciones) || isset($TipoServicio_Id)
-        || isset($ServiciosBasicos_Id) || isset($Extras_Id) || isset($Referencia_Id)) {
-             
-            /*Nombre Crud Función->*/ $this->Crud_MatrizServicio->UpdateMatrizServicio(
-                $Id,
-                $Ubicacion,
-                $Duracion,
-                $Referencia_Ubi,
-                $Jornada,
-                $Turno,
-                $HorarioLaboral,
-                $Observaciones,
-                $TipoServicio_Id,
-                $ServiciosBasicos_Id,
-            );
-
+         || isset($Turno) || isset($HorarioLaboral) || isset($Observaciones) || isset($TipoServicio_Id)
+         || isset($ServiciosBasicos_Id) || isset($Extras_Id) || isset($Referencia_Id)) {
+              
+             /*Nombre Crud Función->*/ $this->Crud_MatrizServicio->UpdateMatrizServicio(
+                 $Id,
+                 $Ubicacion,
+                 $Duracion,
+                 $Referencia_Ubi,
+                 $Jornada,
+                 $Turno,
+                 $HorarioLaboral,
+                 $Observaciones,
+                 $TipoServicio_Id,
+                 $ServiciosBasicos_Id,
+             );
+ 
             echo json_encode(array("msg"=> "Actualizada la Matriz de Servicio!!"));
         } else {
             echo json_encode(array("msg"=> "Actualización Matriz de Servicio No Realizada!!"));
@@ -479,16 +465,82 @@ class Welcome extends CI_Controller
     {
         $Id = $this->input->post("id");
         if (isset($Id)) {
-            
-       /*Nombre Crud Función->*/$this->Crud_MatrizServicio->DeleteMatrizServicio($Id);
-
+             
+        /*Nombre Crud Función->*/$this->Crud_MatrizServicio->DeleteMatrizServicio($Id);
+ 
             echo json_encode(array("msg" => "Matriz de Servicio Eliminada"));
         } else {
             echo json_encode(array("msg" => "Elimina no realizada. Matriz Servicio"));
         }
     }
+ 
+    
+    #################--->          servicios basicos Crud tabla             <---#################
 
+    public function VerServiciosB()
+    {
+        json_encode($this->Crud_ServiciosBasicos->SelectServicios());
+    }
+    public function CrearServiciosB()
+    {
+        $Id = $this->input->post('id');
+        $Agua = $this->input->post('agua');
+        $Luz = $this->input->post('luz');
+        $Bano = $this->input->post('bano');
+        $Casino = $this->input->post('casino');
+        $Caseta = $this->input->post('caseta');
+        $Internet = $this->input->post('internet');
 
+        if (isset($Agua) || isset($Luz) || isset($Bano)
+        || isset($Casino) || isset($Caseta) || isset($Internet)) {
+            $this->crud_ServiciosBasicos->InsertServicios($Agua, $Luz, $Bano, $Casino, $Casete, $Internet);
+            echo json_encode(array("msg" => "Exito Servicio Basico"));
+        } else {
+            echo json_encode(array("msg" => "No Creo Servicio Basico"));
+        }
+    }
+
+    public function ActualizarServiciosB()
+    {
+        $Id = $this->input->post('id');
+        $Agua = $this->input->post('agua');
+        $Luz = $this->input->post('luz');
+        $Bano = $this->input->post('bano');
+        $Casino = $this->input->post('casino');
+        $Caseta = $this->input->post('caseta');
+        $Internet = $this->input->post('internet');
+
+        if (isset($Id) || isset($Agua) || isset($Luz) || isset($Bano)
+        || isset($Casino) || isset($Caseta) || isset($Internet)) {
+            $this->crud_ServiciosBasicos->UpdateServicios($Agua, $Luz, $Bano, $Casino, $Casete, $Internet);
+            echo json_encode(array("msg" => "Actualizado Servicio Basico"));
+        } else {
+            echo json_encode(array("msg" => "No Actualizo Servicio Basico"));
+        }
+    }
+
+    public function EliminarServiciosB()
+    {
+        $Id = $this->input->post('id');
+        
+        if (isset($Id)) {
+            echo json_encode(array("msg" => "Eliminar Servicio Basico"));
+        } else {
+            echo json_encode(array("msg" => "No Eliminar Servicio Basico"));
+        }
+    }
+ 
+    
+    #################--->          contacto Crud tabla             <---#################
+
+    #################--->         referencia Crud tabla            <---#################
+ 
+    #################--->         tipo_servicio Crud tabla         <---#################
+
+    #################--->        tipo_servicio Crud tabla          <---#################
+    
+    #################--->        referencia Crud tabla             <---#################
+   
     #################--->        matriz_cotizante Crud tabla       <---#################
 
     #################--->        empresas_ctrlroll Crud tabla      <---#################
