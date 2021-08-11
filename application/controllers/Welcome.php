@@ -13,7 +13,7 @@ class Welcome extends CI_Controller
         $this->load->model("Crud_Cargos");
         $this->load->model("Crud_PersonaNatural");
         $this->load->model("Crud_RepresentanteLegal");
-        $this->load->model('Crud_ServiciosBasicos');
+        $this->load->model("Crud_ServiciosBasicos");
     }
 
     #################--->          departamento Crud tabla         <---#################
@@ -479,7 +479,7 @@ class Welcome extends CI_Controller
 
     public function VerServiciosB()
     {
-        json_encode($this->Crud_ServiciosBasicos->SelectServicios());
+        echo json_encode($this->Crud_ServiciosBasicos->SelectServicios());
     }
     public function CrearServiciosB()
     {

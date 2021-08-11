@@ -62,16 +62,12 @@ $route['Login'] = 'Vistas/Login';
     $route['updateCargo'] = 'Welcome/ActualizarCargos';
     $route['deleteCargo'] = 'Welcome/EliminarCargos';
 
-    #------------> Contacto CRUD <--------------#
     #------------> Persona_Natural CRUD <--------------#
 
     $route['RL'] = 'Welcome/VerRepresentante';
     $route['insertRL'] = 'Welcome/CrearRepresentante';
     $route['updateRL'] = 'Welcome/ActualizarRepresentante';
     $route['deleteRL'] = 'Welcome/EliminarRepresentante';
-
-
-    #------------> Matriz_Cotizante CRUD <--------------#
 
     #------------> Matriz_Servicio CRUD <--------------#
     
@@ -80,9 +76,6 @@ $route['Login'] = 'Vistas/Login';
     $route['updateMs'] = 'Welcome/ActualizarMatrizServicio';
     $route['deleteMs'] = 'Welcome/EliminarMatrizServicio';
 
-    #------------> Tipo_Servicio CRUD <--------------#
-    #------------> Referencia CRUD <--------------#
-    
     #------------> Empresa CRUD <--------------#
   
     $route['Emp'] = 'Welcome/VerEmpresa';
@@ -90,19 +83,12 @@ $route['Login'] = 'Vistas/Login';
     $route['updateEmp'] = 'Welcome/ActualizarEmpresa';
     $route['deleteEmp'] = 'Welcome/EliminarEmpresa';
 
-
-
-    #------------> Matriz_Requerimientos CRUD <--------------#
-    #------------> Estados CRUD <--------------#
     #------------> Servicios_Basicos CRUD <--------------#
 
-    $route['SV'] = 'Welcome/VerServiciosB';
-    $route['insertSV'] = 'Welcome/CrearServiciosB';
-    $route['updateSV'] = 'Welcome/VerServiciosB';
-    $route['deleteSV'] = 'Welcome/VerServiciosB';
-
-
-    #------------> Extras CRUD <--------------#
+    $route['SB'] = 'Welcome/VerServiciosB';
+    $route['insertSB'] = 'Welcome/CrearServiciosB';
+    $route['updateSB'] = 'Welcome/ActualizarServiciosB';
+    $route['deleteSB'] = 'Welcome/EliminarServiciosB';
 
     #------------> Representante_Legal CRUD <--------------#
     
@@ -111,13 +97,18 @@ $route['Login'] = 'Vistas/Login';
     $route['updatePN'] = 'Welcome/ActualizarPersonaNatural';
     $route['deletePN'] = 'Welcome/EliminarPersonaNatural';
 
+
+    #------------> Tipo_Servicio CRUD <--------------#
+    #------------> Referencia CRUD <--------------#
+    #------------> Matriz_Cotizante CRUD <--------------#
     #------------> Empresa_ctrlroll CRUD <--------------#
     #------------> Requerimiento CRUD <--------------#
     #------------> Noticias CRUD <--------------#
     #------------> Categorias CRUD <--------------#
-
-
-
+    #------------> Extras CRUD <--------------#
+    #------------> Contacto CRUD <--------------#
+    #------------> Matriz_Requerimientos CRUD <--------------#
+    #------------> Estados CRUD <--------------#
 
 
 
