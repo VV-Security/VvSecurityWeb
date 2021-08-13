@@ -126,22 +126,19 @@
 <!-- Footer -->
 
 <!-- SCRIPTS -->
-<script type="text/javascript" src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/compiled-4.8.0.min.js">
-</script>
 <!-- JQuery -->
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-3.4.1.min.js"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/mdb.min.js"></script>
 <!-- Initializations -->
 <script type="text/javascript">
 // Animations initialization
 new WOW().init();
-</script>
-<script type="text/javascript" src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/compiled-4.8.10.min.js">
 </script>
 <div class="hiddendiv common"></div>
 <script type="text/javascript">
@@ -187,7 +184,37 @@ $( "#Apellidos" ).keyup(function() {
 $( "#Tel" ).keyup(function() {
     $("#TelCard").text($("#Tel").val());
 });
+$( "#Comentario" ).keyup(function() {
+    $("#ComentarioCard").text($("#Comentario").val());
+});
+$( "#Correo" ).keyup(function() {
+    $("#CorreoCard").text($("#Correo").val());
+});
+$( "#Correo" ).keyup(function() {
+    $("#CorreoCard").text($("#Correo").val());
+});
+$( "#Comuna" ).keyup(function() {
+    $("#ComunaCard").text($("#Comuna").val());
+});
+$('#exampleRadios1').change(function() { 
+    if (this.checked) {
+        $("#Check").html('<i class="far fa-check-circle fa-3x green-text"></i>');
+    } else {
+                        
+        $("#Check").html('<i class="far fa-times-circle fa-3x red-text"></i>');
+    }
+});
+$('#exampleRadios2').change(function() { 
+    if (this.checked) {
+    $("#Check").html('<i class="far fa-times-circle fa-3x red-text"></i>');
+    } else {
+        $("#Check").html('<i class="far fa-check-circle fa-3x green-text"></i>');
+    }
+});
  });
+
+
+
 
 
 function Seguridad(){   
