@@ -12,9 +12,9 @@ $route['Sucursales'] = 'Vistas/Sucursales';
 $route['Servicios'] = 'Vistas/Servicios';
 
 #------------> Noticias Vistas <--------------#
-$route['Recientes'] = 'Vistas/Recientes';
-$route['SarsCov2'] = 'Vistas/SarsCov2';
-
+$route['Noticias'] = 'Noticias/Navegar';
+$route['Noticias/(:any)'] = 'Noticias/Navegar';
+$route['Noticias/(:any)/(:any)'] = 'Noticias/Navegar';
 #------------> SoftGuard Vistas <--------------#
 $route['SmartPanic'] = 'Vistas/SmartPanic';
 $route['Monitoreo'] = 'Vistas/Monitoreo';
@@ -99,7 +99,19 @@ $route['login'] = 'Vistas/Login';
     #------------> Empresa_ctrlroll CRUD <--------------#
     #------------> Requerimiento CRUD <--------------#
     #------------> Noticias CRUD <--------------#
+    $route['NoticiasT'] = 'Noticias/VerNoticias';
+    $route['insertNoticias'] = 'Noticias/CrearNoticias';
+    $route['updateNoticias'] = 'Noticias/ActualizarNoticias';
+    $route['deleteNoticias'] = 'Noticias/EliminarNoticias';
     #------------> Categorias CRUD <--------------#
+    $route['Categoria'] = 'Noticias/VerCategoria';
+    $route['insertCategoria'] = 'Noticias/CrearCategoria';
+    $route['updateCategoria'] = 'Noticias/ActualizarCategoria';
+    $route['deleteCategoria'] = 'Noticias/EliminarCategoria';
+    $route['BuscarCategorias'] = 'Noticias/BuscarCategoria';
+    $route['BuscarNoticias'] = 'Noticias/BuscarNoticias';
+    $route['BuscarNoticias_Titulo'] = 'Noticias/BuscarNoticias_Titulo';
+    $route['Recientes'] = 'Noticias/Recientes';
 
 
 

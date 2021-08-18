@@ -28,7 +28,8 @@
             <!--Grid row-->
         </div>
     </div>
-
+  <!-- script vue.js -->
+   
     <!--Footer Links-->
     <div class="container mt-5 mb-4 text-center text-md-left">
         <div class="row mt-3">
@@ -128,6 +129,9 @@
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-3.4.1.min.js"></script>
+
+
+
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -142,6 +146,8 @@ new WOW().init();
 </script>
 <div class="hiddendiv common"></div>
 <script type="text/javascript">
+
+
 // MDB Lightbox Init
 $(function(){
     $("#mdb-lightbox-ui").load('https://mdbootstrap.com/api/snippets/static/mdb-addons/mdb-lightbox-ui.html');
@@ -304,6 +310,10 @@ function Seguridad(){
     });
 
 </script>
+
+
+</script>
+
 </body>
 
 </html>
