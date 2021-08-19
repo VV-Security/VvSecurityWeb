@@ -14,6 +14,240 @@ class Welcome extends CI_Controller
         $this->load->model("Crud_PersonaNatural");
         $this->load->model("Crud_RepresentanteLegal");
         $this->load->model("Crud_ServiciosBasicos");
+        $this->load->model('Crud_Contacto');
+        $this->load->model('Crud_Referencia');
+        $this->load->model('Crud_EmpresasCtrlRoll');
+        $this->load->model('Crud_Extras');
+        $this->load->model('Crud_Laboral');
+        $this->load->model('Crud_MatrizCotizante');
+        $this->load->model('Crud_TipoServicio');
+        // $this->load->model('Crud_MatrizRequerimiento');l
+        // $this->load->model('Crud_Requerimiento');
+        // $this->load->model('Crud_Estados');
+
+        
+        #################--->        referencia Crud tabla             <---#################
+        #################--->        requerimiento Crud tabla          <---#################
+        #################--->        estados Crud tabla                <---#################
+        #################--->     matriz_requerimientos Crud tabla     <---#################
+        #################--->         noticias Crud tabla              <---#################
+        #################--->         categorías Crud tabla            <---#################
+    }
+    #################--->        tipo_servicio Crud tabla          <---#################
+    public function VerTS()
+    {
+        echo json_encode($this->Crud_TipoServicio->SelectTS());
+    }
+
+    #################--->        matriz_cotizante Crud tabla       <---#################
+    public function VerMC()
+    {
+        echo json_encode($this->Crud_MatrizCotizante->SelectMC());
+    }
+    public function CrearMC()
+    {
+        $Empresa_Id = $this->input->post('empresa_id');
+        $Contacto_Id = $this->input->post('contacto_id');
+        $Natural_Id = $this->input->post('natural_id');
+        $Servicio_Id = $this->input->post('servicio_id');
+        
+        if (isset($Empresa_Id) || isset($Contacto_Id) || isset($Natural_Id) || isset($Servicio_Id)) {
+            $this->Crud_MatrizCotizante->InsertMC($Empresa_Id, $Contacto_Id, $Natural_Id, $Servicio_Id);
+            echo json_encode(array("msg" => "Creo Matriz Cotizante"));
+        } else {
+            echo json_encode(array("msg" => "No Crea Matriz Cotizante"));
+        }
+    }
+    public function ActualizarMC()
+    {
+        $Id = $this->input->post('id');
+        $Empresa_Id = $this->input->post('empresa_id');
+        $Contacto_Id = $this->input->post('contacto_id');
+        $Natural_Id = $this->input->post('natural_id');
+        $Servicio_Id = $this->input->post('servicio_id');
+        
+        if (isset($Id) || isset($Empresa_Id) || isset($Contacto_Id) || isset($Natural_Id) || isset($Servicio_Id)) {
+            $this->Crud_MatrizCotizante->UpdateMC($Id, $Empresa_Id, $Contacto_Id, $Natural_Id, $Servicio_Id);
+            echo json_encode(array("msg" => "Actualizo Matriz Cotizante"));
+        } else {
+            echo json_encode(array("msg" => "No Actualiza Matriz Cotizante"));
+        }
+    }
+    public function EliminarMC()
+    {
+        $Id = $this->input->post('id');
+        if (isset($Id)) {
+            $this->Crud_MatrizCotizante->EliminarMC($Id);
+            echo json_encode(array("msg"=>"Eliminada La matriz Cotizante"));
+        } else {
+            echo json_encode(array("msg"=>"No Elimina La matriz Cotizante"));
+        }
+    }
+    #################--->        Laboral Crud tabla      <---#################
+    public function VerLaboral()
+    {
+        echo json_encode($this->Crud_Laboral->SelectLaboral());
+    }
+    public function CrearLaboral()
+    {
+        // $Id,
+        $Rut = $this->input->post('rut');
+        $Nombres = $this->input->post('nombres');
+        $Apellidos = $this->input->post('apellidos');
+        $OS10 = $this->input->post('os10');
+        $Puesto = $this->input->post('puesto');
+        $Obervaciones = $this->input->post('obs');
+        $Fono = $this->input->post('fono');
+        $Mail = $this->input->post('mail');
+        $MsgInterno = $this->input->post('msgint');
+
+        if (isset($Rut) || isset($Nombres) || isset($Apellidos) || isset($OS10) || isset($Puesto)
+             || isset($Observaciones) || isset($Fono) || isset($Mail) || isset($MsgInterno)) {
+            $this->Crud_Laboral->InsertarLaboral($Rut, $Nombres, $Apellidos, $OS10, $Puesto, $Observaciones, $Fono, $Mail, $MsgInterno);
+            echo json_encode(array("msg"=> "Creado Laboral con exito"));
+        } else {
+            echo json_encode(array("msg"=> "No Crea Laboral"));
+        }
+    }
+    public function ActualizarLaboral()
+    {
+        $Id = $this->input->post('id');
+        $Rut = $this->input->post('rut');
+        $Nombres = $this->input->post('nombres');
+        $Apellidos = $this->input->post('apellidos');
+        $OS10 = $this->input->post('os10');
+        $Puesto = $this->input->post('puesto');
+        $Obervaciones = $this->input->post('obs');
+        $Fono = $this->input->post('fono');
+        $Mail = $this->input->post('mail');
+        $MsgInterno = $this->input->post('msgint');
+
+        if (isset($Id) || isset($Rut) || isset($Nombres) || isset($Apellidos) || isset($OS10) || isset($Puesto)
+             || isset($Observaciones) || isset($Fono) || isset($Mail) || isset($MsgInterno)) {
+            $this->Crud_Laboral->InsertarLaboral($Id, $Rut, $Nombres, $Apellidos, $OS10, $Puesto, $Observaciones, $Fono, $Mail, $MsgInterno);
+            echo json_encode(array("msg"=> "Actualiza Laboral con exito"));
+        } else {
+            echo json_encode(array("msg"=> "No Actualiza Laboral"));
+        }
+    }
+    public function EliminarLaboral()
+    {
+        $Id = $this->input->post('id');
+        if (isset($Id)) {
+            $this->Crud_Laboral->DeleteLaboral($Id);
+            echo json_encode(array("msg"=> "Elimina Laboral"));
+        } else {
+            echo json_encode(array("msg"=> "No Elimina Laboral"));
+        }
+    }
+    
+    #################--->        empresas_ctrlroll Crud tabla      <---#################
+    public function VerExtras()
+    {
+        echo json_encode($this->Crud_Extras->SelectExtras());
+    }
+    public function CrearExtras()
+    {
+        // $Id,
+        $CaptorRonda = $this->input->post('captor');
+        $CtrlAsis = $this->input->post('ctrl');
+        $SuperExcl = $this->input->post('super');
+        $CamSeg = $this->input->post('camara');
+        $AlarmSeg = $this->input->post('alarma');
+
+        if (isset($CaptorRonda) || isset($CtrlAsis) || isset($SuperExcl) || isset($CamSeg) || isset($AlarmSeg)) {
+            $this->Crud_Extras->InsertExtras($CaptorRonda, $CtrlAsis, $SuperExcl, $CamSeg, $AlarmSeg);
+            echo json_encode(array('msg' => 'Se Creo Extras'));
+        } else {
+            echo json_encode(array('msg' => 'No Se Creo Extras'));
+        }
+    }
+
+    public function ActualizarExtras()
+    {
+        $Id = $this->input->post('id');
+        $CaptorRonda = $this->input->post('captor');
+        $CtrlAsis = $this->input->post('ctrl');
+        $SuperExcl = $this->input->post('super');
+        $CamSeg = $this->input->post('camara');
+        $AlarmSeg = $this->input->post('alarma');
+
+        if (isset($CaptorRonda) || isset($CtrlAsis) || isset($SuperExcl) || isset($CamSeg) || isset($AlarmSeg)) {
+            $this->Crud_Extras->InsertExtras($CaptorRonda, $CtrlAsis, $SuperExcl, $CamSeg, $AlarmSeg);
+            echo json_encode(array('msg' => 'Actualizo Extras'));
+        } else {
+            echo json_encode(array('msg' => 'No Actualizo Extras'));
+        }
+    }
+    public function DeleteExtras()
+    {
+        $Id = $this->input->post('id');
+        if (isset($Id)) {
+            $this->Crud_Extras->DeleteExtras($Id);
+            echo json_encode(array('msg' =>"Eliminado Extra"));
+        } else {
+            echo json_encode(array('msg' =>"No Eliminado Extra"));
+        }
+    }
+
+    #################--->        empresas_ctrlroll Crud tabla      <---#################
+
+    public function VerEmpresasCtrl()
+    {
+        echo json_encode($this->Crud_EmpresasCtrlRoll->SelectEmpresasCTRL());
+    }
+    public function CrearEmpresasCtrl()
+    {
+        // $Id = $this->input->post('id');
+        $CtrlRoll_Id = $this->input->post('ctrlroll');
+        $Rut_Emp = $this->input->post('rut_emp');
+        $Nombre_Fantasia = $this->input->post('nombre_fantasia');
+        $R_Social = $this->input->post('r_social');
+        $Giro = $this->input->post('giro');
+        if (isset($CtrlRoll_Id) || isset($Rut_Emp) || isset($Nombre_Fantasia) || isset($R_Social) || isset($Giro)) {
+            $this->Crud_EmpresasCtrlRoll->InsertEmpresasCTRL(
+                $CtrlRoll_Id,
+                $Rut_Emp,
+                $Nombre_Fantasia,
+                $R_Social,
+                $Giro
+            );
+            echo json_encode(array('msg' => "Empresa en Control Roll Creada"));
+        } else {
+            echo json_encode(array('msg' => " No Crea Empresa en Control Roll "));
+        }
+    }
+    public function ActualizarEmpresasCtrl()
+    {
+        $Id = $this->input->post('id');
+        $CtrlRoll_Id = $this->input->post('ctrlroll');
+        $Rut_Emp = $this->input->post('rut_emp');
+        $Nombre_Fantasia = $this->input->post('nombre_fantasia');
+        $R_Social = $this->input->post('r_social');
+        $Giro = $this->input->post('giro');
+        if (isset($Id) || isset($CtrlRoll_Id) || isset($Rut_Emp) || isset($Nombre_Fantasia) || isset($R_Social) || isset($Giro)) {
+            $this->Crud_EmpresasCtrlRoll->UpdateEmpresasCTRL(
+                $Id,
+                $CtrlRoll_Id,
+                $Rut_Emp,
+                $Nombre_Fantasia,
+                $R_Social,
+                $Giro
+            );
+            echo json_encode(array('msg' => "Actualiza Empresa en Control Roll"));
+        } else {
+            echo json_encode(array('msg' => "No Actualiza Empresa en Control Roll"));
+        }
+    }
+    public function EliminarEmpresasCtrl()
+    {
+        $Id = $this->input->post('id');
+        if (isset($Id)) {
+            $this->Crud_EmpresasCtrlRoll->DeleteEmpresasCTRL($Id);
+            echo json_encode(array("msg"=>"Eliminada Empresa Control Roll"));
+        } else {
+            echo json_encode(array("msg"=>"No Eliminada Empresa Control Roll"));
+        }
     }
 
     #################--->          departamento Crud tabla         <---#################
@@ -529,29 +763,98 @@ class Welcome extends CI_Controller
             echo json_encode(array("msg" => "No Eliminar Servicio Basico"));
         }
     }
- 
-    
+     
     #################--->          contacto Crud tabla             <---#################
+
+    public function VerContactos()
+    {
+        echo json_encode($this->Crud_Contacto->SelectContacto());
+    }
+    public function CrearContactos()
+    {
+        $Primer = $this->input->post('primer');
+        $Segundo = $this->input->post('segundo');
+        $Paterno = $this->input->post('paterno');
+        $Materno = $this->input->post('materno');
+        $Fono = $this->input->post('fono');
+        $Mail = $this->input->post('mail');
+        $Cargo_Id = $this->input->post('cargo_id');
+
+        if (isset($Primer)  || isset($Segundo) || isset($Paterno) || isset($Materno)
+            || isset($Fono) || isset($Mail) || isset($Cargo_Id)) {
+            $this->Crud_Contacto->SelectContacto($Primer, $Segundo, $Paterno, $Materno, $Fono, $Mail, $Cargo_Id);
+            echo json_encode(array("msg"=> "Contacto Creado!"));
+        } else {
+            echo json_encode(array("msg"=> "No crea Contacto!"));
+        }
+    }
+    public function ActualizarContactos()
+    {
+        $Id = $this->input->post('id');
+        $Primer = $this->input->post('primer');
+        $Segundo = $this->input->post('segundo');
+        $Paterno = $this->input->post('paterno');
+        $Materno = $this->input->post('materno');
+        $Fono = $this->input->post('fono');
+        $Mail = $this->input->post('mail');
+        $Cargo_Id = $this->input->post('cargo_id');
+
+        if (isset($Id) || isset($Primer)  || isset($Segundo) || isset($Paterno) || isset($Materno)
+            || isset($Fono) || isset($Mail) || isset($Cargo_Id)) {
+            $this->Crud_Contacto->UpdateContacto($Primer, $Segundo, $Paterno, $Materno, $Fono, $Mail, $Cargo_Id);
+            echo json_encode(array("msg"=> "Actualiza Creado!"));
+        } else {
+            echo json_encode(array("msg"=> "No actualiza Contacto!"));
+        }
+    }
+    public function EliminarContactos()
+    {
+        $Id = $this->input->post('id');
+        if (isset($Id)) {
+            $this->Crud_Contacto->DeleteContactos($Id);
+            echo json_encode(array("msg" => "Contacto Eliminado"));
+        } else {
+            echo json_encode(array("msg" => "No Elimina Contacto"));
+        }
+    }
 
     #################--->         referencia Crud tabla            <---#################
  
-    #################--->         tipo_servicio Crud tabla         <---#################
-
-    #################--->        tipo_servicio Crud tabla          <---#################
-    
-    #################--->        referencia Crud tabla             <---#################
-   
-    #################--->        matriz_cotizante Crud tabla       <---#################
-
-    #################--->        empresas_ctrlroll Crud tabla      <---#################
-
-    #################--->        requerimiento Crud tabla          <---#################
-
-    #################--->        estados Crud tabla                <---#################
-
-    #################--->     matriz_requerimientos Crud tabla     <---#################
-
-    #################--->         noticias Crud tabla              <---#################
-    
-    #################--->         categorías Crud tabla            <---#################
+    public function VerReferencia()
+    {
+        echo json_encode(array($this->Crud_Referencia->SelectReferencia()));
+    }
+    public function CrearReferencia()
+    {
+        $Nombre = $this->input->post('nombre');
+        $Depto = $this->input->post('depto');
+        if (isset($Nombre) || isset($Depto)) {
+            $this->Crud_Referencia->InsertReferencia($Nombre, $Depto);
+            echo json_encode(array('msg' => "Creo Referencia"));
+        } else {
+            echo json_encode(array('msg' => "No Creo Referencia"));
+        }
+    }
+    public function ActualizarReferencia()
+    {
+        $Id = $this->input->post('id');
+        $Nombre = $this->input->post('nombre');
+        $Depto = $this->input->post('depto');
+        if (isset($Id) || isset($Nombre) || isset($Depto)) {
+            $this->Crud_Referencia->UpdateReferencia($Nombre, $Depto);
+            echo json_encode(array('msg' => "Actualiza Referencia"));
+        } else {
+            echo json_encode(array('msg' => "No Actualizo Referencia"));
+        }
+    }
+    public function EliminarReferencia()
+    {
+        $Id = $this->input->post('id');
+        if (isset($Id)) {
+            $this->Crud_Referencia->DeleteReferencia($Id);
+            echo json_encode(array('msg' => "Eliminada Referencia"));
+        } else {
+            echo json_encode(array('msg' => "No Eliminada Referencia"));
+        }
+    }
 }

@@ -50,17 +50,17 @@ $route['Login'] = 'Vistas/Login';
  
     #------------> Departamentos CRUD <--------------#
 
-    $route['Depts'] = 'Welcome/VerDepartamentos';
-    $route['insertDepts'] = 'Welcome/CrearDepartamentos';
-    $route['updateDepts'] = 'Welcome/ActualizarDepartamentos';
-    $route['deleteDepts'] = 'Welcome/EliminarDepartamentos';
+    $route['DP'] = 'Welcome/VerDepartamentos';
+    $route['insertDP'] = 'Welcome/CrearDepartamentos';
+    $route['updateDP'] = 'Welcome/ActualizarDepartamentos';
+    $route['deleteDP'] = 'Welcome/EliminarDepartamentos';
 
     #------------------> Cargos CRUD <-----------------------#
   
-    $route['Cargo'] = 'Welcome/VerCargos';
-    $route['insertCargo'] = 'Welcome/CrearCargos';
-    $route['updateCargo'] = 'Welcome/ActualizarCargos';
-    $route['deleteCargo'] = 'Welcome/EliminarCargos';
+    $route['CG'] = 'Welcome/VerCargos';
+    $route['insertCG'] = 'Welcome/CrearCargos';
+    $route['updateCG'] = 'Welcome/ActualizarCargos';
+    $route['deleteCG'] = 'Welcome/EliminarCargos';
 
     #------------> Persona_Natural CRUD <--------------#
 
@@ -71,17 +71,17 @@ $route['Login'] = 'Vistas/Login';
 
     #------------> Matriz_Servicio CRUD <--------------#
     
-    $route['Ms'] = 'Welcome/VerMatrizServicio';
-    $route['insertMs'] = 'Welcome/CrearMatrizServicio';
-    $route['updateMs'] = 'Welcome/ActualizarMatrizServicio';
-    $route['deleteMs'] = 'Welcome/EliminarMatrizServicio';
+    $route['MS'] = 'Welcome/VerMatrizServicio';
+    $route['insertMS'] = 'Welcome/CrearMatrizServicio';
+    $route['updateMS'] = 'Welcome/ActualizarMatrizServicio';
+    $route['deleteMS'] = 'Welcome/EliminarMatrizServicio';
 
     #------------> Empresa CRUD <--------------#
   
-    $route['Emp'] = 'Welcome/VerEmpresa';
-    $route['insertEmp'] = 'Welcome/CrearEmpresa';
-    $route['updateEmp'] = 'Welcome/ActualizarEmpresa';
-    $route['deleteEmp'] = 'Welcome/EliminarEmpresa';
+    $route['EMP'] = 'Welcome/VerEmpresa';
+    $route['insertEMP'] = 'Welcome/CrearEmpresa';
+    $route['updateEMP'] = 'Welcome/ActualizarEmpresa';
+    $route['deleteEMP'] = 'Welcome/EliminarEmpresa';
 
     #------------> Servicios_Basicos CRUD <--------------#
 
@@ -97,24 +97,56 @@ $route['Login'] = 'Vistas/Login';
     $route['updatePN'] = 'Welcome/ActualizarPersonaNatural';
     $route['deletePN'] = 'Welcome/EliminarPersonaNatural';
 
+    #------------> Contacto CRUD <--------------#
+    
+    $route['CT'] = 'Welcome/VerContactos';
+    $route['insertCT'] = 'Welcome/CrearContactos';
+    $route['updateCT'] = 'Welcome/ActualizarContactos';
+    $route['deleteCT'] = 'Welcome/EliminarContactos';
+
+    #------------> Referencia CRUD <--------------#
+
+    $route['RF'] = 'Welcome/VerReferencia';
+    $route['insertRF'] = 'Welcome/CrearReferencia';
+    $route['updateRF'] = 'Welcome/ActualizarReferencia';
+    $route['deleteRF'] = 'Welcome/EliminarReferencia';
+
+    #------------> Empresas_CtrlRoll CRUD <--------------#
+
+    $route['ECR'] = 'Welcome/VerEmpresasCtrl';
+    $route['insertECR'] = 'Welcome/CrearEmpresasCtrl';
+    $route['updateECR'] = 'Welcome/ActualizarEmpresasCtrl';
+    $route['deleteECR'] = 'Welcome/EliminarEmpresasCtrl';
+
+    #------------> Extras CRUD <--------------#
+
+    $route['EX'] = 'Welcome/VerExtras';
+    $route['insertEX'] = 'Welcome/CrearExtras';
+    $route['updateEX'] = 'Welcome/ActualizarExtras';
+    $route['deleteEX'] = 'Welcome/DeleteExtras';
+
+    #------------> Laboral CRUD <--------------#
+    $route['LB'] = 'Welcome/VerLaboral';
+    $route['insertLB'] = 'Welcome/CrearLaboral';
+    $route['updateLB'] = 'Welcome/ActualizarLaboral';
+    $route['deleteLB'] = 'Welcome/EliminarLaboral';
+    
+    #------------> Matriz_Cotizante CRUD <--------------#
+    $route['MC'] = 'Welcome/VerMC';
+    $route['insertMC'] = 'Welcome/CrearMC';
+    $route['updateMC'] = 'Welcome/ActualizarMC';
+    $route['deleteMC'] = 'Welcome/EliminarMC';
+
+    
 
     #------------> Tipo_Servicio CRUD <--------------#
-    #------------> Referencia CRUD <--------------#
-    #------------> Matriz_Cotizante CRUD <--------------#
-    #------------> Empresa_ctrlroll CRUD <--------------#
+   
     #------------> Requerimiento CRUD <--------------#
     #------------> Noticias CRUD <--------------#
     #------------> Categorias CRUD <--------------#
-    #------------> Extras CRUD <--------------#
-    #------------> Contacto CRUD <--------------#
+    
     #------------> Matriz_Requerimientos CRUD <--------------#
     #------------> Estados CRUD <--------------#
-
-
-
-
-
-
 
 
 
