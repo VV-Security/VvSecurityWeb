@@ -85,11 +85,12 @@ create table Requerimiento(
 	Observacion text not null,
 	Fecha_Ing date not null,
 	Fecha_Fin date not null ,
-
+	Respuesta text not null,
 	constraint pk_Requerimiento primary key (Id)
 );
 
-	INSERT INTO Requerimiento (Nombre,Observacion,Fecha_Ing,Fecha_Fin) VALUES ('Nombre requerimiento TEST','Observacion requerimiento TEST','2021/03/12','2021/03/13');
+	INSERT INTO Requerimiento (Nombre,Observacion,Fecha_Ing,Fecha_Fin, Respuesta)
+	 VALUES ('Nombre requerimiento TEST','Observacion requerimiento TEST','2021/03/12','2021/03/13', 'Test Respuesta');
 
 
 create table Empresas_CtrlRoll(
@@ -282,5 +283,20 @@ create table Noticias(
 );
  INSERT INTO Noticias( Fecha_registro, Titulo							 , img										, Contenido								, Categoria_Id)
  							VALUES ('2021/05/21', 'Titulo Noticia TEST', 'rutaImg Noticia TEST' , 'Contenido Noticia TEST', 1);
+
+create table Laboral(
+	Id int not null auto_increment,
+	Rut varchar(15) not null,
+	Nombres varchar(400) not null,
+	Apellidos varchar(400) not null,
+	OS10 int not null,
+	Puesto varchar(40) not null,
+	Observaciones text not null,
+	Fono varchar(12) not null,
+	Mail varchar(400) not null,
+	MsgInterno text not null,
+
+	constraint pk_Laboral primary key (Id)
+);
 -- constraint pk_[Nombre tabla local] primary key ('Id referencia')
 -- constraint fk_[Nombre Tabla local]_[columna en local nombre] foreign key ('columna en local nombre') references 'tabla referencia'(Id referencia)
