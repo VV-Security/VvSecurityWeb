@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/compiled-4.9.0.min.css">
        <!--Estilos propios -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
 </head>
 
 
@@ -53,14 +56,9 @@
                     </li>
 
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Noticias
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo site_url() ?>/Noticias">Noticias
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo site_url() ?>/Recientes">Recientes</a>
-                            <a class="dropdown-item" href="<?php echo site_url() ?>/SarsCov2">SarsCov2</a>
                     </li>
 
 
