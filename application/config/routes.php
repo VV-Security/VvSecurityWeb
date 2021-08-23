@@ -93,7 +93,7 @@ $route['Login'] = 'Vistas/Login';
     $route['deleteSB'] = 'Welcome/EliminarServiciosB';
 
     #------------> Representante_Legal CRUD <--------------#
-// <<<<<<< HEAD
+
 //     #------------> Empresa_ctrlroll CRUD <--------------#
 //     #------------> Requerimiento CRUD <--------------#
 //     #------------> Noticias CRUD <--------------#
@@ -112,11 +112,10 @@ $route['Login'] = 'Vistas/Login';
 //     $route['Recientes'] = 'Noticias/Recientes';
 // =======
     
-//     $route['PN'] = 'Welcome/verPersonaNatural';
-//     $route['insertPN'] = 'Welcome/CrearPersonaNatural';
-//     $route['updatePN'] = 'Welcome/ActualizarPersonaNatural';
-//     $route['deletePN'] = 'Welcome/EliminarPersonaNatural';
-// >>>>>>> main
+    $route['PN'] = 'Welcome/verPersonaNatural';
+    $route['insertPN'] = 'Welcome/CrearPersonaNatural';
+    $route['updatePN'] = 'Welcome/ActualizarPersonaNatural';
+    $route['deletePN'] = 'Welcome/EliminarPersonaNatural';
 
     #------------> Contacto CRUD <--------------#
     
