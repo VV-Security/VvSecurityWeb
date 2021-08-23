@@ -19,7 +19,7 @@ class Crud_ServiciosBasicos extends CI_Model
             "Internet" => $Internet
         );
 
-        $this->db->insert('servicios_basicos', $datos);
+        return $this->db->insert('servicios_basicos', $datos);
     }
     public function UpdateServicios(
         $Id,
@@ -40,11 +40,11 @@ class Crud_ServiciosBasicos extends CI_Model
             "Internet" => $Internet
         );
 
-        $this->db->update('servicios_basicos', $datos);
+        return  $this->db->update('servicios_basicos', $datos);
     }
     public function DeleteServicio($Id)
     {
         $this->db->where('Id', $Id);
-        $this->db->delete('servicios_basicos');
+        return  $this->db->delete('servicios_basicos');
     }
 }

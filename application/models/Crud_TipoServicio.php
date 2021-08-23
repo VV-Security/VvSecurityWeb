@@ -16,7 +16,7 @@
                 'Caseta'=>$Caseta,
                 'Otros' => $Otros
             );
-            $this->db->insert('tipo_servicio', $object);
+            return $this->db->insert('tipo_servicio', $object);
         }
         public function UpdateTS($Id, $Ggss, $ServiAseoInd, $Caseta, $Otros)
         {
@@ -27,11 +27,11 @@
                 'Caseta'=>$Caseta,
                 'Otros' => $Otros
             );
-            $this->db->insert('tipo_servicio', $object);
+            return $this->db->insert('tipo_servicio', $object);
         }
         public function DeleteTS($Id)
         {
             $this->db->where('id', $Id);
-            $this->db->delete('tipo_servicio');
+            return $this->db->delete('tipo_servicio');
         }
     }

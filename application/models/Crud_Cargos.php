@@ -21,7 +21,7 @@ class Crud_Cargos extends CI_Model
             "Nombre" => $Nombre
         );
         
-        $this->db->update('cargos', $datos);
+        return  $this->db->update('cargos', $datos);
     }
     public function DeleteCargos()
     {

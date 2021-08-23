@@ -64,7 +64,7 @@ $route['Login'] = 'Vistas/Login';
     $route['updateCG'] = 'Welcome/ActualizarCargos';
     $route['deleteCG'] = 'Welcome/EliminarCargos';
 
-    #------------> Persona_Natural CRUD <--------------#
+     #------------> Representante_Legal CRUD <--------------#
 
     $route['RL'] = 'Welcome/VerRepresentante';
     $route['insertRL'] = 'Welcome/CrearRepresentante';
@@ -92,26 +92,25 @@ $route['Login'] = 'Vistas/Login';
     $route['updateSB'] = 'Welcome/ActualizarServiciosB';
     $route['deleteSB'] = 'Welcome/EliminarServiciosB';
 
-    #------------> Representante_Legal CRUD <--------------#
-
-//     #------------> Empresa_ctrlroll CRUD <--------------#
-//     #------------> Requerimiento CRUD <--------------#
-//     #------------> Noticias CRUD <--------------#
-//     $route['Recientes'] = 'Noticias/Recientes';
+    #------------> Noticias CRUD <--------------#
+    
     $route['NoticiasT'] = 'Noticias/VerNoticias';
- $route['insertNoticias'] = 'Noticias/CrearNoticias';
+    $route['insertNoticias'] = 'Noticias/CrearNoticias';
     $route['updateNoticias'] = 'Noticias/ActualizarNoticias';
-     $route['deleteNoticias'] = 'Noticias/EliminarNoticias';
+    $route['deleteNoticias'] = 'Noticias/EliminarNoticias';
+    $route['BuscarNoticias'] = 'Noticias/BuscarNoticias';
+    $route['BuscarNoticias_Titulo'] = 'Noticias/BuscarNoticias_Titulo';
+    $route['Recientes'] = 'Noticias/Recientes';
+
     #------------> Categorias CRUD <--------------#
+    
     $route['Categoria'] = 'Noticias/VerCategoria';
     $route['insertCategoria'] = 'Noticias/CrearCategoria';
     $route['updateCategoria'] = 'Noticias/ActualizarCategoria';
     $route['deleteCategoria'] = 'Noticias/EliminarCategoria';
     $route['BuscarCategorias'] = 'Noticias/BuscarCategoria';
-    $route['BuscarNoticias'] = 'Noticias/BuscarNoticias';
-    $route['BuscarNoticias_Titulo'] = 'Noticias/BuscarNoticias_Titulo';
-    $route['Recientes'] = 'Noticias/Recientes';
-
+    
+    #------------> Persona_Natural CRUD <--------------#
     
     $route['PN'] = 'Welcome/verPersonaNatural';
     $route['insertPN'] = 'Welcome/CrearPersonaNatural';
@@ -147,26 +146,42 @@ $route['Login'] = 'Vistas/Login';
     $route['deleteEX'] = 'Welcome/DeleteExtras';
 
     #------------> Laboral CRUD <--------------#
+    
     $route['LB'] = 'Welcome/VerLaboral';
     $route['insertLB'] = 'Welcome/CrearLaboral';
     $route['updateLB'] = 'Welcome/ActualizarLaboral';
     $route['deleteLB'] = 'Welcome/EliminarLaboral';
     
     #------------> Matriz_Cotizante CRUD <--------------#
+    
     $route['MC'] = 'Welcome/VerMC';
     $route['insertMC'] = 'Welcome/CrearMC';
     $route['updateMC'] = 'Welcome/ActualizarMC';
     $route['deleteMC'] = 'Welcome/EliminarMC';
 
-    
-
     #------------> Tipo_Servicio CRUD <--------------#
-   
-    #------------> Requerimiento CRUD <--------------#
-    #------------> Noticias CRUD <--------------#
-    #------------> Categorias CRUD <--------------#
     
+    $route['TS'] = 'Welcome/VerTS';
+    $route['insertTS'] = 'Welcome/CrearTS';
+    $route['updateTS'] = 'Welcome/ActualizarTS';
+    $route['deleteTS'] = 'Welcome/EliminarTS';
+
     #------------> Matriz_Requerimientos CRUD <--------------#
+
+    $route['MR'] = 'Welcome/VerMR';
+    $route['insertMR'] = 'Welcome/CrearMR';
+    $route['updateMR'] = 'Welcome/ActualizarMR';
+    $route['deleteMR'] = 'Welcome/EliminarMR';
+
+    #------------> Requerimiento CRUD <--------------#
+    
+    $route['RQ'] = 'Welcome/VerRequerimiento';
+    $route['insertRQ'] = 'Welcome/CrearRequerimiento';
+    $route['updateRQ'] = 'Welcome/ActualizarRequerimiento';
+    $route['deleteRQ'] = 'Welcome/EliminarRequerimiento';
+
+
+
     #------------> Estados CRUD <--------------#
 
 

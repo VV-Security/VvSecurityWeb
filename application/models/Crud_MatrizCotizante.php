@@ -17,7 +17,7 @@
                 'Natural_Id'   => $Natural_Id,
                 'Servicio_Id'    => $Servicio_Id,
                 );
-            $this->db->insert('matriz_cotizante', $data);
+            return $this->db->insert('matriz_cotizante', $data);
         }
 
         public function UpdateMC($Id, $Empresa_Id, $Contacto_Id, $Natural_Id, $Servicio_Id)
@@ -29,11 +29,11 @@
                 'Natural_Id'   => $Natural_Id,
                 'Servicio_Id'    => $Servicio_Id,
                 );
-            $this->db->update('matriz_cotizante', $data);
+            return $this->db->update('matriz_cotizante', $data);
         }
         public function DeleteMC($Id)
         {
             $this->db->where('Id', $$Id);
-            $this->db->delete('matriz_cotizante');
+            return $this->db->delete('matriz_cotizante');
         }
     }

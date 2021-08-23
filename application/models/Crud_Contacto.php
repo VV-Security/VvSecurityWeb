@@ -25,7 +25,7 @@ class Crud_Contacto extends CI_Model
             "Mail" => $Mail,
             "Cargo_Id" => $Cargo_Id
         );
-        $this->db->insert('contacto', $datos);
+        return  $this->db->insert('contacto', $datos);
     }
     public function UpdateContacto(
         $Id,
@@ -47,11 +47,11 @@ class Crud_Contacto extends CI_Model
             "Mail" => $Mail,
             "Cargo_Id" => $Cargo_Id
         );
-        $this->db->update('contacto', $datos);
+        return  $this->db->update('contacto', $datos);
     }
     public function DeleteContactos($Id)
     {
         $this->db->where('contacto', $Id);
-        $this->db->delete('contacto');
+        return  $this->db->delete('contacto');
     }
 }

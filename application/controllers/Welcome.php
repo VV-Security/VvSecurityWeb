@@ -21,24 +21,147 @@ class Welcome extends CI_Controller
         $this->load->model('Crud_Laboral');
         $this->load->model('Crud_MatrizCotizante');
         $this->load->model('Crud_TipoServicio');
-        // $this->load->model('Crud_MatrizRequerimiento');l
-        // $this->load->model('Crud_Requerimiento');
+        $this->load->model('Crud_MatrizRequerimientos');
+        $this->load->model('Crud_Requerimientos');
         // $this->load->model('Crud_Estados');
-
-        
-        #################--->        referencia Crud tabla             <---#################
-        #################--->        requerimiento Crud tabla          <---#################
-        #################--->        estados Crud tabla                <---#################
-        #################--->     matriz_requerimientos Crud tabla     <---#################
-        #################--->         noticias Crud tabla              <---#################
-        #################--->         categorías Crud tabla            <---#################
     }
+ 
+    
+    #################--->        estados Crud tabla                <---#################
+    
+    #################--->        requerimiento Crud tabla          <---#################
+    public function VerRequerimiento()
+    {
+        echo json_encode($this->Crud_Requerimientos->SelectRequerimientos());
+    }
+    public function CrearRequerimiento()
+    {
+        // $Id
+        $Nombre = $this->input->post('nombre');
+        $Observacion = $this->input->post('observaciones');
+        $Fecha_Ing = $this->input->post('ingreso');
+        $Fecha_Fin = $this->input->post('fin');
+        $Respuesta = $this->input->post('repuesta');
+        if (isset($Nombre) || isset($Observacion) || isset($Fecha_Ing) || isset($Fecha_Fin) || isset($Respuesta)) {
+            $this->Crud_Requerimientos->InsertRequerimientos($Nombre, $Observacion, $Fecha_Ing, $Fecha_Fin, $Respuesta);
+            echo json_encode(array('msg' =>'Requerimiento Creado'));
+        } else {
+            echo json_encode(array('msg' =>' No Crea Requerimiento'));
+        }
+    }
+    
+    public function ActualizarRequerimiento()
+    {
+        $Id = $this->input->post('id');
+        $Nombre = $this->input->post('nombre');
+        $Observacion = $this->input->post('observaciones');
+        $Fecha_Ing = $this->input->post('ingreso');
+        $Fecha_Fin = $this->input->post('fin');
+        $Respuesta = $this->input->post('repuesta');
+        if (isset($Nombre) || isset($Observacion) || isset($Fecha_Ing) || isset($Fecha_Fin) || isset($Respuesta)) {
+            $this->Crud_Requerimientos->UpdateRequerimientos($Nombre, $Observacion, $Fecha_Ing, $Fecha_Fin, $Respuesta);
+            echo json_encode(array('msg' =>'Actualiza Requerimiento'));
+        } else {
+            echo json_encode(array('msg' =>' No Actualiza Requerimiento'));
+        }
+    }
+    public function EliminarRequerimiento()
+    {
+        $Id = $this->input->post('id');
+        if (isset($Id)) {
+            $this->Crud_Requerimientos->DeleteRequerimiento($Id);
+            echo json_encode(array('msg' =>'Eliminamos Requerimiento'));
+        } else {
+            echo json_encode(array('msg' =>'No Eliminamos Requerimiento'));
+        }
+    }
+    
+    #################--->     matriz_requerimientos Crud tabla     <---#################
+    public function VerMR()
+    {
+        echo json_encode($this->Crud_MatrizRequerimientos->SelectMR());
+    }
+    public function CrearMR()
+    {
+        // $Id,
+        $EmpresasCtrl = $this->input->post('empresactrl');
+        $Requerimientos_Id = $this->input->post('requerimiento_id');
+        $Estado_Id = $this->input->post('estado_id');
+        if (isset($EmpresasCtrl) || isset($Requerimientos_Id) || isset($Estado_Id)) {
+            $this->Crud_MatrizRequerimientos->InsertMR($EmpresasCtrl, $Requerimientos_Id, $Estado_Id);
+            echo json_encode(array('msg' =>'Matriz de Requerimiento Creada'));
+        } else {
+            echo json_encode(array('msg' =>'No Crea Matriz de Requerimiento'));
+        }
+    }
+    
+    public function ActualizarMR()
+    {
+        $Id = $this->input->post('id');
+        $EmpresasCtrl = $this->input->post('empresactrl');
+        $Requerimientos_Id = $this->input->post('requerimiento_id');
+        $Estado_Id = $this->input->post('estado_id');
+        if (isset($Id) || isset($EmpresasCtrl) || isset($Requerimientos_Id) || isset($Estado_Id)) {
+            $this->Crud_MatrizRequerimientos->UpdateMR($Id, $EmpresasCtrl, $Requerimientos_Id, $Estado_Id);
+            echo json_encode(array('msg' =>'Actualiza Matriz de Requerimiento'));
+        } else {
+            echo json_encode(array('msg' =>'No Actualiza Matriz de Requerimiento'));
+        }
+    }
+    public function EliminarMR()
+    {
+        $Id = $this->input->post('id');
+        if (isset($Id)) {
+            $this->Crud_MatrizRequerimientos->DeleteMR($Id);
+            echo json_encode(array('msg' => 'Matriz de requerimiento Eliminada'));
+        } else {
+            echo json_encode(array('msg' => 'No Elimina Matriz de requerimiento'));
+        }
+    }
+
     #################--->        tipo_servicio Crud tabla          <---#################
     public function VerTS()
     {
         echo json_encode($this->Crud_TipoServicio->SelectTS());
     }
-
+    public function CrearTS()
+    {
+        // $Id
+        $Ggss = $this->input->post('ggss');
+        $ServiAseoInd = $this->input->post('ServicioAseo');
+        $Caseta = $this->input->post('caseta');
+        $Otros = $this->input->post('otros');
+        if (isset($Ggss) || isset($ServiAseoInd) || isset($Caseta) || isset($Otros)) {
+            $this->Crud_TipoServicio->InsertTS($Ggss, $ServiAseoInd, $Caseta, $Otros);
+            echo json_encode(array("msg"=>"Tipo de servicio Creado"));
+        } else {
+            echo json_encode(array("msg"=>"No Crea Tipo de servicio"));
+        }
+    }
+    public function ActualizarTS()
+    {
+        $Id = $this->input->post('id');
+        $Ggss = $this->input->post('ggss');
+        $ServiAseoInd = $this->input->post('ServicioAseo');
+        $Caseta = $this->input->post('caseta');
+        $Otros = $this->input->post('otros');
+        if (isset($Id) || isset($Ggss) || isset($ServiAseoInd) || isset($Caseta) || isset($Otros)) {
+            $this->Crud_TipoServicio->UpdateTS($Id, $Ggss, $ServiAseoInd, $Caseta, $Otros);
+            echo json_encode(array("msg"=>"Actualiza Tipo de servicio "));
+        } else {
+            echo json_encode(array("msg"=>"No Actualiza Tipo de servicio"));
+        }
+    }
+    public function EliminarTS()
+    {
+        $Id = $this->input->post('id');
+        if (isset($Id)) {
+            $this->Crud_TipoServicio->DeleteTS($Id);
+            echo json_encode(array("msg" => "Tipo Servicio Eliminado"));
+        } else {
+            echo json_encode(array("msg" => "No Elimina Tipo Servicio"));
+        }
+    }
     #################--->        matriz_cotizante Crud tabla       <---#################
     public function VerMC()
     {
@@ -141,7 +264,7 @@ class Welcome extends CI_Controller
         }
     }
     
-    #################--->        empresas_ctrlroll Crud tabla      <---#################
+    #################--->        Extras Crud tabla      <---#################
     public function VerExtras()
     {
         echo json_encode($this->Crud_Extras->SelectExtras());
@@ -707,9 +830,8 @@ class Welcome extends CI_Controller
             echo json_encode(array("msg" => "Elimina no realizada. Matriz Servicio"));
         }
     }
- 
-    
-    #################--->          servicios basicos Crud tabla             <---#################
+     
+    #################--->     servicios basicos Crud tabla             <---#################
 
     public function VerServiciosB()
     {
