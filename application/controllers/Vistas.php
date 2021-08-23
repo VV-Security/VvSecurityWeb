@@ -142,25 +142,4 @@ class Vistas extends CI_Controller
    
         $this->load->view('templates/footerers');
     }
-
-    public function SarsCov2()
-    {
-        $this->load->view('templates/Navbar');
-   
-   
-        $this->load->view('NOTICIASfolder/SarsCov2');
-   
-   
-        $this->load->view('templates/footerers');
-    }
-    public function Recientes()
-    {
-        $this->load->view('templates/Navbar');
-   
-   
-        $this->load->view('NOTICIASfolder/Recientes');
-   
-   
-        $this->load->view('templates/footerers');
-    }
 }
