@@ -8,13 +8,11 @@
     <link rel="icon" href="<?php echo base_url() ?>assets/img/logo.png">
     <title>V&V SECURITY</title>
 
-    <!-- Material Design Bootstrap -->
-    <!-- Your custom styles (optional) -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
-    <link rel="stylesheet" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.8.9.min.css">
-    <link rel="stylesheet"
-        href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/general/snippets-assets/datatables.min.css">
-    <link href="<?php echo base_url() ?>assets/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/compiled-4.9.0.min.css">
+       <!--Estilos propios -->
+    <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
 </head>
 
 
@@ -108,7 +106,7 @@
                                 seguridad</a>
                             <a class="dropdown-item" href="<?php echo site_url() ?>/ssppz">Supervisor de
                                 zona</a>
-                            <a class="dropdown-item" href="<?php echo site_url() ?>/Capacitaciones">Capacitaciones</a>
+                           <!-- <a class="dropdown-item" href="<?php echo site_url() ?>/Capacitaciones">Capacitaciones</a> --->
                     </li>
 
                     <li class="nav-item dropdown">

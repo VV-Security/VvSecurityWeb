@@ -79,6 +79,65 @@
         <!-- Grid row -->
 
     </section>
+    <hr class="my-5">
+
+
+<!-- Section: Features v.1 -->
+<section class="text-center my-5">
+
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold my-5 white-text wow fadeIn">Nuestros diferenciales</h2>
+
+    <!-- Grid row -->
+    <div class="row  mb-5">
+
+        <!-- Grid column -->
+        <div class="col-md-3 wow fadeInLeft">
+
+            <i class="fas fa-chess-king fa-3x yellow-text"></i>
+            <p class="grey-text mb-md-0 mb-5 text-justify my-5">
+                V&V Security sinónimo de prestigio, nos diferencia y nos une.
+            </p>
+
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-md-3 wow fadeInUp">
+
+            <i class="fas fa-shield-alt fa-3x teal-text"></i>
+            <p class="grey-text mb-md-0 mb-5 text-justify my-5">Eficacia garantizada con tecnología de última
+                generación y profesionales altamente cualificados.
+            </p>
+
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-md-3 wow fadeInUp">
+
+            <i class="fas fa-balance-scale fa-3x blue-text"></i>
+            <p class="grey-text mb-0 text-justify my-5">
+                Soluciones integrales estudiadas, diseñadas y ejecutadas a medida, adaptándonos con
+                versatibilidad a todos los sectores para cubrir, con rigor, las necesidades de todos nuestros
+                clientes.
+            </p>
+
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-md-3 wow fadeInRight">
+
+            <i class="fas fa-handshake fa-3x pink-text"></i>
+            <p class="grey-text mb-0 text-justify my-5">Trato personalizado, transparente y cuidada atención al
+                cliente.
+            </p>
+
+        </div>
+        <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+</section>
+<!-- Section: Features v.1 -->
 
     <hr class="my-5">
 

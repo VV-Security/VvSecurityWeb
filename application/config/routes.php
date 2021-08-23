@@ -30,8 +30,10 @@ $route['Contactar'] = 'Vistas/Contactar';
 $route['Requerimientos'] = 'Vistas/Requerimientos';
 $route['Capacitaciones'] = 'Vistas/Capacitaciones';
 
+
 #------------> Contacto Vistas <--------------#
 $route['Login'] = 'Vistas/Login';
+
 
 #|#####################################################################################################|
 #|#####################################################################################################|
