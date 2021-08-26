@@ -41,59 +41,134 @@ $route['Login'] = 'Vistas/Login';
 #|#####################################################################################################|
 
 ################--->My Controllers <---############
+    #------------> Servicios_Basicos CRUD <--------------#
 
-    #------------> Usuarios CRUD <--------------#
+    $route['SB'] = 'Servicios_Basicos/VerServiciosB';
+    $route['insertSB'] = 'Servicios_Basicos/CrearServiciosB';
+    $route['updateSB'] = 'Servicios_Basicos/ActualizarServiciosB';
+    $route['deleteSB'] = 'Servicios_Basicos/EliminarServiciosB';
+
+      
+    // -----------------------------------------------------------------------
     
-    $route['User'] = 'Welcome/VerUsuario';
-    $route['insertUser'] = 'Welcome/CrearUsuario';
-    $route['updateUser'] = 'Welcome/ActualizarUsuario';
-    $route['deleteUser'] = 'Welcome/EliminarUsuario';
-    
- 
-    #------------> Departamentos CRUD <--------------#
-
-    $route['DP'] = 'Welcome/VerDepartamentos';
-    $route['insertDP'] = 'Welcome/CrearDepartamentos';
-    $route['updateDP'] = 'Welcome/ActualizarDepartamentos';
-    $route['deleteDP'] = 'Welcome/EliminarDepartamentos';
-
-    #------------------> Cargos CRUD <-----------------------#
-  
-    $route['CG'] = 'Welcome/VerCargos';
-    $route['insertCG'] = 'Welcome/CrearCargos';
-    $route['updateCG'] = 'Welcome/ActualizarCargos';
-    $route['deleteCG'] = 'Welcome/EliminarCargos';
-
-     #------------> Representante_Legal CRUD <--------------#
-
-    $route['RL'] = 'Welcome/VerRepresentante';
-    $route['insertRL'] = 'Welcome/CrearRepresentante';
-    $route['updateRL'] = 'Welcome/ActualizarRepresentante';
-    $route['deleteRL'] = 'Welcome/EliminarRepresentante';
-
     #------------> Matriz_Servicio CRUD <--------------#
     
     $route['MS'] = 'Welcome/VerMatrizServicio';
-    $route['insertMS'] = 'Welcome/CrearMatrizServicio';
-    $route['updateMS'] = 'Welcome/ActualizarMatrizServicio';
-    $route['deleteMS'] = 'Welcome/EliminarMatrizServicio';
+    $route['insertMS'] = 'Matriz_Servicio/CrearMatrizServicio';
+    $route['updateMS'] = 'Matriz_Servicio/ActualizarMatrizServicio';
+    $route['deleteMS'] = 'Matriz_Servicio/EliminarMatrizServicio';
+
+    #------------> Contacto CRUD <--------------#
+        
+    $route['CT'] = 'Contacto/VerContactos';
+    $route['insertCT'] = 'Contacto/CrearContactos';
+    $route['updateCT'] = 'Contacto/ActualizarContactos';
+    $route['deleteCT'] = 'Contacto/EliminarContactos';
 
     #------------> Empresa CRUD <--------------#
   
-    $route['EMP'] = 'Welcome/VerEmpresa';
-    $route['insertEMP'] = 'Welcome/CrearEmpresa';
-    $route['updateEMP'] = 'Welcome/ActualizarEmpresa';
-    $route['deleteEMP'] = 'Welcome/EliminarEmpresa';
+    $route['EMP'] = 'Empresas/VerEmpresa';
+    $route['insertEMP'] = 'Empresas/CrearEmpresa';
+    $route['updateEMP'] = 'Empresas/ActualizarEmpresa';
+    $route['deleteEMP'] = 'Empresas/EliminarEmpresa';
 
-    #------------> Servicios_Basicos CRUD <--------------#
+    
+    #------------> Referencia CRUD <--------------#
 
-    $route['SB'] = 'Welcome/VerServiciosB';
-    $route['insertSB'] = 'Welcome/CrearServiciosB';
-    $route['updateSB'] = 'Welcome/ActualizarServiciosB';
-    $route['deleteSB'] = 'Welcome/EliminarServiciosB';
+    $route['RF'] = 'Referencia/VerReferencia';
+    $route['insertRF'] = 'Referencia/CrearReferencia';
+    $route['updateRF'] = 'Referencia/ActualizarReferencia';
+    $route['deleteRF'] = 'Referencia/EliminarReferencia';
+
+    #------------------> Cargos CRUD <-----------------------#
+    
+    $route['CG'] = 'Cargos/VerCargos';
+    $route['insertCG'] = 'Cargos/CrearCargos';
+    $route['updateCG'] = 'Cargos/ActualizarCargos';
+    $route['deleteCG'] = 'Cargos/EliminarCargos';
+   
+    #------------> Persona_Natural CRUD <--------------#
+    
+    $route['PN'] = 'Persona_Natural/verPersonaNatural';
+    $route['insertPN'] = 'Persona_Natural/CrearPersonaNatural';
+    $route['updatePN'] = 'Persona_Natural/ActualizarPersonaNatural';
+    $route['deletePN'] = 'Persona_Natural/EliminarPersonaNatural';
+    
+    #------------> Empresas_CtrlRoll CRUD <--------------#
+
+    $route['ECR'] = 'Empresas_CtrlRoll/VerEmpresasCtrl';
+    $route['insertECR'] = 'Empresas_CtrlRoll/CrearEmpresasCtrl';
+    $route['updateECR'] = 'Empresas_CtrlRoll/ActualizarEmpresasCtrl';
+    $route['deleteECR'] = 'Empresas_CtrlRoll/EliminarEmpresasCtrl';
+
+    #------------> Extras CRUD <--------------#
+
+    $route['EX'] = 'Extras/VerExtras';
+    $route['insertEX'] = 'Extras/CrearExtras';
+    $route['updateEX'] = 'Extras/ActualizarExtras';
+    $route['deleteEX'] = 'Extras/DeleteExtras';
+
+    #------------> Matriz_Cotizante CRUD <--------------#
+    
+    $route['MC'] = 'Matriz_Cotizante/VerMC';
+    $route['insertMC'] = 'Matriz_Cotizante/CrearMC';
+    $route['updateMC'] = 'Matriz_Cotizante/ActualizarMC';
+    $route['deleteMC'] = 'Matriz_Cotizante/EliminarMC';
+    
+    #------------> Tipo_Servicio CRUD <--------------#
+    
+    $route['TS'] = 'Tipo_Servicio/VerTS';
+    $route['insertTS'] = 'Tipo_Servicio/CrearTS';
+    $route['updateTS'] = 'Tipo_Servicio/ActualizarTS';
+    $route['deleteTS'] = 'Tipo_Servicio/EliminarTS';
+    
+    
+
+    #------------> Usuarios CRUD <--------------#
+        
+    $route['User'] = 'Usuario/VerUsuario';
+    $route['insertUser'] = 'Usuario/CrearUsuario';
+    $route['updateUser'] = 'Usuario/ActualizarUsuario';
+    $route['deleteUser'] = 'Usuario/EliminarUsuario';
+    
+
+
+    #------------> Departamentos CRUD <--------------#
+
+     $route['DP'] = 'Departamentos/VerDepartamentos';
+     $route['insertDP'] = 'Departamentos/CrearDepartamentos';
+     $route['updateDP'] = 'Departamentos/ActualizarDepartamentos';
+     $route['deleteDP'] = 'Departamentos/EliminarDepartamentos';
+
+    #------------> Laboral CRUD <--------------#
+    
+    $route['LB'] = 'Laboral/VerLaboral';
+    $route['insertLB'] = 'Laboral/CrearLaboral';
+    $route['updateLB'] = 'Laboral/ActualizarLaboral';
+    $route['deleteLB'] = 'Laboral/EliminarLaboral';
+    
+    #------------> Matriz_Requerimientos CRUD <--------------#
+    
+    $route['MR'] = 'Matriz_Requerimientos/VerMR';
+    $route['insertMR'] = 'Matriz_Requerimientos/CrearMR';
+    $route['updateMR'] = 'Matriz_Requerimientos/ActualizarMR';
+    $route['deleteMR'] = 'Matriz_Requerimientos/EliminarMR';
+    
+    #------------> Estados CRUD <--------------#
+    $route['ET'] = 'Estados/VerEstados';
+    $route['insertET'] = 'Estados/CrearEstados';
+    $route['updateET'] = 'Estados/ActualizarEstados';
+    $route['deleteET'] = 'Estados/EliminarEstados';
+
+    #------------> Requerimiento CRUD <--------------#
+        
+    $route['RQ'] = 'Requerimiento/VerRequerimiento';
+    $route['insertRQ'] = 'Requerimiento/CrearRequerimiento';
+    $route['updateRQ'] = 'Requerimiento/ActualizarRequerimiento';
+    $route['deleteRQ'] = 'Requerimiento/EliminarRequerimiento';
 
     #------------> Noticias CRUD <--------------#
-    
+        
     $route['NoticiasT'] = 'Noticias/VerNoticias';
     $route['insertNoticias'] = 'Noticias/CrearNoticias';
     $route['updateNoticias'] = 'Noticias/ActualizarNoticias';
@@ -103,87 +178,12 @@ $route['Login'] = 'Vistas/Login';
     $route['Recientes'] = 'Noticias/Recientes';
 
     #------------> Categorias CRUD <--------------#
-    
+        
     $route['Categoria'] = 'Noticias/VerCategoria';
     $route['insertCategoria'] = 'Noticias/CrearCategoria';
     $route['updateCategoria'] = 'Noticias/ActualizarCategoria';
     $route['deleteCategoria'] = 'Noticias/EliminarCategoria';
     $route['BuscarCategorias'] = 'Noticias/BuscarCategoria';
-    
-    #------------> Persona_Natural CRUD <--------------#
-    
-    $route['PN'] = 'Welcome/verPersonaNatural';
-    $route['insertPN'] = 'Welcome/CrearPersonaNatural';
-    $route['updatePN'] = 'Welcome/ActualizarPersonaNatural';
-    $route['deletePN'] = 'Welcome/EliminarPersonaNatural';
-
-    #------------> Contacto CRUD <--------------#
-    
-    $route['CT'] = 'Welcome/VerContactos';
-    $route['insertCT'] = 'Welcome/CrearContactos';
-    $route['updateCT'] = 'Welcome/ActualizarContactos';
-    $route['deleteCT'] = 'Welcome/EliminarContactos';
-
-    #------------> Referencia CRUD <--------------#
-
-    $route['RF'] = 'Welcome/VerReferencia';
-    $route['insertRF'] = 'Welcome/CrearReferencia';
-    $route['updateRF'] = 'Welcome/ActualizarReferencia';
-    $route['deleteRF'] = 'Welcome/EliminarReferencia';
-
-    #------------> Empresas_CtrlRoll CRUD <--------------#
-
-    $route['ECR'] = 'Welcome/VerEmpresasCtrl';
-    $route['insertECR'] = 'Welcome/CrearEmpresasCtrl';
-    $route['updateECR'] = 'Welcome/ActualizarEmpresasCtrl';
-    $route['deleteECR'] = 'Welcome/EliminarEmpresasCtrl';
-
-    #------------> Extras CRUD <--------------#
-
-    $route['EX'] = 'Welcome/VerExtras';
-    $route['insertEX'] = 'Welcome/CrearExtras';
-    $route['updateEX'] = 'Welcome/ActualizarExtras';
-    $route['deleteEX'] = 'Welcome/DeleteExtras';
-
-    #------------> Laboral CRUD <--------------#
-    
-    $route['LB'] = 'Welcome/VerLaboral';
-    $route['insertLB'] = 'Welcome/CrearLaboral';
-    $route['updateLB'] = 'Welcome/ActualizarLaboral';
-    $route['deleteLB'] = 'Welcome/EliminarLaboral';
-    
-    #------------> Matriz_Cotizante CRUD <--------------#
-    
-    $route['MC'] = 'Welcome/VerMC';
-    $route['insertMC'] = 'Welcome/CrearMC';
-    $route['updateMC'] = 'Welcome/ActualizarMC';
-    $route['deleteMC'] = 'Welcome/EliminarMC';
-
-    #------------> Tipo_Servicio CRUD <--------------#
-    
-    $route['TS'] = 'Welcome/VerTS';
-    $route['insertTS'] = 'Welcome/CrearTS';
-    $route['updateTS'] = 'Welcome/ActualizarTS';
-    $route['deleteTS'] = 'Welcome/EliminarTS';
-
-    #------------> Matriz_Requerimientos CRUD <--------------#
-
-    $route['MR'] = 'Welcome/VerMR';
-    $route['insertMR'] = 'Welcome/CrearMR';
-    $route['updateMR'] = 'Welcome/ActualizarMR';
-    $route['deleteMR'] = 'Welcome/EliminarMR';
-
-    #------------> Requerimiento CRUD <--------------#
-    
-    $route['RQ'] = 'Welcome/VerRequerimiento';
-    $route['insertRQ'] = 'Welcome/CrearRequerimiento';
-    $route['updateRQ'] = 'Welcome/ActualizarRequerimiento';
-    $route['deleteRQ'] = 'Welcome/EliminarRequerimiento';
-
-
-
-    #------------> Estados CRUD <--------------#
-
 
 
 ########---->No Touch <----########

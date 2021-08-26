@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 /**
  * undocumented class
  */
-class Crud_MatrizRequerimientos extends CI_Controller
+class Crud_MatrizRequerimientos extends CI_Model
 {
     public function SelectMR()
     {

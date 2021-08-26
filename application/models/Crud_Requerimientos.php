@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 /**
  * undocumented class
  */
-class Crud_Requerimientos extends CI_Controller
+class Crud_Requerimientos extends CI_Model
 {
     public function SelectRequerimientos()
     {
