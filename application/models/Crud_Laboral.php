@@ -30,7 +30,7 @@ class Crud_Laboral extends CI_Model
             "Mail" =>$Mail,
            "MsgInterno"=> $MsgInterno
         );
-        $this->db->insert('laboral', $data);
+        return $this->db->insert('laboral', $data);
     }
     
     public function UpdateLaboral(
@@ -57,12 +57,12 @@ class Crud_Laboral extends CI_Model
             "Mail" =>$Mail,
            "MsgInterno"=> $MsgInterno
         );
-        $this->db->update('laboral', $data);
+        return $this->db->update('laboral', $data);
     }
     public function DeleteLaboral($Id)
     {
         $this->db->where('Id', $Id);
-        $this->db->delete('laboral');
+        return $this->db->delete('laboral');
     }
 }
 

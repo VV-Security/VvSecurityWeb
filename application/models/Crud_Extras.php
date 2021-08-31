@@ -20,7 +20,7 @@ class Crud_Extras extends CI_Model
             'CamSeg' => $CamSeg,
             'AlarmSeg' => $CamSeg
         );
-        $this->db->insert('extras', $data);
+        return $this->db->insert('extras', $data);
     }
     
     public function UpdateExtras($Id, $CaptorRonda, $CtrlAsis, $SuperExcl, $CamSeg, $AlarmSeg)
@@ -33,12 +33,12 @@ class Crud_Extras extends CI_Model
             'CamSeg' => $CamSeg,
             'AlarmSeg' => $CamSeg
         );
-        $this->db->update('extras', $data);
+        return $this->db->update('extras', $data);
     }
     public function DeleteExtras($Id)
     {
         $this->db->where('extras', $Id);
-        $this->db->delete('extras');
+        return $this->db->delete('extras');
     }
 }
 

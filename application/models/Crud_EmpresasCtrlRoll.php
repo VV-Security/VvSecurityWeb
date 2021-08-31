@@ -22,7 +22,7 @@ class Crud_EmpresasCtrlRoll extends CI_Model
         'R_Social'    => $R_Social  ,
         'Giro' => $Giro
     );
-        $this->db->insert($data);
+        return $this->db->insert($data);
     }
     public function UpdateEmpresasCTRL(
         $Id,
@@ -40,12 +40,12 @@ class Crud_EmpresasCtrlRoll extends CI_Model
         'R_Social'    => $R_Social  ,
         'Giro' => $Giro
     );
-        $this->db->update($data);
+        return  $this->db->update($data);
     }
     public function DeleteEmpresasCTRL($Id)
     {
         $this->db->where('Id', $Id);
-        $this->db->delete('empresas_ctrlroll');
+        return $this->db->delete('empresas_ctrlroll');
     }
 }
  

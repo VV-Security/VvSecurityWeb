@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Crud_Departaments extends CI_Model
+class Crud_Departamentos extends CI_Model
 {
     public function SelectDepartamento()
     {

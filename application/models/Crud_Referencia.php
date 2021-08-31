@@ -13,7 +13,7 @@ class Crud_Referencia extends CI_Model
             "Nombre" => $Nombre,
             "Depto" => $Depto
         );
-        $this->db->insert('referencia', $object);
+        return $this->db->insert('referencia', $object);
     }
     
     public function UpdateReferencia($Id, $Nombre, $Depto)
@@ -23,11 +23,11 @@ class Crud_Referencia extends CI_Model
             "Nombre" => $Nombre,
             "Depto" => $Depto
         );
-        $this->db->update('referencia', $object);
+        return $this->db->update('referencia', $object);
     }
     public function DeleteReferencia($Id)
     {
         $this->db->where('Id', $Id);
-        $this->db->delete('referencia');
+        return $this->db->delete('referencia');
     }
 }
