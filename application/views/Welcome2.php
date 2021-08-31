@@ -254,7 +254,7 @@
 
 
     <div class="container">
-        <section class="text-center my-5 wow fadeIn">
+        <section id="NoticiasHome" class="text-center my-5 wow fadeIn">
             <!-- Section heading -->
 
             <div class="row">
