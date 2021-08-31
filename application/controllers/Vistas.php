@@ -142,11 +142,34 @@ class Vistas extends CI_Controller
    
         $this->load->view('templates/footerers');
     }
-    public function Login()
-    {
+    // <<<<<<< HEAD
+//     public function Login()
+//     {
      
-        $this->load->view('INTRANETfolder/Login');
+//         $this->load->view('INTRANETfolder/Login');
 
      
-    }
+// =======
+
+//     public function SarsCov2()
+//     {
+//         $this->load->view('templates/Navbar');
+   
+   
+//         $this->load->view('NOTICIASfolder/SarsCov2');
+   
+   
+//         $this->load->view('templates/footerers');
+//     }
+//     public function Recientes()
+//     {
+//         $this->load->view('templates/Navbar');
+   
+   
+//         $this->load->view('NOTICIASfolder/Recientes');
+   
+   
+//         $this->load->view('templates/footerers');
+// >>>>>>> main
+//     }
 }
