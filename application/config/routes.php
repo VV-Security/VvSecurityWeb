@@ -164,7 +164,23 @@ $route['Login'] = 'Vistas/Login';
    
     #------------> Requerimiento CRUD <--------------#
     #------------> Noticias CRUD <--------------#
+        
+    $route['NoticiasT'] = 'Noticias/VerNoticias';
+    $route['insertNoticias'] = 'Noticias/CrearNoticias';
+    $route['updateNoticias'] = 'Noticias/ActualizarNoticias';
+    $route['deleteNoticias'] = 'Noticias/EliminarNoticias';
+    $route['BuscarNoticias'] = 'Noticias/BuscarNoticias';
+    $route['BuscarNoticias_Titulo'] = 'Noticias/BuscarNoticias_Titulo';
+    $route['Recientes'] = 'Noticias/Recientes';
+
     #------------> Categorias CRUD <--------------#
+        
+    $route['Categoria'] = 'Noticias/VerCategoria';
+    $route['insertCategoria'] = 'Noticias/CrearCategoria';
+    $route['updateCategoria'] = 'Noticias/ActualizarCategoria';
+    $route['deleteCategoria'] = 'Noticias/EliminarCategoria';
+    $route['BuscarCategorias'] = 'Noticias/BuscarCategoria';
+
     
     #------------> Matriz_Requerimientos CRUD <--------------#
     #------------> Estados CRUD <--------------#
