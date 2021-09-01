@@ -92,22 +92,22 @@
                 </h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 200px;">
                 <p>
-                    <i class="fa fa-home mr-3"></i> Formulario de Contacto
+                 <a href="http://localhost/VvSecurityWeb/index.php/Contactar"> <i class="fa fa-home mr-3"></i> Formulario de Contacto</a>  
                 </p>
                 <p>
-                    <i class="fa fa-phone mr-3"></i>+56 2 27261164
+                   <a  href="tel:+56227261164"> <i class="fa fa-phone mr-3"></i>+56 2 27261164</a>
                 </p>
                 <p>
-                    <i class="fa fa-phone mr-3"></i>+56 2 27261168
+                   <a  href="tel:+56227261168"> <i class="fa fa-phone mr-3"></i>+56 2 27261168</a>
                 </p>
                 <p>
-                    <i class="fa fa-envelope mr-3"></i>tecnologia@vvsecurity.cl
+                    <a href="mailto:tecnologia@vvsecurity.cl"><i class="fa fa-envelope mr-3"></i>tecnologia@vvsecurity.cl</a>
                 </p>
                 <p>
-                    <i class="fa fa-inbox mr-3"></i>Trabaja con Nosotros
+                   <a href="http://localhost/VvSecurityWeb/index.php/ggss"><i class="fa fa-inbox mr-3"></i>Trabaja con Nosotros</a> 
                 </p>
                 <p>
-                    <i class="fa fa-external-link-alt mr-3"></i>ACCESOS DIRECTOS
+                    <a href="http://localhost/VvSecurityWeb/index.php/login"><i class="fa fa-external-link-alt mr-3"></i>ACCESOS DIRECTOS</a>
                 </p>
 
             </div>

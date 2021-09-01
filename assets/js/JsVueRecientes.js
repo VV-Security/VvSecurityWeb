@@ -22,5 +22,9 @@ new Vue({
 			console.log(error);
 		});
 	}
-	}
+	}, computed: {
+		Borrar() {
+		  return this.Recientes.filter((r, index) => index != 0);
+		},
+	  }
 });

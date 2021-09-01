@@ -56,3 +56,30 @@
         </div>
     </div>
 </div>
+
+<div class="container-fluid">
+    <div class="row text-center">
+                                  <div class="col white-text">
+                    <a href="tel:+56227261164"  style="background-color:#3c40c6" class="btn-floating darken-4 waves-effect waves-light">
+                      <i class="fas fa-phone-alt"></i>
+                    </a>
+                    <p>+56 2 27261164</p>
+                   
+                  </div>
+                  <div class="col white-text">
+                    <a href="tel:+56227261168" class="btn-floating blue darken-4 waves-effect waves-light">
+                      <i class="fas fa-phone-alt"></i>
+                    </a>
+                    <p>+56 2 27261168</p>
+                   
+                  </div>
+                                  <div class="col white-text">
+                    <a href="mailto:tecnologia@vvsecurity.cl" style="background-color:#3c40c6" class="btn-floating darken-4 waves-effect waves-light">
+                      <i class="fas fa-envelope"></i>
+                    </a>
+                    <p>tecnologia@vvsecurity.cl</p>
+                    
+                  </div>
+                </div>
+
+</div>

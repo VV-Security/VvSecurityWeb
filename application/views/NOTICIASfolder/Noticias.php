@@ -140,11 +140,7 @@ h6 {
 <br>
 <br>
 <br>
-
-
 <div class="container">
-
-
     <div id="NavCat" class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
             <a v-for="c in categorias" class="p-2 text-white"
@@ -152,46 +148,43 @@ h6 {
         </nav>
     </div>
 
-
     <Section id="Recientes">
-        <diV v-for="(r,index) in Recientes">
-
-            <div class="row mb-2">
-
-                <div v-if="index != 1" class="jumbotron col-md-12 p-4 p-md-5 text-white rounded"
-                    :style="'background-image: url('+r.img+'); background-repeat: no-repeat; background-size: cover;'">
-                    <div class="col-md-6 px-0" style="background-color: rgb(0,0,0,0.5);">
-                        <h1 class="display-4 font-italic">{{r.Titulo}}</h1>
-                        <p class="lead my-3">{{r.Contenido}}</p>
-                        <p class="lead mb-0"><a
-                                :href="'http://localhost/VvSecurityWeb/index.php/Noticias'+'/'+r.Nombre.replaceAll(' ','_')+'/'+r.Titulo.replaceAll(' ','_')"
-                                class="text-white font-weight-bold">Continua leyendo...</a></p>
-                    </div>
+        <div class="row row-cols-auto mb-2">
+            <div class="jumbotron col-md-12 p-4 p-md-5 text-white rounded"
+                :style="'background-image: url('+Recientes[0].img+'); background-repeat: no-repeat; background-size: cover;'">
+                <div class="col-md-6 px-0" style="background-color: rgb(0,0,0,0.5);">
+                    <h1 class="display-4 font-italic">{{Recientes[0].Titulo}}</h1>
+                    <p class="lead my-3">{{Recientes[0].Contenido}}</p>
+                    <p class="lead mb-0"><a
+                            :href="'http://localhost/VvSecurityWeb/index.php/Noticias'+'/'+Recientes[0].Nombre.replaceAll(' ','_')+'/'+Recientes[0].Titulo.replaceAll(' ','_')"
+                            class="text-white font-weight-bold">Continua leyendo...</a></p>
                 </div>
-                <div v-else class="col-md-6">
-                    <a
-                        :href="'http://localhost/VvSecurityWeb/index.php/Noticias'+'/'+r.Nombre.replaceAll(' ','_')+'/'+r.Titulo.replaceAll(' ','_')">
-                        <div class="card mb-3 wow bounceInLeft"
-                            style="max-width: 540px; visibility: visible; animation-name: bounceInLeft;">
-                            <div class="row g-0">
-                                <div class="col-md-5 img-card" :style="'background-image: url('+ r.img +')'">
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body">
-                                        <strong class="d-inline-block mb-2 text-primary">{{r.Nombre}}</strong>
-                                        <h5 class="card-title">{{r.Titulo}}
-                                        </h5>
-                                        <p class="card-text">{{r.Contenido}}</p>
-                                        <p class="card-text"><small class="text-muted">{{r.Fecha_registro}}</small></p>
-                                    </div>
+            </div>
+
+            <diV v-for="(r,index) in Borrar" class="col-md-6">
+                <a
+                    :href="'http://localhost/VvSecurityWeb/index.php/Noticias'+'/'+r.Nombre.replaceAll(' ','_')+'/'+r.Titulo.replaceAll(' ','_')">
+                    <div class="card mb-3 wow bounceInLeft"
+                        style="max-width: 540px; visibility: visible; animation-name: bounceInLeft;">
+                        <div class="row g-0">
+                            <div class="col-md-5 img-card" :style="'background-image: url('+ r.img +')'">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <strong class="d-inline-block mb-2 text-primary">{{r.Nombre}}</strong>
+                                    <h5 class="card-title">{{r.Titulo}}
+                                    </h5>
+                                    <p class="card-text">{{r.Contenido}}</p>
+                                    <p class="card-text"><small class="text-muted">{{r.Fecha_registro}}</small></p>
                                 </div>
                             </div>
                         </div>
-                    </a>
-                </div>
+                </a>
             </div>
         </div>
-    </Section>
+</div>
+</Section>
+
 </div>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/JsVueNoticias.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/JsVueRecientes.js"></script>
