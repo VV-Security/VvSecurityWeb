@@ -41,17 +41,15 @@ $route['ViewUser'] = 'Usuario/ViewUsuario';
 #|#####################################################################################################|
 #|#####################################################################################################|
 
-################--->My Controllers <---############
+#######################------> My Controllers <--------###################
+
     #------------> Servicios_Basicos CRUD <--------------#
 
     $route['SB'] = 'Servicios_Basicos/VerServiciosB';
     $route['insertSB'] = 'Servicios_Basicos/CrearServiciosB';
     $route['updateSB'] = 'Servicios_Basicos/ActualizarServiciosB';
     $route['deleteSB'] = 'Servicios_Basicos/EliminarServiciosB';
-
-      
-    // -----------------------------------------------------------------------
-    
+s    
     #------------> Matriz_Servicio CRUD <--------------#
     
     $route['MS'] = 'Welcome/VerMatrizServicio';
