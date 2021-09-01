@@ -125,7 +125,7 @@ $route['Login'] = 'Vistas/Login';
     
 
     #------------> Usuarios CRUD <--------------#
-        
+    $route['ViewUser'] = 'Usuario/ViewUsuario';
     $route['User'] = 'Usuario/VerUsuario';
     $route['insertUser'] = 'Usuario/CrearUsuario';
     $route['updateUser'] = 'Usuario/ActualizarUsuario';
