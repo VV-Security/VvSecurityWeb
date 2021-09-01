@@ -15,6 +15,7 @@ $route['Servicios'] = 'Vistas/Servicios';
 $route['Noticias'] = 'Noticias/Navegar';
 $route['Noticias/(:any)'] = 'Noticias/Navegar';
 $route['Noticias/(:any)/(:any)'] = 'Noticias/Navegar';
+
 #------------> SoftGuard Vistas <--------------#
 $route['SmartPanic'] = 'Vistas/SmartPanic';
 $route['Monitoreo'] = 'Vistas/Monitoreo';
@@ -31,7 +32,7 @@ $route['Requerimientos'] = 'Vistas/Requerimientos';
 $route['Capacitaciones'] = 'Vistas/Capacitaciones';
 
 
-#------------> Contacto Vistas <--------------#
+#------------> Intranet Vistas <--------------#
 $route['Login'] = 'Vistas/Login';
 
 

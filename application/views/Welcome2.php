@@ -1,57 +1,57 @@
 <style>
+header {
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* Media Query for devices withi coarse pointers and no hover functionality */
+
+/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+@media (pointer: coarse) and (hover: none) {
     header {
-        position: relative;
-        background-color: black;
-        height: 100vh;
-        min-height: 25rem;
-        width: 100%;
-        overflow: hidden;
+        background: url('<?php echo base_url() ?>assets/img/Video_Portada.jpg') black no-repeat center center scroll;
     }
 
     header video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: 0;
-        -ms-transform: translateX(-50%) translateY(-50%);
-        -moz-transform: translateX(-50%) translateY(-50%);
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
+        display: none;
     }
-
-    header .container {
-        position: relative;
-        z-index: 2;
-    }
-
-    header .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: black;
-        opacity: 0.5;
-        z-index: 1;
-    }
-
-    /* Media Query for devices withi coarse pointers and no hover functionality */
-
-    /* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
-
-    @media (pointer: coarse) and (hover: none) {
-        header {
-            background: url('<?php echo base_url() ?>assets/img/Video_Portada.jpg') black no-repeat center center scroll;
-        }
-
-        header video {
-            display: none;
-        }
-    }
+}
 </style>
 <header>
 
@@ -80,14 +80,18 @@
 <main>
     <div class="container-fluid">
         <section class="text-center my-5 wow fadeIn">
-            <h2 class="h1-responsive font-weight-bold my-5 white-text">Protege tus dependencias con nuestros equipos de seguridad</h2>
+            <h2 class="h1-responsive font-weight-bold my-5 white-text">Protege tus dependencias con nuestros equipos de
+                seguridad</h2>
             <!-- Section description -->
-            <p class="lead grey-text w-responsive mx-auto">Tenemos una amplia variedad de equipos de seguridad que se adaptan a todo lo que necesites proteger.</p>
-            <p class="lead grey-text w-responsive mx-auto mb-5">¡Desde cámaras de seguridad hasta nuestra nueva app Smartpanics para que estés protegido donde quiera que vallas!</p>
+            <p class="lead grey-text w-responsive mx-auto">Tenemos una amplia variedad de equipos de seguridad que se
+                adaptan a todo lo que necesites proteger.</p>
+            <p class="lead grey-text w-responsive mx-auto mb-5">¡Desde cámaras de seguridad hasta nuestra nueva app
+                Smartpanics para que estés protegido donde quiera que vallas!</p>
             <div class="conteiner">
                 <div class="row ">
                     <div class="col-9 mx-auto ">
-                        <img class="img-fluid" src="<?php echo base_url() ?>assets/img/todo.png" alt="Fotos de servicios de seguridad">
+                        <img class="img-fluid" src="<?php echo base_url() ?>assets/img/todo.png"
+                            alt="Fotos de servicios de seguridad">
                     </div>
                 </div>
             </div>
@@ -175,13 +179,17 @@
     </div>
     <div class="container-fluid">
         <section class="text-center my-5 wow fadeIn">
-            <h2 class="h1-responsive font-weight-bold my-5 white-text">Siéntete seguro en todo momento con nuestra app Smartpanics </h2>
+            <h2 class="h1-responsive font-weight-bold my-5 white-text">Siéntete seguro en todo momento con nuestra app
+                Smartpanics </h2>
             <!-- Section description -->
-            <p class="lead grey-text w-responsive mx-auto mb-5">SmartPanics es una aplicación que te permite reportar incidencias a las autoridades de manera fácil y rápida con múltiples funciones que te protegerán a ti y tus dependencias.</p>
+            <p class="lead grey-text w-responsive mx-auto mb-5">SmartPanics es una aplicación que te permite reportar
+                incidencias a las autoridades de manera fácil y rápida con múltiples funciones que te protegerán a ti y
+                tus dependencias.</p>
             <div class="conteiner">
                 <div class="row ">
                     <div class="col-9 mx-auto">
-                        <img class="img-fluid" src="<?php echo base_url() ?>assets/img/NuevoSmartPanics.png" alt="Fotos de servicios de seguridad">
+                        <img class="img-fluid" src="<?php echo base_url() ?>assets/img/NuevoSmartPanics.png"
+                            alt="Fotos de servicios de seguridad">
                     </div>
                 </div>
             </div>
@@ -196,13 +204,16 @@
                         Nunca estas solo con Smartpanics
                     </h3>
                     <p class="lead grey-text w-responsive mx-auto mb-5">
-                        En caso de que te encuentres en una situación de emergencia, pulsa el botón SOS de SmartPanics y te enviaremos ayudamos de inmediato desde nuestra Central de monitoreo.
+                        En caso de que te encuentres en una situación de emergencia, pulsa el botón SOS de SmartPanics y
+                        te enviaremos ayudamos de inmediato desde nuestra Central de monitoreo.
                     </p>
                     <p class="lead grey-text w-responsive mx-auto mb-5">
-                        Si no te sientes en peligro en el lugar donde te encuentras con el botón estoy aquí informa de tu ubicación a nuestra central y en los grupos en los que te encuentres en SmartPanics
+                        Si no te sientes en peligro en el lugar donde te encuentras con el botón estoy aquí informa de
+                        tu ubicación a nuestra central y en los grupos en los que te encuentres en SmartPanics
                     </p>
                 </div>
-                <div class="col-6 rounded-left img-card" style="height: 700px; background-image: url('<?php echo base_url() ?>assets/img/tab1.jpg')">
+                <div class="col-6 rounded-left img-card"
+                    style="height: 700px; background-image: url('<?php echo base_url() ?>assets/img/tab1.jpg')">
                 </div>
             </div>
 
@@ -210,14 +221,16 @@
 
         <section class="text-center wow fadeIn">
             <div class="row">
-                <div class="col-6 rounded-left img-card" style="height: 700px; background-image: url('<?php echo base_url() ?>assets/img/incendio.jpg')">
+                <div class="col-6 rounded-left img-card"
+                    style="height: 700px; background-image: url('<?php echo base_url() ?>assets/img/incendio.jpg')">
                 </div>
                 <div class="col-6">
                     <h3 class="h3-responsive font-weight-bold my-5 white-text">
-                    Botón de incendio
+                        Botón de incendio
                     </h3>
                     <p class="lead grey-text w-responsive mx-auto mb-5">
-                    En caso de fuego con el botón de incendio informa a nuestra central en cual responderemos rápidamente llamando a bomberos y enviando personal a asistirte de manera inmediata.  
+                        En caso de fuego con el botón de incendio informa a nuestra central en cual responderemos
+                        rápidamente llamando a bomberos y enviando personal a asistirte de manera inmediata.
                     </p>
                 </div>
 
@@ -228,13 +241,15 @@
             <div class="row">
                 <div class="col-6">
                     <h3 class="h3-responsive font-weight-bold my-5 white-text">
-                       Asistencia
+                        Asistencia
                     </h3>
                     <p class="lead grey-text w-responsive mx-auto mb-5">
-                    En caso de que requieras asistencia médica con el botón de asistencia enviaremos tanto a servicios de salud como personal nuestro que te atenderán lo antes posible.
+                        En caso de que requieras asistencia médica con el botón de asistencia enviaremos tanto a
+                        servicios de salud como personal nuestro que te atenderán lo antes posible.
                     </p>
                 </div>
-                <div class="col-6 rounded-left img-card" style="height: 700px; background-image: url('<?php echo base_url() ?>assets/img/ataque.jpg')">
+                <div class="col-6 rounded-left img-card"
+                    style="height: 700px; background-image: url('<?php echo base_url() ?>assets/img/ataque.jpg')">
                 </div>
             </div>
         </section>
@@ -261,7 +276,8 @@
                 <div class="col-md-6">
                     <div class="card mb-3 wow bounceInLeft" style="max-width: 540px;">
                         <div class="row g-0">
-                            <div class="col-md-5 img-card" style="background-image: url('<?php echo base_url() ?>assets/img/iso.jpg')">
+                            <div class="col-md-5 img-card"
+                                style="background-image: url('<?php echo base_url() ?>assets/img/iso.jpg')">
                             </div>
                             <div class="col-md-7">
                                 <div class="card-body">
@@ -282,7 +298,8 @@
 
                     <div class="card mb-3 wow bounceInRight" style="max-width: 540px;">
                         <div class="row g-0">
-                            <div class="col-md-5 img-card" style="background-image: url('<?php echo base_url() ?>assets/img/guardias.jpg')">
+                            <div class="col-md-5 img-card"
+                                style="background-image: url('<?php echo base_url() ?>assets/img/guardias.jpg')">
 
                             </div>
                             <div class="col-md-7">
