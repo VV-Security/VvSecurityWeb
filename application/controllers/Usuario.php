@@ -69,4 +69,14 @@ class Usuario extends CI_Controller
             echo json_encode(array("msg"=> "Usuario no Eliminado"));
         }
     }
+
+
+    public function ViewUsuario(){
+        $this->load->view('templates/INTRANETNavbar');
+
+        $this->load->view('INTRANETfolder/Usuarios');
+
+        $this->load->view('templates/INTRANETFooter');
+
+    }
 }

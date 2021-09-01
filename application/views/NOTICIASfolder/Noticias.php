@@ -135,6 +135,8 @@ h6 {
         font-size: 3.5rem;
     }
 }
+
+>>>>>>>jose
 </style>
 <br>
 <br>
@@ -143,8 +145,12 @@ h6 {
 <div class="container">
     <div id="NavCat" class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            <a v-for="c in categorias" class="p-2 text-white"
+            <<<<<<< HEAD <a v-for="c in categorias" class="p-2 text-white"
                 :href="'http://localhost/VvSecurityWeb/index.php/Noticias/' + c.Nombre">{{c.Nombre}}</a>
+                =======
+                <a v-for="c in categorias" class="p-2 text-white"
+                    :href="'http://localhost/VvSecurityWeb/index.php/Noticias/' + c.Nombre">{{c.Nombre}}</a>
+                >>>>>>> jose
         </nav>
     </div>
 
@@ -184,7 +190,6 @@ h6 {
         </div>
 </div>
 </Section>
-
 </div>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/JsVueNoticias.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/JsVueRecientes.js"></script>
