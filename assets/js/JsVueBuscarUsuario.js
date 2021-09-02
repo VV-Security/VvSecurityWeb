@@ -16,16 +16,16 @@ new Vue({
 		Usuarios: [],
 		InfoModal: []
 	},
-	created: function() {
+	created: function () {
 		// metodos que se deben inicicializan con la pagina.php
 		this.CargarUsuarios();
 		this.CargarDeptos();
 	},
-	mounted: function() {
+	mounted: function () {
 		//importaciones que debe poseer la pagina.php para uso de comboboc y chk modal ...
 	},
 	methods: {
-		CargarDeptos: function() {
+		CargarDeptos: function () {
 			url = "http://localhost/VvSecurityWeb/index.php/DP";
 			axios
 				.post(url)
@@ -36,7 +36,7 @@ new Vue({
 					console.log(error);
 				});
 		},
-		CargarUsuarios: function() {
+		CargarUsuarios: function () {
 			url = "http://localhost/VvSecurityWeb/index.php/User";
 			axios
 				.post(url)
@@ -47,11 +47,11 @@ new Vue({
 					console.log(error);
 				});
 		},
-		DatosModal: function(U) {
+		DatosModal: function (U) {
 			this.InfoModal = U;
 		},
 
-		Modificar: function() {
+		Modificar: function () {
 			url = "http://localhost/VvSecurityWeb/index.php/updateUser";
 			param = new FormData();
 			param.append("id", this.InfoModal.Id);
@@ -69,14 +69,16 @@ new Vue({
 				.post(url, param)
 				.then(res => {
 					o = res.data;
-					M.toast({ html: o.value });
+					M.toast({
+						html: o.value
+					});
 				})
 				.catch(error => {
 					console.log(error);
 				});
 			this.CargarUsuarios();
 		},
-		eliminar: function(U) {
+		eliminar: function (U) {
 			bootbox.confirm({
 				message: "Esta seguro que quiere eliminar al usuario de rut: " + U.Rut,
 				buttons: {
@@ -89,7 +91,7 @@ new Vue({
 						className: "btn-danger"
 					}
 				},
-				callback: function(result) {
+				callback: function (result) {
 					if (result) {
 						url = "http://localhost/VvSecurityWeb/index.php/deleteUser";
 						param = new FormData();
@@ -98,7 +100,9 @@ new Vue({
 							.post(url, param)
 							.then(res => {
 								o = res.data;
-								M.toast({ html: o.value });
+								M.toast({
+									html: o.value
+								});
 								this.CargarUsuarios();
 							})
 							.catch(error => {
@@ -114,6 +118,16 @@ new Vue({
 new Vue({
 	el: "#Agregar",
 	data: {
+		ValidacionRut: "",
+		ValidacionPrimero:"",
+		ValidacionSegundo:"",
+		ValidacionPaterno:"",
+		ValidacionMaterno:"",
+		ValidacionMail:"",
+		ValidacionClave:"",
+		ValidacionClave2:"",
+		ValidacionTipo:"",
+		ValidacionDepartamentos:"",
 		Rut: "",
 		Primero: "",
 		Segundo: "",
@@ -126,15 +140,15 @@ new Vue({
 		Departamento_Id: -1,
 		Departamentos: []
 	},
-	created: function() {
+	created: function () {
 		// metodos que se deben inicicializan con la pagina.php
 	},
-	mounted: function() {
+	mounted: function () {
 		//importaciones que debe poseer la pagina.php para uso de comboboc y chk modal ...
 		this.CargarDeptos();
 	},
 	methods: {
-		CargarDeptos: function() {
+		CargarDeptos: function () {
 			url = "http://localhost/VvSecurityWeb/index.php/DP";
 			axios
 				.post(url)
@@ -145,7 +159,24 @@ new Vue({
 					console.log(error);
 				});
 		},
-		Insertar: function() {
+		Insertar: function () {
+			if(this.ValidacionClave=="Débil!"||this.ValidacionClave=="Media!"||this.ValidacionClave=="Fuerte!"){
+				alert("Si Clave")
+			}else{
+				alert("No Clave")
+			}
+			if(this.ValidacionDepartamentos==""&&this.Departamento_Id!=(-1)){
+				alert("DepartamentosSi")
+			}else{
+				alert("DepartamentosNo")
+			}
+
+
+
+
+			if((this.ValidacionRut=="")&&(this.ValidacionPrimero=="")&&(this.ValidacionSegundo=="")&&(this.ValidacionPaterno=="")&&(this.ValidacionMaterno=="")&&(this.ValidacionMail=="")&&
+			(this.ValidacionClave=="Débil!"||this.ValidacionClave=="Media!"||this.ValidacionClave=="Fuerte!")&&(this.ValidacionTipo==""&&this.Tipo!=(-1))&&(this.ValidacionDepartamentos==""&&this.Departamento_Id!=(-1))){
+				
 			url = "http://localhost/VvSecurityWeb/index.php/insertUser";
 			param = new FormData();
 			param.append("rut", this.Rut);
@@ -161,12 +192,141 @@ new Vue({
 				.post(url, param)
 				.then(res => {
 					o = res.data;
-					M.toast({ html: o.value });
+					M.toast({
+						html: o.value
+					});
 					this.CargarUsuarios();
 				})
 				.catch(error => {
 					console.log(error);
 				});
+
+				$('#Agregar').modal('toggle');
+
+			}else{
+				alert(this.ValidacionRut);
+				this.rut();
+				this.mail();
+				this.primero();
+				this.segundo();
+				this.paterno();
+				this.materno();
+				this.clave();
+				this.tipo();
+				this.departamento();
+			}
+
+			
+
+		},
+		validaRut: function (rutCompleto) {
+			if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rutCompleto))
+				return false;
+			var tmp = rutCompleto.split('-');
+			var digv = tmp[1];
+			var rut = tmp[0];
+			if (digv == 'K') digv = 'k';
+			return (this.dv(rut) == digv);
+		},
+		dv: function (T) {
+			var M = 0,
+				S = 1;
+			for (; T; T = Math.floor(T / 10))
+				S = (S + T % 10 * (9 - M++ % 6)) % 11;
+			return S ? S - 1 : 'k';
+		},
+
+		validarMail: function (Mail) {
+			emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+			//Se muestra un texto a modo de ejemplo, luego va a ser un icono
+			if (emailRegex.test(Mail)) {
+				return true;	
+			} else {
+				return false;
+			}
+		},
+
+		SeguridadClave: function(clave){
+				strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+				mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+				enoughRegex = new RegExp("(?=.{6,}).*", "g");
+				if (false == enoughRegex.test(clave)) {
+					this.ValidacionClave = "Más caracteres";
+				} else if (strongRegex.test(clave)) {
+					this.ValidacionClave = "Fuerte!";
+				} else if (mediumRegex.test(clave)) {
+					this.ValidacionClave = "Media!";
+				} else {		
+					this.ValidacionClave = "Débil!";
+				}
 		}
+		,
+		rut: function () {
+			if (this.validaRut(this.Rut)) {
+				this.ValidacionRut = "";
+			} else {
+				this.ValidacionRut = "Rut inválido";
+			}
+
+		},
+		mail:function(){
+			if (this.validarMail(this.Email)) {
+				this.ValidacionMail = "";
+			} else {
+				this.ValidacionMail = "Mail inválido";
+			}
+		},
+		primero: function(){
+			if(this.Primero==""){
+				this.ValidacionPrimero = "Ingrese un Nombre porfavor";
+			}else{
+				this.ValidacionPrimero = "";
+			}
+		},
+		segundo: function(){
+			if(this.Segundo==""){
+				this.ValidacionSegundo = "Ingrese un Nombre porfavor";
+			}else{
+				this.ValidacionSegundo = "";
+			}
+		},
+		paterno: function(){
+			if(this.Paterno==""){
+				this.ValidacionPaterno = "Ingrese un Apellido porfavor";
+			}else{
+				this.ValidacionPaterno = "";
+			}
+		},
+		materno: function(){
+			if(this.Materno==""){
+				this.ValidacionMaterno = "Ingrese un Apellido porfavor";
+			}else{
+				this.ValidacionMaterno = "";
+			}
+		},
+		clave: function(){
+			this.SeguridadClave(this.Clave);
+		},
+		clave2: function(){
+			if(this.Clave==this.Clave2){
+				this.ValidacionClave2 = "";
+			}else{
+				this.ValidacionClave2 = "Las Contraseñas no coniciden!";
+			}
+		},
+		tipo: function(){
+		if(this.Tipo==(-1)){
+		this.ValidacionTipo="Seleciona un Perfil!";
+		}else{
+		this.ValidacionTipo="";
+		}
+		},
+		departamento: function(){
+			if(this.Departamento_Id==(-1)){
+			this.ValidacionDepartamentos="Seleciona un Departamento!";
+			}else{
+			this.ValidacionDepartamentos="";
+			}
+			}
 	}
 });

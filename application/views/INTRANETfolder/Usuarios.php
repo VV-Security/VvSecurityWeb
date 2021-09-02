@@ -25,41 +25,49 @@
                         <form class="needs-validation">
                             <div class="mb-3">
                                 <label class="form-label">Rut</label>
-                                <input v-model="Rut" type="text" class="form-control">
+                                <input @keyup="rut()" v-model="Rut" type="text" class="form-control">
+                                <div>{{ValidacionRut}}</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Primer Nombre</label>
-                                <input v-model="Primero" type="text" class="form-control">
+                                <input @keyup="primero()" v-model="Primero" type="text" class="form-control">
+                                <div>{{ValidacionPrimero}}</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Segundo Nombre</label>
-                                <input v-model="Segundo" type="text" class="form-control">
+                                <input @keyup="segundo()" v-model="Segundo" type="text" class="form-control">
+                                <div>{{ValidacionSegundo}}</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Apellido Paterno</label>
-                                <input v-model="Paterno" type="text" class="form-control">
+                                <input @keyup="paterno()" v-model="Paterno" type="text" class="form-control">
+                                <div>{{ValidacionPaterno}}</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Apellido Materno</label>
-                                <input v-model="Materno" type="text" class="form-control">
+                                <input @keyup="materno()" v-model="Materno" type="text" class="form-control">
+                                <div>{{ValidacionMaterno}}</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
-                                <input v-model="Email" type="email" class="form-control">
+                                <input v-model="Email" @keyup="mail()" type="email" class="form-control">
+                                <div>{{ValidacionMail}}</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Clave</label>
-                                <input v-model="Clave" type="password" class="form-control" id="exampleInputPassword1">
+                                <input @keyup="clave()" v-model="Clave" type="password" class="form-control">
+                                <div>{{ValidacionClave}}</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Confirmar Clave</label>
-                                <input v-model="Clave2" type="password" class="form-control" id="exampleInputPassword1">
+                                <input @keyup="clave2()" v-model="Clave2" type="password" class="form-control">
+                                <div>{{ValidacionClave2}}</div>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Perfil</label>
                                 </div>
-                                <select v-model="Tipo" class="custom-select" id="inputGroupSelect01">
+                                <select @change="tipo" v-model="Tipo" class="custom-select" id="inputGroupSelect01">
                                     <option value="-1">Seleccionar Per...</option>
                                     <option value="0">Admin</option>
                                     <option value="1">Basico</option>
@@ -68,8 +76,9 @@
                                     <option value="4">Inactivo</option>
                                 </select>
                             </div>
+                            <div>{{ValidacionTipo}}</div>
                             <div class="input-group mb-3">
-                                <select v-model="Departamento_Id" class="custom-select">
+                                <select @change="departamento" v-model="Departamento_Id" class="custom-select">
                                     <option value="-1">Seleccionar Depart...</option>
                                     <option v-for="d in Departamentos" v-bind:value="d.Id">{{d.nombre}}</option>
                                 </select>
@@ -77,12 +86,12 @@
                                     <label class="input-group-text" for="inputGroupSelect02">Departamento</label>
                                 </div>
                             </div>
+                            <div>{{ValidacionDepartamentos}}</div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" @click="Insertar()" data-dismiss="modal"
-                            class="btn btn-primary">Guardar</button>
+                        <button type="button" @click="Insertar()" class="btn btn-primary">Guardar</button>
                     </div>
                     <pre>
                         {{$data}}
