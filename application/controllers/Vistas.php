@@ -101,6 +101,7 @@ class Vistas extends CI_Controller
    
         $this->load->view('templates/footerers');
     }
+
     public function Capacitaciones()
     {
         $this->load->view('templates/Navbar');
@@ -122,6 +123,7 @@ class Vistas extends CI_Controller
    
         $this->load->view('templates/footerers');
     }
+
     public function Requerimientos()
     {
         $this->load->view('templates/Navbar');
@@ -132,6 +134,7 @@ class Vistas extends CI_Controller
    
         $this->load->view('templates/footerers');
     }
+    
     public function Sucursales()
     {
         $this->load->view('templates/Navbar');
@@ -141,5 +144,17 @@ class Vistas extends CI_Controller
    
    
         $this->load->view('templates/footerers');
+    }
+
+    public function Login()
+    {
+        $this->load->view('INTRANETfolder/Login');
+    }
+
+    public function Usuarios()
+    {
+        $this->load->view('templates/INTRANETNavbar');
+        $this->load->view('INTRANETfolder/Usuarios');
+        $this->load->view('templates/INTRANETFooter');
     }
 }

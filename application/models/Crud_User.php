@@ -7,7 +7,7 @@ class Crud_User extends CI_Model
     {
         return $this->db->get("usuarios")->result();
     }
-    public function InsertUsuario($Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Departamento_Id)
+    public function InsertUsuario($Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id)
     {
         $datos = array(
             "Rut"=> $Rut,
@@ -17,10 +17,10 @@ class Crud_User extends CI_Model
             "Materno" => $Materno,
             "Clave" => $Clave,
             "Mail"=> $Mail,
-            "Estado" => 1,
+            "Estado" => $Estado,
             "Depatarmento_Id" => $Departamento_Id
         );
-        return $this->db->insert("usuario", $datos);
+        return $this->db->insert("usuarios", $datos);
     }
    
     public function UpdateUsuario($Id, $Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id)
@@ -38,11 +38,11 @@ class Crud_User extends CI_Model
             "Departamento_Id" => $Departamento_Id
         );
         $this->db->where("Id", $Id);
-        return $this->db->update("usuario", $datos);
+        return $this->db->update("usuarios", $datos);
     }
     public function DeleteUsuario($Id)
     {
         $this->db->where("Id", $Id);
-        return $this->db->delete("usuario");
+        return $this->db->delete("usuarios");
     }
 }

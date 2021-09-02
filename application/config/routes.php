@@ -34,7 +34,7 @@ $route['Capacitaciones'] = 'Vistas/Capacitaciones';
 
 #------------> Intranet Vistas <--------------#
 $route['Login'] = 'Vistas/Login';
-$route['ViewUser'] = 'Usuario/ViewUsuario';
+$route['Usuario'] = 'Vistas/Usuarios';
 
 #|#####################################################################################################|
 #|#####################################################################################################|
@@ -49,10 +49,10 @@ $route['ViewUser'] = 'Usuario/ViewUsuario';
     $route['insertSB'] = 'Servicios_Basicos/CrearServiciosB';
     $route['updateSB'] = 'Servicios_Basicos/ActualizarServiciosB';
     $route['deleteSB'] = 'Servicios_Basicos/EliminarServiciosB';
-s    
+   
     #------------> Matriz_Servicio CRUD <--------------#
     
-    $route['MS'] = 'Welcome/VerMatrizServicio';
+    $route['MS'] = 'Matriz_Servicio/VerMatrizServicio';
     $route['insertMS'] = 'Matriz_Servicio/CrearMatrizServicio';
     $route['updateMS'] = 'Matriz_Servicio/ActualizarMatrizServicio';
     $route['deleteMS'] = 'Matriz_Servicio/EliminarMatrizServicio';

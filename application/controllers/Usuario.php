@@ -28,8 +28,19 @@ class Usuario extends CI_Controller
 
         if (isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno)
         || isset($Materno) || isset($Clave) || isset($Mail) || isset($Estado) || isset($Departamento_Id)) {
-          
-        /*Nombre Crud Función->*/$this->Crud_User->InsertUsuario($Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id);
+            $Clave = SHA512($Clave);
+
+            /*Nombre Crud Función->*/$this->Crud_User->InsertUsuario(
+                $Rut,
+                $Primero,
+                $Segundo,
+                $Paterno,
+                $Materno,
+                $Clave,
+                $Mail,
+                $Estado,
+                $Departamento_Id
+            );
             
             echo json_encode(array("msg" => "Nuevo Usuario Agregado con Éxito"));
         } else {
@@ -44,8 +55,8 @@ class Usuario extends CI_Controller
         $Segundo = $this->input->post("segundo");
         $Paterno = $this->input->post("paterno");
         $Materno = $this->input->post("materno");
-        $Clave = $this->input->post("clave");
         $Mail = $this->input->post("mail");
+        $Clave = $this->input->post("clave");
         $Estado = $this->input->post("estado");
         $Departamento_Id = $this->input->post("depto_id");
 
@@ -71,12 +82,12 @@ class Usuario extends CI_Controller
     }
 
 
-    public function ViewUsuario(){
+    public function ViewUsuario()
+    {
         $this->load->view('templates/INTRANETNavbar');
 
         $this->load->view('INTRANETfolder/Usuarios');
 
         $this->load->view('templates/INTRANETFooter');
-
     }
 }
