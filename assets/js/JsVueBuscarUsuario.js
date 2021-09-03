@@ -119,15 +119,15 @@ new Vue({
 	el: "#Agregar",
 	data: {
 		ValidacionRut: "",
-		ValidacionPrimero:"",
-		ValidacionSegundo:"",
-		ValidacionPaterno:"",
-		ValidacionMaterno:"",
-		ValidacionMail:"",
-		ValidacionClave:"",
-		ValidacionClave2:"",
-		ValidacionTipo:"",
-		ValidacionDepartamentos:"",
+		ValidacionPrimero: "",
+		ValidacionSegundo: "",
+		ValidacionPaterno: "",
+		ValidacionMaterno: "",
+		ValidacionMail: "",
+		ValidacionClave: "",
+		ValidacionClave2: "",
+		ValidacionTipo: "",
+		ValidacionDepartamentos: "",
 		Rut: "",
 		Primero: "",
 		Segundo: "",
@@ -160,50 +160,49 @@ new Vue({
 				});
 		},
 		Insertar: function () {
-			if(this.ValidacionClave=="Débil!"||this.ValidacionClave=="Media!"||this.ValidacionClave=="Fuerte!"){
-				alert("Si Clave")
-			}else{
-				alert("No Clave")
-			}
-			if(this.ValidacionDepartamentos==""&&this.Departamento_Id!=(-1)){
-				alert("DepartamentosSi")
-			}else{
-				alert("DepartamentosNo")
-			}
+			if ((this.ValidacionRut == "") && (this.ValidacionPrimero == "") && (this.ValidacionSegundo == "") && (this.ValidacionPaterno == "") && (this.ValidacionMaterno == "") && (this.ValidacionMail == "") &&
+				(this.ValidacionClave == "Débil!" || this.ValidacionClave == "Media!" || this.ValidacionClave == "Fuerte!") && (this.ValidacionTipo == "" && this.Tipo != (-1)) && (this.ValidacionDepartamentos == "" && this.Departamento_Id != (-1))) {
 
 
+				if (this.Rut == "" || this.Primero == "" || this.Segundo == "" || this.Paterno == "" || this.Materno == "" || this.Email == "" || this.Clave == "" || this.Clave2 == "") {
+					this.rut();
+					this.mail();
+					this.primero();
+					this.segundo();
+					this.paterno();
+					this.materno();
+					this.clave();
+					this.tipo();
+					this.departamento();
+				} else {
 
+					url = "http://localhost/VvSecurityWeb/index.php/insertUser";
+					param = new FormData();
+					param.append("rut", this.Rut);
+					param.append("primero", this.Primero);
+					param.append("segundo", this.Segundo);
+					param.append("paterno", this.Paterno);
+					param.append("materno", this.Materno);
+					param.append("mail", this.Email);
+					param.append("clave", this.Clave);
+					param.append("estado", this.Tipo);
+					param.append("depto_id", this.Departamento_Id);
+					axios
+						.post(url, param)
+						.then(res => {
+							o = res.data;
+							M.toast({
+								html: o.value
+							});
+							this.CargarUsuarios();
+						})
+						.catch(error => {
+							console.log(error);
+						});
 
-			if((this.ValidacionRut=="")&&(this.ValidacionPrimero=="")&&(this.ValidacionSegundo=="")&&(this.ValidacionPaterno=="")&&(this.ValidacionMaterno=="")&&(this.ValidacionMail=="")&&
-			(this.ValidacionClave=="Débil!"||this.ValidacionClave=="Media!"||this.ValidacionClave=="Fuerte!")&&(this.ValidacionTipo==""&&this.Tipo!=(-1))&&(this.ValidacionDepartamentos==""&&this.Departamento_Id!=(-1))){
-				
-			url = "http://localhost/VvSecurityWeb/index.php/insertUser";
-			param = new FormData();
-			param.append("rut", this.Rut);
-			param.append("primero", this.Primero);
-			param.append("segundo", this.Segundo);
-			param.append("paterno", this.Paterno);
-			param.append("materno", this.Materno);
-			param.append("mail", this.Email);
-			param.append("clave", this.Clave);
-			param.append("estado", this.Tipo);
-			param.append("depto_id", this.Departamento_Id);
-			axios
-				.post(url, param)
-				.then(res => {
-					o = res.data;
-					M.toast({
-						html: o.value
-					});
-					this.CargarUsuarios();
-				})
-				.catch(error => {
-					console.log(error);
-				});
-
-				$('#Agregar').modal('toggle');
-
-			}else{
+					$('#Agregar').modal('toggle');
+				}
+			} else {
 				alert(this.ValidacionRut);
 				this.rut();
 				this.mail();
@@ -216,7 +215,7 @@ new Vue({
 				this.departamento();
 			}
 
-			
+
 
 		},
 		validaRut: function (rutCompleto) {
@@ -240,27 +239,26 @@ new Vue({
 			emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 			//Se muestra un texto a modo de ejemplo, luego va a ser un icono
 			if (emailRegex.test(Mail)) {
-				return true;	
+				return true;
 			} else {
 				return false;
 			}
 		},
 
-		SeguridadClave: function(clave){
-				strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-				mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-				enoughRegex = new RegExp("(?=.{6,}).*", "g");
-				if (false == enoughRegex.test(clave)) {
-					this.ValidacionClave = "Más caracteres";
-				} else if (strongRegex.test(clave)) {
-					this.ValidacionClave = "Fuerte!";
-				} else if (mediumRegex.test(clave)) {
-					this.ValidacionClave = "Media!";
-				} else {		
-					this.ValidacionClave = "Débil!";
-				}
-		}
-		,
+		SeguridadClave: function (clave) {
+			strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+			mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+			enoughRegex = new RegExp("(?=.{6,}).*", "g");
+			if (false == enoughRegex.test(clave)) {
+				this.ValidacionClave = "Más caracteres";
+			} else if (strongRegex.test(clave)) {
+				this.ValidacionClave = "Fuerte!";
+			} else if (mediumRegex.test(clave)) {
+				this.ValidacionClave = "Media!";
+			} else {
+				this.ValidacionClave = "Débil!";
+			}
+		},
 		rut: function () {
 			if (this.validaRut(this.Rut)) {
 				this.ValidacionRut = "";
@@ -269,64 +267,64 @@ new Vue({
 			}
 
 		},
-		mail:function(){
+		mail: function () {
 			if (this.validarMail(this.Email)) {
 				this.ValidacionMail = "";
 			} else {
 				this.ValidacionMail = "Mail inválido";
 			}
 		},
-		primero: function(){
-			if(this.Primero==""){
+		primero: function () {
+			if (this.Primero == "") {
 				this.ValidacionPrimero = "Ingrese un Nombre porfavor";
-			}else{
+			} else {
 				this.ValidacionPrimero = "";
 			}
 		},
-		segundo: function(){
-			if(this.Segundo==""){
+		segundo: function () {
+			if (this.Segundo == "") {
 				this.ValidacionSegundo = "Ingrese un Nombre porfavor";
-			}else{
+			} else {
 				this.ValidacionSegundo = "";
 			}
 		},
-		paterno: function(){
-			if(this.Paterno==""){
+		paterno: function () {
+			if (this.Paterno == "") {
 				this.ValidacionPaterno = "Ingrese un Apellido porfavor";
-			}else{
+			} else {
 				this.ValidacionPaterno = "";
 			}
 		},
-		materno: function(){
-			if(this.Materno==""){
+		materno: function () {
+			if (this.Materno == "") {
 				this.ValidacionMaterno = "Ingrese un Apellido porfavor";
-			}else{
+			} else {
 				this.ValidacionMaterno = "";
 			}
 		},
-		clave: function(){
+		clave: function () {
 			this.SeguridadClave(this.Clave);
 		},
-		clave2: function(){
-			if(this.Clave==this.Clave2){
+		clave2: function () {
+			if (this.Clave == this.Clave2) {
 				this.ValidacionClave2 = "";
-			}else{
+			} else {
 				this.ValidacionClave2 = "Las Contraseñas no coniciden!";
 			}
 		},
-		tipo: function(){
-		if(this.Tipo==(-1)){
-		this.ValidacionTipo="Seleciona un Perfil!";
-		}else{
-		this.ValidacionTipo="";
-		}
+		tipo: function () {
+			if (this.Tipo == (-1)) {
+				this.ValidacionTipo = "Seleciona un Perfil!";
+			} else {
+				this.ValidacionTipo = "";
+			}
 		},
-		departamento: function(){
-			if(this.Departamento_Id==(-1)){
-			this.ValidacionDepartamentos="Seleciona un Departamento!";
-			}else{
-			this.ValidacionDepartamentos="";
+		departamento: function () {
+			if (this.Departamento_Id == (-1)) {
+				this.ValidacionDepartamentos = "Seleciona un Departamento!";
+			} else {
+				this.ValidacionDepartamentos = "";
 			}
-			}
+		}
 	}
 });
