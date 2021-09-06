@@ -7,8 +7,17 @@ class Crud_User extends CI_Model
     {
         return $this->db->get("usuarios")->result();
     }
-    public function InsertUsuario($Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id)
-    {
+    public function InsertUsuario(
+        $Rut,
+        $Primero,
+        $Segundo,
+        $Paterno,
+        $Materno,
+        $Clave,
+        $Mail,
+        $Estado,
+        $Departamento_Id
+    ) {
         $datos = array(
             "Rut"=> $Rut,
             "Primero" => $Primero,
@@ -18,7 +27,7 @@ class Crud_User extends CI_Model
             "Clave" => $Clave,
             "Mail"=> $Mail,
             "Estado" => $Estado,
-            "Depatarmento_Id" => $Departamento_Id
+            "Departamento_Id" => $Departamento_Id
         );
         return $this->db->insert("usuarios", $datos);
     }
@@ -44,5 +53,15 @@ class Crud_User extends CI_Model
     {
         $this->db->where("Id", $Id);
         return $this->db->delete("usuarios");
+    }
+    public function JoinUsuarioDepto()
+    {
+        $this->db->select('U.Id as Id_User,U.Rut as Rut, U.Primero as Primero,
+         U.Segundo as Segundo, U.Paterno as Paterno, U.Materno as Materno,
+         U.Mail as Mail, U.Estado as Estado, U.Departamento_Id as Id_Departamento,
+         D.nombre as departamento');
+        $this->db->from('usuarios U');
+        $this->db->join('departamento D ', 'U.Departamento_Id = D.Id');
+        return $this->db->get()->result();
     }
 }

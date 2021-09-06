@@ -21,15 +21,14 @@ class Usuario extends CI_Controller
         $Segundo = $this->input->post("segundo");
         $Paterno = $this->input->post("paterno");
         $Materno = $this->input->post("materno");
-        $Clave = $this->input->post("clave");
         $Mail = $this->input->post("mail");
+        $Clave = $this->input->post("clave");
         $Estado = $this->input->post("estado");
         $Departamento_Id = $this->input->post("depto_id");
 
         if (isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno)
-        || isset($Materno) || isset($Clave) || isset($Mail) || isset($Estado) || isset($Departamento_Id)) {
-            $Clave = SHA512($Clave);
-
+        || isset($Materno) || isset($Clave) || isset($Mail) || isset($Estado)
+        || isset($Departamento_Id)) {
             /*Nombre Crud Función->*/$this->Crud_User->InsertUsuario(
                 $Rut,
                 $Primero,
@@ -62,8 +61,19 @@ class Usuario extends CI_Controller
 
         if (isset($Id) || isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno)
         || isset($Materno) || isset($Clave) || isset($Mail) || isset($Estado) || isset($Departamento_Id)) {
+           
+            // Tipo de usuario clasificación
+            // <option value="0">Admin</option>
+            // <option value="1">Básico</option>
+            // <option value="2">Intermedio</option>
+            // <option value="3">Avanzado</option>
+            // <option value="4">Inactivo</option>
+            if ($Estado == 0) {
+                $Clave = SHA1(MD5($Clave));
+            } else {
+                $Clave = SHA1($Clave);
+            }
             /*Nombre Crud Función->*/$this->Crud_User->UpdateUsuario($Id, $Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id);
-            
             echo json_encode(array("msg" => "Usuario Actualizado!!"));
         } else {
             echo json_encode(array("msg" => "No se pude Actualizar!!"));
@@ -80,14 +90,8 @@ class Usuario extends CI_Controller
             echo json_encode(array("msg"=> "Usuario no Eliminado"));
         }
     }
-
-
-    public function ViewUsuario()
+    public function UnirUsuarioDepto()
     {
-        $this->load->view('templates/INTRANETNavbar');
-
-        $this->load->view('INTRANETfolder/Usuarios');
-
-        $this->load->view('templates/INTRANETFooter');
+        echo json_encode($this->Crud_User->JoinUsuarioDepto());
     }
 }

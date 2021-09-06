@@ -1,4 +1,7 @@
+
+
 new Vue({
+	//jose 
 	el: "#datos",
 	data: {
 		Id: "",
@@ -35,10 +38,7 @@ new Vue({
 				.catch(error => {
 					console.log(error);
 				});
-		},
-		CargarUsuarios: function () {
-			url = "http://localhost/VvSecurityWeb/index.php/User";
-			axios
+		},	axios
 				.post(url)
 				.then(res => {
 					this.Usuarios = res.data;
@@ -99,18 +99,21 @@ new Vue({
 						axios
 							.post(url, param)
 							.then(res => {
-								o = res.data;
-								M.toast({
-									html: o.value
-								});
-								this.CargarUsuarios();
+							this.CargarUsuarios();
+								console.log(res);
+								
 							})
 							.catch(error => {
 								console.log(error);
 							});
+							
 					}
+					
 				}
+				
 			});
+			
+			
 		}
 	}
 });

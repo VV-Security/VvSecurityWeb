@@ -102,7 +102,7 @@
 
 
         <div class="col-md-12" id="datos">
-            <table id="example" class="table table-dark table-striped" style="width:100%">
+            <table id="" class="table table-dark table-striped" style="width:100%">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -120,14 +120,14 @@
                 <tbody>
 
                     <tr v-for="U in Usuarios">
-                        <td>{{U.Id}}</td>
+                        <td>{{U.Id_User}}</td>
                         <td>{{U.Rut}}</td>
                         <td>{{U.Primero}}</td>
                         <td>{{U.Segundo}}</td>
                         <td>{{U.Paterno}}</td>
                         <td>{{U.Materno}}</td>
                         <td>{{U.Mail}}</td>
-                        <td>{{U.Departamento_Id}}</td>
+                        <td>{{U.departamento}}</td>
                         <td>
                             <button @click="DatosModal(U)" data-toggle="modal" data-target="#Modificar" type="button"
                                 class="btn btn-info"><i class="fas fa-edit"></i></button>
