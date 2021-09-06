@@ -127,6 +127,7 @@ $route['Usuario'] = 'Vistas/Usuarios';
     $route['insertUser'] = 'Usuario/CrearUsuario';
     $route['updateUser'] = 'Usuario/ActualizarUsuario';
     $route['deleteUser'] = 'Usuario/EliminarUsuario';
+    $route['userJoinDepto'] = 'Usuario/UnirUsuarioDepto';
     
 
     #------------> Departamentos CRUD <--------------#

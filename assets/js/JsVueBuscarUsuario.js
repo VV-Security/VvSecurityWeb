@@ -14,7 +14,8 @@ new Vue({
 		Departamento_Id: "",
 		Departamentos: [],
 		Usuarios: [],
-		InfoModal: []
+		InfoModal: [],
+		msg: {}
 	},
 	created: function() {
 		// metodos que se deben inicicializan con la pagina.php
@@ -37,7 +38,7 @@ new Vue({
 				});
 		},
 		CargarUsuarios: function() {
-			url = "http://localhost/VvSecurityWeb/index.php/User";
+			url = "http://localhost/VvSecurityWeb/index.php/userJoinDepto";
 			axios
 				.post(url)
 				.then(res => {
@@ -68,8 +69,8 @@ new Vue({
 			axios
 				.post(url, param)
 				.then(res => {
-					o = res.data;
-					M.toast({ html: o.value });
+					this.msg = res.data;
+					bootbox.alert("¡" + this.msg.msg + "!");
 				})
 				.catch(error => {
 					console.log(error);
@@ -98,7 +99,7 @@ new Vue({
 							.post(url, param)
 							.then(res => {
 								o = res.data;
-								M.toast({ html: o.value });
+								bootbox.alert("¡" + o.value + "!");
 								this.CargarUsuarios();
 							})
 							.catch(error => {
@@ -123,15 +124,16 @@ new Vue({
 		Clave: "",
 		Clave2: "",
 		Tipo: -1,
+		msg: {},
 		Departamento_Id: -1,
 		Departamentos: []
 	},
 	created: function() {
 		// metodos que se deben inicicializan con la pagina.php
+		this.CargarDeptos();
 	},
 	mounted: function() {
 		//importaciones que debe poseer la pagina.php para uso de comboboc y chk modal ...
-		this.CargarDeptos();
 	},
 	methods: {
 		CargarDeptos: function() {
@@ -157,12 +159,12 @@ new Vue({
 			param.append("clave", this.Clave);
 			param.append("estado", this.Tipo);
 			param.append("depto_id", this.Departamento_Id);
+
 			axios
 				.post(url, param)
-				.then(res => {
-					o = res.data;
-					M.toast({ html: o.value });
-					this.CargarUsuarios();
+				.then(response => {
+					this.msg = response.data;
+					bootbox.alert("¡" + this.msg.msg + "!");
 				})
 				.catch(error => {
 					console.log(error);
