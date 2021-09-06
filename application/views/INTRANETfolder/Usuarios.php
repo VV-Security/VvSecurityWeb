@@ -100,27 +100,38 @@
             </div>
         </div>
 
+        
 
+<<<<<<< Updated upstream
         <div class="col-md-12" id="datos">
             <table id="" class="table table-dark table-striped" style="width:100%">
                 <thead>
+=======
+        <div id="datos">
+            <table id="example" class=" text-center table table-responsive table-bordered">
+                <thead class="thead-dark">
+>>>>>>> Stashed changes
                     <tr>
-                        <th>Id</th>
-                        <th>Rut</th>
-                        <th>Primer Nombre</th>
-                        <th>Segundo Nombre</th>
-                        <th>Apellido Paterno</th>
-                        <th>Apellido Materno</th>
-                        <th>Mail</th>
-                        <th>Departamento</th>
-                        <th>Modificar</th>
-                        <th>Eliminar</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Rut</th>
+                        <th scope="col">Primer Nombre</th>
+                        <th scope="col">Segundo Nombre</th>
+                        <th scope="col">Apellido Paterno</th>
+                        <th scope="col">Apellido Materno</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Modificar</th>
+                        <th scope="col">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     <tr v-for="U in Usuarios">
+<<<<<<< Updated upstream
                         <td>{{U.Id_User}}</td>
+=======
+                        <td scope="row">{{U.Id}}</td>
+>>>>>>> Stashed changes
                         <td>{{U.Rut}}</td>
                         <td>{{U.Primero}}</td>
                         <td>{{U.Segundo}}</td>
@@ -129,15 +140,12 @@
                         <td>{{U.Mail}}</td>
                         <td>{{U.departamento}}</td>
                         <td>
-                            <button @click="DatosModal(U)" data-toggle="modal" data-target="#Modificar" type="button"
-                                class="btn btn-info"><i class="fas fa-edit"></i></button>
+                            <button @click="DatosModal(U)" data-toggle="modal" data-target="#Modificar" type="button" class="btn btn-info"><i class="fas fa-edit"></i></button>
                         </td>
                         <td>
-                            <button @click="eliminar(U)" type="button" class="btn btn-danger"><i
-                                    class="fas fa-trash-alt text-white"></i></button>
+                            <button @click="eliminar(U)" type="button" class="btn btn-danger"><i class="fas fa-trash-alt text-white"></i></button>
                         </td>
                     </tr>
-
                 </tbody>
             </table>
             <pre>

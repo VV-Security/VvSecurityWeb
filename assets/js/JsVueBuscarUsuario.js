@@ -38,7 +38,15 @@ new Vue({
 				.catch(error => {
 					console.log(error);
 				});
+<<<<<<< Updated upstream
 		},	axios
+=======
+		},
+		CargarUsuarios: function () {
+			alert("AAAAAAAAAA");
+			url = "http://localhost/VvSecurityWeb/index.php/User";
+			axios
+>>>>>>> Stashed changes
 				.post(url)
 				.then(res => {
 					this.Usuarios = res.data;
@@ -99,7 +107,11 @@ new Vue({
 						axios
 							.post(url, param)
 							.then(res => {
+<<<<<<< Updated upstream
 							this.CargarUsuarios();
+=======
+							U.CargarUsuarios();
+>>>>>>> Stashed changes
 								console.log(res);
 								
 							})
