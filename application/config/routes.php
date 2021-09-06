@@ -49,7 +49,47 @@ $route['Usuario'] = 'Vistas/Usuarios';
     $route['insertSB'] = 'Servicios_Basicos/CrearServiciosB';
     $route['updateSB'] = 'Servicios_Basicos/ActualizarServiciosB';
     $route['deleteSB'] = 'Servicios_Basicos/EliminarServiciosB';
+
    
+
+
+
+  #------------> Noticias CRUD <--------------#
+$route['MantenedorNoticias'] = 'Noticias/MantenedorNoticias';
+$route['insertNoticias'] = 'Noticias/CrearNoticias';
+$route['updateNoticias'] = 'Noticias/ActualizarNoticias';
+$route['deleteNoticias'] = 'Noticias/EliminarNoticias';
+
+    #------------> Usuarios CRUD <--------------#
+    
+    $route['User'] = 'Welcome/VerUsuario';
+    $route['insertUser'] = 'Welcome/CrearUsuario';
+    $route['updateUser'] = 'Welcome/ActualizarUsuario';
+    $route['deleteUser'] = 'Welcome/EliminarUsuario';
+    
+ 
+    #------------> Departamentos CRUD <--------------#
+
+    $route['DP'] = 'Welcome/VerDepartamentos';
+    $route['insertDP'] = 'Welcome/CrearDepartamentos';
+    $route['updateDP'] = 'Welcome/ActualizarDepartamentos';
+    $route['deleteDP'] = 'Welcome/EliminarDepartamentos';
+
+    #------------------> Cargos CRUD <-----------------------#
+  
+    $route['CG'] = 'Welcome/VerCargos';
+    $route['insertCG'] = 'Welcome/CrearCargos';
+    $route['updateCG'] = 'Welcome/ActualizarCargos';
+    $route['deleteCG'] = 'Welcome/EliminarCargos';
+
+    #------------> Persona_Natural CRUD <--------------#
+
+    $route['RL'] = 'Welcome/VerRepresentante';
+    $route['insertRL'] = 'Welcome/CrearRepresentante';
+    $route['updateRL'] = 'Welcome/ActualizarRepresentante';
+    $route['deleteRL'] = 'Welcome/EliminarRepresentante';
+
+
     #------------> Matriz_Servicio CRUD <--------------#
     
     $route['MS'] = 'Matriz_Servicio/VerMatrizServicio';
