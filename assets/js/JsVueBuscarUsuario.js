@@ -1,7 +1,4 @@
-
-
 new Vue({
-	//jose 
 	el: "#datos",
 	data: {
 		Id: "",
@@ -19,16 +16,16 @@ new Vue({
 		Usuarios: [],
 		InfoModal: []
 	},
-	created: function () {
+	created: function() {
 		// metodos que se deben inicicializan con la pagina.php
 		this.CargarUsuarios();
 		this.CargarDeptos();
 	},
-	mounted: function () {
+	mounted: function() {
 		//importaciones que debe poseer la pagina.php para uso de comboboc y chk modal ...
 	},
 	methods: {
-		CargarDeptos: function () {
+		CargarDeptos: function() {
 			url = "http://localhost/VvSecurityWeb/index.php/DP";
 			axios
 				.post(url)
@@ -38,15 +35,11 @@ new Vue({
 				.catch(error => {
 					console.log(error);
 				});
-<<<<<<< Updated upstream
-		},	axios
-=======
 		},
-		CargarUsuarios: function () {
+		CargarUsuarios: function() {
 			alert("AAAAAAAAAA");
 			url = "http://localhost/VvSecurityWeb/index.php/User";
 			axios
->>>>>>> Stashed changes
 				.post(url)
 				.then(res => {
 					this.Usuarios = res.data;
@@ -55,11 +48,11 @@ new Vue({
 					console.log(error);
 				});
 		},
-		DatosModal: function (U) {
+		DatosModal: function(U) {
 			this.InfoModal = U;
 		},
 
-		Modificar: function () {
+		Modificar: function() {
 			url = "http://localhost/VvSecurityWeb/index.php/updateUser";
 			param = new FormData();
 			param.append("id", this.InfoModal.Id);
@@ -86,7 +79,7 @@ new Vue({
 				});
 			this.CargarUsuarios();
 		},
-		eliminar: function (U) {
+		eliminar: function(U) {
 			bootbox.confirm({
 				message: "Esta seguro que quiere eliminar al usuario de rut: " + U.Rut,
 				buttons: {
@@ -99,7 +92,7 @@ new Vue({
 						className: "btn-danger"
 					}
 				},
-				callback: function (result) {
+				callback: function(result) {
 					if (result) {
 						url = "http://localhost/VvSecurityWeb/index.php/deleteUser";
 						param = new FormData();
@@ -107,25 +100,15 @@ new Vue({
 						axios
 							.post(url, param)
 							.then(res => {
-<<<<<<< Updated upstream
-							this.CargarUsuarios();
-=======
-							U.CargarUsuarios();
->>>>>>> Stashed changes
+								this.CargarUsuarios();
 								console.log(res);
-								
 							})
 							.catch(error => {
 								console.log(error);
 							});
-							
 					}
-					
 				}
-				
 			});
-			
-			
 		}
 	}
 });
@@ -155,15 +138,15 @@ new Vue({
 		Departamento_Id: -1,
 		Departamentos: []
 	},
-	created: function () {
+	created: function() {
 		// metodos que se deben inicicializan con la pagina.php
 	},
-	mounted: function () {
+	mounted: function() {
 		//importaciones que debe poseer la pagina.php para uso de comboboc y chk modal ...
 		this.CargarDeptos();
 	},
 	methods: {
-		CargarDeptos: function () {
+		CargarDeptos: function() {
 			url = "http://localhost/VvSecurityWeb/index.php/DP";
 			axios
 				.post(url)
@@ -174,12 +157,32 @@ new Vue({
 					console.log(error);
 				});
 		},
-		Insertar: function () {
-			if ((this.ValidacionRut == "") && (this.ValidacionPrimero == "") && (this.ValidacionSegundo == "") && (this.ValidacionPaterno == "") && (this.ValidacionMaterno == "") && (this.ValidacionMail == "") &&
-				(this.ValidacionClave == "Débil!" || this.ValidacionClave == "Media!" || this.ValidacionClave == "Fuerte!") && (this.ValidacionTipo == "" && this.Tipo != (-1)) && (this.ValidacionDepartamentos == "" && this.Departamento_Id != (-1))) {
-
-
-				if (this.Rut == "" || this.Primero == "" || this.Segundo == "" || this.Paterno == "" || this.Materno == "" || this.Email == "" || this.Clave == "" || this.Clave2 == "") {
+		Insertar: function() {
+			if (
+				this.ValidacionRut == "" &&
+				this.ValidacionPrimero == "" &&
+				this.ValidacionSegundo == "" &&
+				this.ValidacionPaterno == "" &&
+				this.ValidacionMaterno == "" &&
+				this.ValidacionMail == "" &&
+				(this.ValidacionClave == "Débil!" ||
+					this.ValidacionClave == "Media!" ||
+					this.ValidacionClave == "Fuerte!") &&
+				this.ValidacionTipo == "" &&
+				this.Tipo != -1 &&
+				this.ValidacionDepartamentos == "" &&
+				this.Departamento_Id != -1
+			) {
+				if (
+					this.Rut == "" ||
+					this.Primero == "" ||
+					this.Segundo == "" ||
+					this.Paterno == "" ||
+					this.Materno == "" ||
+					this.Email == "" ||
+					this.Clave == "" ||
+					this.Clave2 == ""
+				) {
 					this.rut();
 					this.mail();
 					this.primero();
@@ -190,7 +193,6 @@ new Vue({
 					this.tipo();
 					this.departamento();
 				} else {
-
 					url = "http://localhost/VvSecurityWeb/index.php/insertUser";
 					param = new FormData();
 					param.append("rut", this.Rut);
@@ -215,7 +217,7 @@ new Vue({
 							console.log(error);
 						});
 
-					$('#Agregar').modal('toggle');
+					$("#Agregar").modal("toggle");
 				}
 			} else {
 				alert(this.ValidacionRut);
@@ -229,28 +231,24 @@ new Vue({
 				this.tipo();
 				this.departamento();
 			}
-
-
-
 		},
-		validaRut: function (rutCompleto) {
-			if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rutCompleto))
-				return false;
-			var tmp = rutCompleto.split('-');
+		validaRut: function(rutCompleto) {
+			if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rutCompleto)) return false;
+			var tmp = rutCompleto.split("-");
 			var digv = tmp[1];
 			var rut = tmp[0];
-			if (digv == 'K') digv = 'k';
-			return (this.dv(rut) == digv);
+			if (digv == "K") digv = "k";
+			return this.dv(rut) == digv;
 		},
-		dv: function (T) {
+		dv: function(T) {
 			var M = 0,
 				S = 1;
 			for (; T; T = Math.floor(T / 10))
-				S = (S + T % 10 * (9 - M++ % 6)) % 11;
-			return S ? S - 1 : 'k';
+				S = (S + (T % 10) * (9 - (M++ % 6))) % 11;
+			return S ? S - 1 : "k";
 		},
 
-		validarMail: function (Mail) {
+		validarMail: function(Mail) {
 			emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 			//Se muestra un texto a modo de ejemplo, luego va a ser un icono
 			if (emailRegex.test(Mail)) {
@@ -260,9 +258,15 @@ new Vue({
 			}
 		},
 
-		SeguridadClave: function (clave) {
-			strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-			mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+		SeguridadClave: function(clave) {
+			strongRegex = new RegExp(
+				"^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$",
+				"g"
+			);
+			mediumRegex = new RegExp(
+				"^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$",
+				"g"
+			);
 			enoughRegex = new RegExp("(?=.{6,}).*", "g");
 			if (false == enoughRegex.test(clave)) {
 				this.ValidacionClave = "Más caracteres";
@@ -274,68 +278,67 @@ new Vue({
 				this.ValidacionClave = "Débil!";
 			}
 		},
-		rut: function () {
+		rut: function() {
 			if (this.validaRut(this.Rut)) {
 				this.ValidacionRut = "";
 			} else {
 				this.ValidacionRut = "Rut inválido";
 			}
-
 		},
-		mail: function () {
+		mail: function() {
 			if (this.validarMail(this.Email)) {
 				this.ValidacionMail = "";
 			} else {
 				this.ValidacionMail = "Mail inválido";
 			}
 		},
-		primero: function () {
+		primero: function() {
 			if (this.Primero == "") {
 				this.ValidacionPrimero = "Ingrese un Nombre porfavor";
 			} else {
 				this.ValidacionPrimero = "";
 			}
 		},
-		segundo: function () {
+		segundo: function() {
 			if (this.Segundo == "") {
 				this.ValidacionSegundo = "Ingrese un Nombre porfavor";
 			} else {
 				this.ValidacionSegundo = "";
 			}
 		},
-		paterno: function () {
+		paterno: function() {
 			if (this.Paterno == "") {
 				this.ValidacionPaterno = "Ingrese un Apellido porfavor";
 			} else {
 				this.ValidacionPaterno = "";
 			}
 		},
-		materno: function () {
+		materno: function() {
 			if (this.Materno == "") {
 				this.ValidacionMaterno = "Ingrese un Apellido porfavor";
 			} else {
 				this.ValidacionMaterno = "";
 			}
 		},
-		clave: function () {
+		clave: function() {
 			this.SeguridadClave(this.Clave);
 		},
-		clave2: function () {
+		clave2: function() {
 			if (this.Clave == this.Clave2) {
 				this.ValidacionClave2 = "";
 			} else {
 				this.ValidacionClave2 = "Las Contraseñas no coniciden!";
 			}
 		},
-		tipo: function () {
-			if (this.Tipo == (-1)) {
+		tipo: function() {
+			if (this.Tipo == -1) {
 				this.ValidacionTipo = "Seleciona un Perfil!";
 			} else {
 				this.ValidacionTipo = "";
 			}
 		},
-		departamento: function () {
-			if (this.Departamento_Id == (-1)) {
+		departamento: function() {
+			if (this.Departamento_Id == -1) {
 				this.ValidacionDepartamentos = "Seleciona un Departamento!";
 			} else {
 				this.ValidacionDepartamentos = "";

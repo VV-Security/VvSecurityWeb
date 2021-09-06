@@ -3,12 +3,11 @@
         <div class="col-6">
             <h2 class="h2 my-3">Usuarios</h2>
         </div>
-        <div class="col-6 text-right">
-            <button type="button" class="btn btn-success " data-toggle="modal" data-target="#Agregar">
-                <i class="fas fa-user-plus"></i>
+        <div class="col-6">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Agregar">
+                <i class="fas fa-plus"></i>
             </button>
         </div>
-
 
         <!-- Modal Agregar-->
         <div class="modal fade" id="Agregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -22,7 +21,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="needs-validation">
+                        <form>
                             <div class="mb-3">
                                 <label class="form-label">Rut</label>
                                 <input @keyup="rut()" v-model="Rut" type="text" class="form-control">
@@ -47,6 +46,14 @@
                                 <label class="form-label">Apellido Materno</label>
                                 <input @keyup="materno()" v-model="Materno" type="text" class="form-control">
                                 <div>{{ValidacionMaterno}}</div>
+
+                                <label class="form-label">Primer Apellido</label>
+                                <input v-model="Paterno" type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Segundo Apellido</label>
+                                <input v-model="Materno" type="text" class="form-control">
+
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
@@ -85,6 +92,10 @@
                                 <div class="input-group-append">
                                     <label class="input-group-text" for="inputGroupSelect02">Departamento</label>
                                 </div>
+
+                                <label class="form-label">Departamento</label>
+                                <input v-model="Departamento_Id" type="number" class="form-control">
+
                             </div>
                             <div>{{ValidacionDepartamentos}}</div>
                         </form>
@@ -93,64 +104,58 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                         <button type="button" @click="Insertar()" class="btn btn-primary">Guardar</button>
                     </div>
-                    <pre>
-                        {{$data}}
-                    </pre>
                 </div>
             </div>
         </div>
-
-        
-
-<<<<<<< Updated upstream
         <div class="col-md-12" id="datos">
-            <table id="" class="table table-dark table-striped" style="width:100%">
+            <table id="example" class="table table-dark table-striped" style="width:100%">
                 <thead>
-=======
-        <div id="datos">
-            <table id="example" class=" text-center table table-responsive table-bordered">
-                <thead class="thead-dark">
->>>>>>> Stashed changes
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Rut</th>
-                        <th scope="col">Primer Nombre</th>
-                        <th scope="col">Segundo Nombre</th>
-                        <th scope="col">Apellido Paterno</th>
-                        <th scope="col">Apellido Materno</th>
-                        <th scope="col">Mail</th>
-                        <th scope="col">Departamento</th>
-                        <th scope="col">Modificar</th>
-                        <th scope="col">Eliminar</th>
+                        <th>Id</th>
+                        <th>Rut</th>
+                        <th>Primer Nombre</th>
+                        <th>Segundo Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Mail</th>
+                        <th>Departamento</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     <tr v-for="U in Usuarios">
-<<<<<<< Updated upstream
-                        <td>{{U.Id_User}}</td>
-=======
-                        <td scope="row">{{U.Id}}</td>
->>>>>>> Stashed changes
+                        <td>{{U.Id}}</td>
                         <td>{{U.Rut}}</td>
                         <td>{{U.Primero}}</td>
                         <td>{{U.Segundo}}</td>
                         <td>{{U.Paterno}}</td>
                         <td>{{U.Materno}}</td>
                         <td>{{U.Mail}}</td>
-                        <td>{{U.departamento}}</td>
-                        <td>
-                            <button @click="DatosModal(U)" data-toggle="modal" data-target="#Modificar" type="button" class="btn btn-info"><i class="fas fa-edit"></i></button>
-                        </td>
-                        <td>
-                            <button @click="eliminar(U)" type="button" class="btn btn-danger"><i class="fas fa-trash-alt text-white"></i></button>
-                        </td>
+                        <td>{{U.Departamento_Id}}</td>
+                        <td><button @click="Modificar(U)" data-toggle="modal" data-target="#Modificar" type="button"
+                                class="btn btn-info"><i class="fas fa-edit"></i></button></td>
+                        <td><button @click="eliminar(U)" type="button" class="btn btn-danger"><i
+                                    class="fas fa-trash-alt text-white"></i></button></td>
                     </tr>
+
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Rut</th>
+                        <th>Primer Nombre</th>
+                        <th>Segundo Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Mail</th>
+                        <th>Departamento</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </tfoot>
             </table>
-            <pre>
-                {{$data}}
-                </pre>
 
 
             <!-- Modal Modificar-->
@@ -168,50 +173,52 @@
                             <form>
                                 <div class="mb-3">
                                     <label class="form-label">Rut</label>
-                                    <input v-model="InfoModal.Rut" type="text" class="form-control">
+                                    <input v-model="Rut" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Primer Nombre</label>
-                                    <input v-model="InfoModal.Primero" type="text" class="form-control">
+                                    <input v-model="Primero" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Segundo Nombre</label>
-                                    <input v-model="InfoModal.Segundo" type="text" class="form-control">
+                                    <input v-model="Segundo" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Primer Apellido</label>
-                                    <input v-model="InfoModal.Paterno" type="text" class="form-control">
+                                    <input v-model="Paterno" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Segundo Apellido</label>
-                                    <input v-model="InfoModal.Materno" type="text" class="form-control">
+                                    <input v-model="Materno" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                    <input v-model="InfoModal.Mail" type="email" class="form-control">
+                                    <input v-model="Email" type="email" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Clave</label>
-                                    <input v-model="InfoModal.Clave" type="password" class="form-control">
+                                    <input v-model="Clave" type="password" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Departamento</label>
-                                    <input v-model="InfoModal.Departamento_Id" type="number" class="form-control">
+                                    <input v-model="Departamento_Id" type="number" class="form-control">
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="button" @click="Modificar()" data-dismiss="modal"
+                            <button type="button" @click="Insertar()" data-dismiss="modal"
                                 class="btn btn-primary">Guardar</button>
                         </div>
+                        <pre>
+                {{$data}}
+                </pre>
                     </div>
                 </div>
 
             </div>
 
         </div>
-
 
     </div>
 </div>
