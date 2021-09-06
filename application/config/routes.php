@@ -51,14 +51,11 @@ $route['Usuario'] = 'Vistas/Usuarios';
     $route['deleteSB'] = 'Servicios_Basicos/EliminarServiciosB';
 
    
-
-
-
   #------------> Noticias CRUD <--------------#
-$route['MantenedorNoticias'] = 'Noticias/MantenedorNoticias';
-$route['insertNoticias'] = 'Noticias/CrearNoticias';
-$route['updateNoticias'] = 'Noticias/ActualizarNoticias';
-$route['deleteNoticias'] = 'Noticias/EliminarNoticias';
+    $route['MantenedorNoticias'] = 'Noticias/MantenedorNoticias';
+    $route['insertNoticias'] = 'Noticias/CrearNoticias';
+    $route['updateNoticias'] = 'Noticias/ActualizarNoticias';
+    $route['deleteNoticias'] = 'Noticias/EliminarNoticias';
 
     #------------> Usuarios CRUD <--------------#
     
