@@ -14,7 +14,8 @@ new Vue({
 		Departamento_Id: "",
 		Departamentos: [],
 		Usuarios: [],
-		InfoModal: []
+		InfoModal: [],
+		msg: {}
 	},
 	created: function() {
 		// metodos que se deben inicicializan con la pagina.php
@@ -22,7 +23,7 @@ new Vue({
 		this.CargarDeptos();
 	},
 	mounted: function() {
-		//importaciones que debe poseer la pagina.php para uso de comboboc y chk modal ...
+		//importaciones que debe poseer la pagina.php para uso de combobox y chk modal ...
 	},
 	methods: {
 		CargarDeptos: function() {
@@ -37,8 +38,10 @@ new Vue({
 				});
 		},
 		CargarUsuarios: function() {
-			alert("AAAAAAAAAA");
-			url = "http://localhost/VvSecurityWeb/index.php/User";
+			//alert("AAAAAAAAAA");
+			//url = "http://localhost/VvSecurityWeb/index.php/User";
+			url = "http://localhost/VvSecurityWeb/index.php/userJoinDepto";
+
 			axios
 				.post(url)
 				.then(res => {
@@ -136,7 +139,8 @@ new Vue({
 		Clave2: "",
 		Tipo: -1,
 		Departamento_Id: -1,
-		Departamentos: []
+		Departamentos: [],
+		msg: {}
 	},
 	created: function() {
 		// metodos que se deben inicicializan con la pagina.php
@@ -168,6 +172,7 @@ new Vue({
 				(this.ValidacionClave == "Débil!" ||
 					this.ValidacionClave == "Media!" ||
 					this.ValidacionClave == "Fuerte!") &&
+				this.ValidacionClave2 == "" &&
 				this.ValidacionTipo == "" &&
 				this.Tipo != -1 &&
 				this.ValidacionDepartamentos == "" &&
@@ -207,10 +212,8 @@ new Vue({
 					axios
 						.post(url, param)
 						.then(res => {
-							o = res.data;
-							M.toast({
-								html: o.value
-							});
+							this.msg = res.data;
+							bootbox.alert("" + this.msg.msg);
 							this.CargarUsuarios();
 						})
 						.catch(error => {
@@ -220,7 +223,6 @@ new Vue({
 					$("#Agregar").modal("toggle");
 				}
 			} else {
-				alert(this.ValidacionRut);
 				this.rut();
 				this.mail();
 				this.primero();
@@ -247,7 +249,6 @@ new Vue({
 				S = (S + (T % 10) * (9 - (M++ % 6))) % 11;
 			return S ? S - 1 : "k";
 		},
-
 		validarMail: function(Mail) {
 			emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 			//Se muestra un texto a modo de ejemplo, luego va a ser un icono
@@ -257,7 +258,6 @@ new Vue({
 				return false;
 			}
 		},
-
 		SeguridadClave: function(clave) {
 			strongRegex = new RegExp(
 				"^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$",
@@ -301,21 +301,21 @@ new Vue({
 		},
 		segundo: function() {
 			if (this.Segundo == "") {
-				this.ValidacionSegundo = "Ingrese un Nombre porfavor";
+				this.ValidacionSegundo = "Ingrese un Nombre por favor";
 			} else {
 				this.ValidacionSegundo = "";
 			}
 		},
 		paterno: function() {
 			if (this.Paterno == "") {
-				this.ValidacionPaterno = "Ingrese un Apellido porfavor";
+				this.ValidacionPaterno = "Ingrese un Apellido por favor";
 			} else {
 				this.ValidacionPaterno = "";
 			}
 		},
 		materno: function() {
 			if (this.Materno == "") {
-				this.ValidacionMaterno = "Ingrese un Apellido porfavor";
+				this.ValidacionMaterno = "Ingrese un Apellido por favor";
 			} else {
 				this.ValidacionMaterno = "";
 			}
@@ -327,19 +327,19 @@ new Vue({
 			if (this.Clave == this.Clave2) {
 				this.ValidacionClave2 = "";
 			} else {
-				this.ValidacionClave2 = "Las Contraseñas no coniciden!";
+				this.ValidacionClave2 = "Las Contraseñas no coinciden!";
 			}
 		},
 		tipo: function() {
 			if (this.Tipo == -1) {
-				this.ValidacionTipo = "Seleciona un Perfil!";
+				this.ValidacionTipo = "Selecciona un Perfil!";
 			} else {
 				this.ValidacionTipo = "";
 			}
 		},
 		departamento: function() {
 			if (this.Departamento_Id == -1) {
-				this.ValidacionDepartamentos = "Seleciona un Departamento!";
+				this.ValidacionDepartamentos = "Selecciona un Departamento!";
 			} else {
 				this.ValidacionDepartamentos = "";
 			}

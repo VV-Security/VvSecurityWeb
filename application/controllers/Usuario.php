@@ -29,6 +29,11 @@ class Usuario extends CI_Controller
         if (isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno)
         || isset($Materno) || isset($Clave) || isset($Mail) || isset($Estado)
         || isset($Departamento_Id)) {
+            if ($Estado == 0) {
+                $Clave = SHA1(MD5($Clave));
+            } else {
+                $Clave = SHA1($Clave);
+            }
             /*Nombre Crud Función->*/$this->Crud_User->InsertUsuario(
                 $Rut,
                 $Primero,
@@ -68,11 +73,11 @@ class Usuario extends CI_Controller
             // <option value="2">Intermedio</option>
             // <option value="3">Avanzado</option>
             // <option value="4">Inactivo</option>
-            if ($Estado == 0) {
-                $Clave = SHA1(MD5($Clave));
-            } else {
-                $Clave = SHA1($Clave);
-            }
+            // if ($Estado == 0) {
+            //     $Clave = SHA1(MD5($Clave));
+            // } else {
+            //     $Clave = SHA1($Clave);
+            // }
             /*Nombre Crud Función->*/$this->Crud_User->UpdateUsuario($Id, $Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id);
             echo json_encode(array("msg" => "Usuario Actualizado!!"));
         } else {
