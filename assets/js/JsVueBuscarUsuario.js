@@ -99,12 +99,12 @@ new Vue({
 					if (result) {
 						url = "http://localhost/VvSecurityWeb/index.php/deleteUser";
 						param = new FormData();
-						param.append("id", U.Id);
+						param.append("id", U.Id_User);
 						axios
 							.post(url, param)
 							.then(res => {
-								this.CargarUsuarios();
-								console.log(res);
+								this.msg = res.data;
+								bootbox.alert("" + this.msg.msg);
 							})
 							.catch(error => {
 								console.log(error);
@@ -112,6 +112,7 @@ new Vue({
 					}
 				}
 			});
+			this.CargarUsuarios();
 		}
 	}
 });
@@ -214,12 +215,10 @@ new Vue({
 						.then(res => {
 							this.msg = res.data;
 							bootbox.alert("" + this.msg.msg);
-							this.CargarUsuarios();
 						})
 						.catch(error => {
 							console.log(error);
 						});
-
 					$("#Agregar").modal("toggle");
 				}
 			} else {
@@ -233,6 +232,7 @@ new Vue({
 				this.tipo();
 				this.departamento();
 			}
+			this.CargarUsuarios();
 		},
 		validaRut: function(rutCompleto) {
 			if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rutCompleto)) return false;

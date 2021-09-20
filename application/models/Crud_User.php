@@ -58,7 +58,7 @@ class Crud_User extends CI_Model
     {
         $this->db->select('U.Id as Id_User,U.Rut as Rut, U.Primero as Primero,
          U.Segundo as Segundo, U.Paterno as Paterno, U.Materno as Materno,
-         U.Mail as Mail, U.Estado as Estado, U.Departamento_Id as Id_Departamento,
+         U.Mail as Mail,U.Clave as Clave ,U.Estado as Estado, U.Departamento_Id as Id_Departamento,
          D.nombre as departamento');
         $this->db->from('usuarios U');
         $this->db->join('departamento D ', 'U.Departamento_Id = D.Id');

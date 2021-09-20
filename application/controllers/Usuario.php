@@ -25,7 +25,7 @@ class Usuario extends CI_Controller
         $Clave = $this->input->post("clave");
         $Estado = $this->input->post("estado");
         $Departamento_Id = $this->input->post("depto_id");
-
+       
         if (isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno)
         || isset($Materno) || isset($Clave) || isset($Mail) || isset($Estado)
         || isset($Departamento_Id)) {
@@ -34,6 +34,17 @@ class Usuario extends CI_Controller
             } else {
                 $Clave = SHA1($Clave);
             }
+            // Tipo de usuario clasificación
+            // <option value="0">Admin</option>
+            // <option value="1">Básico</option>
+            // <option value="2">Intermedio</option>
+            // <option value="3">Avanzado</option>
+            // <option value="4">Inactivo</option>
+            // if ($Estado == 0) {
+            //     $Clave = SHA1(MD5($Clave));
+            // } else {
+            //     $Clave = SHA1($Clave);
+            // }
             /*Nombre Crud Función->*/$this->Crud_User->InsertUsuario(
                 $Rut,
                 $Primero,

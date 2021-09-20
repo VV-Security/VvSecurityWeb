@@ -1,3 +1,10 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="<?= base_url() ?>assets/css/materialize.min.css"
+    media="screen,projection" />
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-6">
@@ -137,7 +144,7 @@
                         <td>{{U.Mail}}</td>
                         <td>{{U.departamento}}</td>
                         <td>
-                            <button @click="Modificar(U)" data-toggle="modal" data-target="#Modificar" type="button"
+                            <button @click="DatosModal()" data-toggle="modal" data-target="#Modificar" type="button"
                                 class="btn btn-info">
                                 <i class="fas fa-edit"></i>
                             </button>
@@ -150,11 +157,42 @@
                     </tr>
                 </tbody>
             </table>
+            <!-- Tabla con datos-->
+
+            <table class="highlight  blue-grey darken-3 white-text">
+                <thead>
+                    <tr>
+                        <th>Rut</th>
+                        <th>Nombre</th>
+                        <th>2do Nombre</th>
+                        <th>Ap. Paterno</th>
+                        <th>Ap. Materno</th>
+                        <th>Mail</th>
+                        <th>Departamento</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alvin</td>
+                        <td>Eclair</td>
+                        <td>$0.87</td>
+                        <td>$0.87</td>
+                        <td>$0.87</td>
+                        <td>$0.87</td>
+                        <td>$0.87</td>
+                        <td>$0.87</td>
+                        <td>$0.87</td>
+                    </tr>
+
+                </tbody>
+            </table>
             <pre>
                 {{$data}}
                 </pre>
-
             <!-- Modal Modificar-->
+
             <div class="modal fade" id="Modificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -169,35 +207,40 @@
                             <form>
                                 <div class="mb-3">
                                     <label class="form-label">Rut</label>
-                                    <input v-model="Rut" type="text" class="form-control">
+                                    <input v-model="InfoModal.Rut" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Primer Nombre</label>
-                                    <input v-model="Primero" type="text" class="form-control">
+                                    <input v-model="InfoModal.Primero" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Segundo Nombre</label>
-                                    <input v-model="Segundo" type="text" class="form-control">
+                                    <input v-model="InfoModal.Segundo" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Primer Apellido</label>
-                                    <input v-model="Paterno" type="text" class="form-control">
+                                    <input v-model="InfoModal.Paterno" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Segundo Apellido</label>
-                                    <input v-model="Materno" type="text" class="form-control">
+                                    <input v-model="InfoModal.Materno" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                    <input v-model="Email" type="email" class="form-control">
+                                    <input v-model="InfoModal.Mail" type="email" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Clave</label>
-                                    <input v-model="Clave" type="password" class="form-control">
+                                    <input v-model="InfoModal.Clave2" type="password" class="form-control">
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Departamento</label>
-                                    <input v-model="Departamento_Id" type="number" class="form-control">
+                                <div class="input-group mb-3">
+                                    <select @change="departamento" v-model="Departamento_Id" class="custom-select">
+                                        <option value="-1">Seleccionar Depart...</option>
+                                        <option v-for="d in Departamentos" v-bind:value="d.Id">{{d.nombre}}</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <label class="input-group-text" for="inputGroupSelect02">Departamento</label>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -213,4 +256,5 @@
     </div>
 </div>
 
+<script type="text/javascript" src="<?= base_url() ?>assets/js/materialize.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/JsVueBuscarUsuario.js"></script>
