@@ -231,12 +231,3 @@
     </div>
 </div>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/JsVueBuscarUsuario.js"></script>
-<!-- 
-<select v-model="updDeptos.G5" class="browser-default">
-    <option :value="updDeptos.G5" v-if="updDeptos.G5 == 5" selected>
-        Activo</option>
-    <option :value="0" selected v-else>No</option>
-    <option :value="5" selected v-if="updDeptos.G5 == 0">Activar
-    </option>
-    <option :value="0" selected v-else>No</option>
-</select> -->

@@ -50,22 +50,14 @@ $route['Usuario'] = 'Vistas/Usuarios';
     $route['updateSB'] = 'Servicios_Basicos/ActualizarServiciosB';
     $route['deleteSB'] = 'Servicios_Basicos/EliminarServiciosB';
 
-   
-  #------------> Noticias CRUD <--------------#
+    #------------> Noticias CRUD <--------------#
+    
     $route['MantenedorNoticias'] = 'Noticias/MantenedorNoticias';
     $route['insertNoticias'] = 'Noticias/CrearNoticias';
     $route['updateNoticias'] = 'Noticias/ActualizarNoticias';
     $route['deleteNoticias'] = 'Noticias/EliminarNoticias';
 
-    #------------> Usuarios CRUD <--------------#
-    
-    $route['User'] = 'Welcome/VerUsuario';
-    $route['insertUser'] = 'Welcome/CrearUsuario';
-    $route['updateUser'] = 'Welcome/ActualizarUsuario';
-    $route['deleteUser'] = 'Welcome/EliminarUsuario';
-    
- 
-    #------------> Departamentos CRUD <--------------#
+   #------------> Departamentos CRUD <--------------#
 
     $route['DP'] = 'Welcome/VerDepartamentos';
     $route['insertDP'] = 'Welcome/CrearDepartamentos';
@@ -166,9 +158,7 @@ $route['Usuario'] = 'Vistas/Usuarios';
     $route['deleteUser'] = 'Usuario/EliminarUsuario';
     $route['userJoinDepto'] = 'Usuario/UnirUsuarioDepto';
     $route['findUser'] = 'Usuario/BuscarUsuario';
-
-    
-
+   
     #------------> Departamentos CRUD <--------------#
 
      $route['DP'] = 'Departamentos/VerDepartamentos';
@@ -183,7 +173,6 @@ $route['Usuario'] = 'Vistas/Usuarios';
     $route['updateLB'] = 'Laboral/ActualizarLaboral';
     $route['deleteLB'] = 'Laboral/EliminarLaboral';
 
-
     #------------> Matriz_Requerimientos CRUD <--------------#
     
     $route['MR'] = 'Matriz_Requerimientos/VerMR';
@@ -192,6 +181,7 @@ $route['Usuario'] = 'Vistas/Usuarios';
     $route['deleteMR'] = 'Matriz_Requerimientos/EliminarMR';
     
     #------------> Estados CRUD <--------------#
+    
     $route['ET'] = 'Estados/VerEstados';
     $route['insertET'] = 'Estados/CrearEstados';
     $route['updateET'] = 'Estados/ActualizarEstados';
@@ -211,8 +201,7 @@ $route['Usuario'] = 'Vistas/Usuarios';
     $route['updateCategoria'] = 'Noticias/ActualizarCategoria';
     $route['deleteCategoria'] = 'Noticias/EliminarCategoria';
     $route['BuscarCategorias'] = 'Noticias/BuscarCategoria';
-   
-   
+      
     #------------> Noticias CRUD <--------------#
 
     $route['NoticiasT'] = 'Noticias/VerNoticias';

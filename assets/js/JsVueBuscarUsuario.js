@@ -74,7 +74,7 @@ var vm = new Vue({
 		Modificar: function() {
 			url = "http://localhost/VvSecurityWeb/index.php/updateUser";
 			param = new FormData();
-			param.append("id", this.InfoModal.Id);
+			param.append("id", this.InfoModal.Id_User);
 			param.append("rut", this.InfoModal.Rut);
 			param.append("primero", this.InfoModal.Primero);
 			param.append("segundo", this.InfoModal.Segundo);
@@ -84,6 +84,8 @@ var vm = new Vue({
 			param.append("clave", this.InfoModal.Clave3);
 			param.append("estado", this.InfoModal.Estado);
 			param.append("depto_id", this.InfoModal.Id_Departamento);
+
+			// bootbox.alert("" + this.InfoModal.Id_User);
 
 			axios
 				.post(url, param)
@@ -95,34 +97,6 @@ var vm = new Vue({
 				.catch(error => {
 					console.log(error);
 				});
-		},
-		Eliminar: function(U) {
-			var alerta = confirm(
-				"¿Confirmar eliminacion de " +
-					U.Primero +
-					" " +
-					U.Paterno +
-					" - " +
-					U.Rut +
-					"?"
-			);
-			if (alerta) {
-				url = "http://localhost/VvSecurityWeb/index.php/deleteUser";
-				param = new FormData();
-				param.append("id", U.Id_User);
-				axios
-					.post(url, param)
-					.then(res => {
-						this.msg = res.data;
-						bootbox.alert("" + this.msg.msg);
-						this.CargarUsuarios;
-					})
-					.catch(error => {
-						console.log(error);
-					});
-			} else {
-				bootbox.alert("No Eliminado");
-			}
 		},
 		Insertar: function() {
 			if (
@@ -195,6 +169,34 @@ var vm = new Vue({
 				this.clave();
 				this.tipo();
 				this.departamento();
+			}
+		},
+		Eliminar: function(U) {
+			var alerta = confirm(
+				"¿Confirmar eliminacion de " +
+					U.Primero +
+					" " +
+					U.Paterno +
+					" - " +
+					U.Rut +
+					"?"
+			);
+			if (alerta) {
+				url = "http://localhost/VvSecurityWeb/index.php/deleteUser";
+				param = new FormData();
+				param.append("id", U.Id_User);
+				axios
+					.post(url, param)
+					.then(res => {
+						this.msg = res.data;
+						bootbox.alert("" + this.msg.msg);
+						this.CargarUsuarios;
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			} else {
+				bootbox.alert("No Eliminado");
 			}
 		},
 		validaRut: function(rutCompleto) {
