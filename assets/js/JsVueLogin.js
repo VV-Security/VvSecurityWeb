@@ -1,5 +1,5 @@
 new Vue({
-	el: "",
+	el: "#login",
 	data: {
 		//datos qiue recibe desde la pagina.php
 		rut: "",

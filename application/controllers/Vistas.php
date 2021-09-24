@@ -157,8 +157,8 @@ class Vistas extends CI_Controller
 
     public function Usuarios()
     {
-        // $this->load->view('templates/INTRANETNavbar');
+        $this->load->view('templates/INTRANETNavbar');
         $this->load->view('INTRANETfolder/Usuarios');
-        // $this->load->view('templates/INTRANETFooter');
+        $this->load->view('templates/INTRANETFooter');
     }
 }

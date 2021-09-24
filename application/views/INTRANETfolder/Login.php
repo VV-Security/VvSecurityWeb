@@ -11,9 +11,10 @@
     <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href=https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900 rel="stylesheet">
-    <script src=//cdn.jsdelivr.net/npm/sweetalert2@11></script>
+    <script src=https://cdn.jsdelivr.net/npm/sweetalert2@11></script>
     <script src=https://unpkg.com/vue@next></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
@@ -96,27 +97,26 @@
 
 <body>
 
-    <div class="container text-center mt-5">
+    <div id="login" class="container text-center mt-5">
         <div class="row justify-content-md-center">
             <div class="col-md-4 rounded" style="background: rgb(0,0,0,0.5);">
                 <form class="form-signin">
                     <img class="mb-4" src="<?php echo base_url() ?>assets/img/Logo.png" alt="" width="200">
-                    <h1 class="h3 mb-3 font-weight-normal text-white">Inicie sesión</h1>
+                    <h1 class="h3 mb-3 font-weight-normal text-white"> Iniciar Sesión</h1>
                     <label for="inputEmail" class="sr-only">Usuario</label>
-                    <input type="email" id="inputEmail" class="form-control my-2" placeholder="Usuario" required=""
-                        autofocus="">
+                    <input type="email" v-model="rut" id="inputEmail" class="form-control my-2"
+                        placeholder="Rut Usuario" required="" autofocus="">
                     <label for="inputPassword" class="sr-only">Contraseña</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" value="remember-me">
-                            <spam class="text-white">Recuérdame</spam>
-                        </label>
-                    </div>
+                    <input type="password" v-model="clave" id="inputPassword" class="form-control"
+                        placeholder="Contraseña" required="">
+                    <br>
                     <button class="btn btn-lg btn-primary btn-block text-white" onclick="ej()" type="submit">Iniciar
                         sesión</button>
                 </form>
             </div>
+            <pre>
+                {{$data}}
+            </pre>
         </div>
     </div>
 
@@ -173,5 +173,6 @@ function ej() {
     })
 }
 </script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/JsVueLogin.js"></script>
 
 </html>
