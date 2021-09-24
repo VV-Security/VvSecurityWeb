@@ -1,5 +1,5 @@
-new Vue({
-	el: "#datos",
+var vm = new Vue({
+	el: "#usuarios",
 	data: {
 		Id: "",
 		Rut: "",
@@ -10,15 +10,32 @@ new Vue({
 		Email: "",
 		Clave: "",
 		Clave2: "",
-		Tipo: "",
-		Departamento_Id: "",
+		Tipo: -1,
+		Departamento_Id: -1,
+		msg: {},
+		ValidacionRut: "",
+		ValidacionPrimero: "",
+		ValidacionSegundo: "",
+		ValidacionPaterno: "",
+		ValidacionMaterno: "",
+		ValidacionMail: "",
+		ValidacionClave: "",
+		ValidacionClave2: "",
+		ValidacionTipo: "",
+		ValidacionDepartamentos: "",
+		ArrayTipo: [
+			{ valor: 0, Tipo: "Admin" },
+			{ valor: 1, Tipo: "Basico" },
+			{ valor: 2, Tipo: "Intermedio" },
+			{ valor: 3, Tipo: "Avanzado" },
+			{ valor: 4, Tipo: "Inactivo" }
+		],
 		Departamentos: [],
 		Usuarios: [],
-		InfoModal: [],
-		msg: {}
+		InfoModal: []
 	},
 	created: function() {
-		// metodos que se deben inicicializan con la pagina.php
+		// metodos que se deben inicializan con la pagina.php
 		this.CargarUsuarios();
 		this.CargarDeptos();
 	},
@@ -54,7 +71,6 @@ new Vue({
 		DatosModal: function(U) {
 			this.InfoModal = U;
 		},
-
 		Modificar: function() {
 			url = "http://localhost/VvSecurityWeb/index.php/updateUser";
 			param = new FormData();
@@ -65,102 +81,48 @@ new Vue({
 			param.append("paterno", this.InfoModal.Paterno);
 			param.append("materno", this.InfoModal.Materno);
 			param.append("mail", this.InfoModal.Mail);
-			param.append("clave", this.InfoModal.Clave);
-			param.append("estado", this.InfoModal.estado);
-			param.append("depto_id", this.InfoModal.Departamento_Id);
+			param.append("clave", this.InfoModal.Clave3);
+			param.append("estado", this.InfoModal.Estado);
+			param.append("depto_id", this.InfoModal.Id_Departamento);
 
 			axios
 				.post(url, param)
 				.then(res => {
-					o = res.data;
-					M.toast({
-						html: o.value
-					});
+					this.msg = res.data;
+					bootbox.alert("" + this.msg.msg);
+					this.CargarUsuarios();
 				})
 				.catch(error => {
 					console.log(error);
 				});
-			this.CargarUsuarios();
 		},
-		eliminar: function(U) {
-			bootbox.confirm({
-				message: "Esta seguro que quiere eliminar al usuario de rut: " + U.Rut,
-				buttons: {
-					confirm: {
-						label: "si",
-						className: "btn-success"
-					},
-					cancel: {
-						label: "No",
-						className: "btn-danger"
-					}
-				},
-				callback: function(result) {
-					if (result) {
-						url = "http://localhost/VvSecurityWeb/index.php/deleteUser";
-						param = new FormData();
-						param.append("id", U.Id_User);
-						axios
-							.post(url, param)
-							.then(res => {
-								this.msg = res.data;
-								bootbox.alert("" + this.msg.msg);
-							})
-							.catch(error => {
-								console.log(error);
-							});
-					}
-				}
-			});
-			this.CargarUsuarios();
-		}
-	}
-});
-
-new Vue({
-	el: "#Agregar",
-	data: {
-		ValidacionRut: "",
-		ValidacionPrimero: "",
-		ValidacionSegundo: "",
-		ValidacionPaterno: "",
-		ValidacionMaterno: "",
-		ValidacionMail: "",
-		ValidacionClave: "",
-		ValidacionClave2: "",
-		ValidacionTipo: "",
-		ValidacionDepartamentos: "",
-		Rut: "",
-		Primero: "",
-		Segundo: "",
-		Paterno: "",
-		Materno: "",
-		Email: "",
-		Clave: "",
-		Clave2: "",
-		Tipo: -1,
-		Departamento_Id: -1,
-		Departamentos: [],
-		msg: {}
-	},
-	created: function() {
-		// metodos que se deben inicicializan con la pagina.php
-	},
-	mounted: function() {
-		//importaciones que debe poseer la pagina.php para uso de comboboc y chk modal ...
-		this.CargarDeptos();
-	},
-	methods: {
-		CargarDeptos: function() {
-			url = "http://localhost/VvSecurityWeb/index.php/DP";
-			axios
-				.post(url)
-				.then(res => {
-					this.Departamentos = res.data;
-				})
-				.catch(error => {
-					console.log(error);
-				});
+		Eliminar: function(U) {
+			var alerta = confirm(
+				"¿Confirmar eliminacion de " +
+					U.Primero +
+					" " +
+					U.Paterno +
+					" - " +
+					U.Rut +
+					"?"
+			);
+			if (alerta) {
+				url = "http://localhost/VvSecurityWeb/index.php/deleteUser";
+				param = new FormData();
+				param.append("id", U.Id_User);
+				axios
+					.post(url, param)
+					.then(res => {
+						this.msg = res.data;
+						bootbox.alert("" + this.msg.msg);
+						this.CargarUsuarios;
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			} else {
+				bootbox.alert("No Eliminado");
+			}
 		},
 		Insertar: function() {
 			if (
@@ -215,6 +177,8 @@ new Vue({
 						.then(res => {
 							this.msg = res.data;
 							bootbox.alert("" + this.msg.msg);
+							this.CargarUsuarios();
+							this.limpiarInputs();
 						})
 						.catch(error => {
 							console.log(error);
@@ -232,7 +196,6 @@ new Vue({
 				this.tipo();
 				this.departamento();
 			}
-			this.CargarUsuarios();
 		},
 		validaRut: function(rutCompleto) {
 			if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rutCompleto)) return false;
@@ -343,6 +306,22 @@ new Vue({
 			} else {
 				this.ValidacionDepartamentos = "";
 			}
+		},
+		limpiarInputs: function() {
+			this.Rut = "";
+			this.Primero = "";
+			this.Segundo = "";
+			this.Paterno = "";
+			this.Materno = "";
+			this.Email = "";
+			this.Clave = "";
+			this.Clave2 = "";
+			this.Tipo = -1;
+			this.Departamento_Id = -1;
+			this.CargarUsuarios();
+		},
+		notificacion: function() {
+			bootbox.alert("" + this.msg.msg);
 		}
 	}
 });

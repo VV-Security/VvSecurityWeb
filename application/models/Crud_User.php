@@ -64,4 +64,16 @@ class Crud_User extends CI_Model
         $this->db->join('departamento D ', 'U.Departamento_Id = D.Id');
         return $this->db->get()->result();
     }
+    
+    public function FindUsuario($Rut)
+    {
+        $this->db->where('Rut', $Rut);
+        return $this->db->get('usuarios')->result();
+    }
+    public function LoginSession($Rut, $Clave)
+    {
+        $this->db->where("Rut", $Rut);
+        $this->db->where("Clave", $Clave);
+        return $this->db->get("usuarios")->result();
+    }
 }

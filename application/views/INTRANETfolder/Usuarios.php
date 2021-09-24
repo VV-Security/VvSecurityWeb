@@ -1,11 +1,4 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="<?= base_url() ?>assets/css/materialize.min.css"
-    media="screen,projection" />
-<!--Let browser know website is optimized for mobile-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<div class="container mt-5">
+<div class="container-fluid mt-5" id="usuarios">
     <div class="row">
         <div class="col-6">
             <h2 class="h2 my-3">Usuarios</h2>
@@ -111,7 +104,7 @@
             <table class="table table-dark table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>ID</th>
                         <th>Rut</th>
                         <th>Primer Nombre</th>
                         <th>Segundo Nombre</th>
@@ -135,7 +128,7 @@
                 </tbody>
                 <tbody v-else>
                     <tr v-for="U in Usuarios">
-                        <td>{{U.Id}}</td>
+                        <td>{{U.Id_User}}</td>
                         <td>{{U.Rut}}</td>
                         <td>{{U.Primero}}</td>
                         <td>{{U.Segundo}}</td>
@@ -144,13 +137,13 @@
                         <td>{{U.Mail}}</td>
                         <td>{{U.departamento}}</td>
                         <td>
-                            <button @click="DatosModal()" data-toggle="modal" data-target="#Modificar" type="button"
+                            <button @click="DatosModal(U)" data-toggle="modal" data-target="#Modificar" type="button"
                                 class="btn btn-info">
                                 <i class="fas fa-edit"></i>
                             </button>
                         </td>
                         <td>
-                            <button @click="eliminar(U)" type="button" class="btn btn-danger">
+                            <button @click="Eliminar(U)" type="button" class="btn btn-danger">
                                 <i class="fas fa-trash-alt text-white"></i>
                             </button>
                         </td>
@@ -158,39 +151,10 @@
                 </tbody>
             </table>
             <!-- Tabla con datos-->
-
-            <table class="highlight  blue-grey darken-3 white-text">
-                <thead>
-                    <tr>
-                        <th>Rut</th>
-                        <th>Nombre</th>
-                        <th>2do Nombre</th>
-                        <th>Ap. Paterno</th>
-                        <th>Ap. Materno</th>
-                        <th>Mail</th>
-                        <th>Departamento</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Alvin</td>
-                        <td>Eclair</td>
-                        <td>$0.87</td>
-                        <td>$0.87</td>
-                        <td>$0.87</td>
-                        <td>$0.87</td>
-                        <td>$0.87</td>
-                        <td>$0.87</td>
-                        <td>$0.87</td>
-                    </tr>
-
-                </tbody>
-            </table>
             <pre>
                 {{$data}}
                 </pre>
+
             <!-- Modal Modificar-->
 
             <div class="modal fade" id="Modificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -233,9 +197,20 @@
                                     <label class="form-label">Clave</label>
                                     <input v-model="InfoModal.Clave2" type="password" class="form-control">
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Confirmar Clave</label>
+                                    <input v-model="InfoModal.Clave3" type="password" class="form-control">
+                                </div>
                                 <div class="input-group mb-3">
-                                    <select @change="departamento" v-model="Departamento_Id" class="custom-select">
-                                        <option value="-1">Seleccionar Depart...</option>
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Perfil</label>
+                                    </div>
+                                    <select v-model="InfoModal.Estado" class="custom-select">
+                                        <option v-for="t in ArrayTipo" v-bind:value="t.valor">{{t.Tipo}}</option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <select v-model="InfoModal.Id_Departamento" class="custom-select">
                                         <option v-for="d in Departamentos" v-bind:value="d.Id">{{d.nombre}}</option>
                                     </select>
                                     <div class="input-group-append">
@@ -246,7 +221,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="button" @click="Insertar()" data-dismiss="modal"
+                            <button type="button" @click="Modificar()" data-dismiss="modal"
                                 class="btn btn-primary">Guardar</button>
                         </div>
                     </div>
@@ -255,6 +230,13 @@
         </div>
     </div>
 </div>
-
-<script type="text/javascript" src="<?= base_url() ?>assets/js/materialize.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/JsVueBuscarUsuario.js"></script>
+<!-- 
+<select v-model="updDeptos.G5" class="browser-default">
+    <option :value="updDeptos.G5" v-if="updDeptos.G5 == 5" selected>
+        Activo</option>
+    <option :value="0" selected v-else>No</option>
+    <option :value="5" selected v-if="updDeptos.G5 == 0">Activar
+    </option>
+    <option :value="0" selected v-else>No</option>
+</select> -->

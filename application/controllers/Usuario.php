@@ -74,9 +74,11 @@ class Usuario extends CI_Controller
         $Clave = $this->input->post("clave");
         $Estado = $this->input->post("estado");
         $Departamento_Id = $this->input->post("depto_id");
+     
+        $Perfil = $this->Crud_User->FindUsuario($Rut);
 
         if (isset($Id) || isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno)
-        || isset($Materno) || isset($Clave) || isset($Mail) || isset($Estado) || isset($Departamento_Id)) {
+        || isset($Materno) || isset($Mail) || isset($Estado) || isset($Departamento_Id)) {
            
             // Tipo de usuario clasificación
             // <option value="0">Admin</option>
@@ -84,12 +86,16 @@ class Usuario extends CI_Controller
             // <option value="2">Intermedio</option>
             // <option value="3">Avanzado</option>
             // <option value="4">Inactivo</option>
-            // if ($Estado == 0) {
-            //     $Clave = SHA1(MD5($Clave));
-            // } else {
-            //     $Clave = SHA1($Clave);
-            // }
-            /*Nombre Crud Función->*/$this->Crud_User->UpdateUsuario($Id, $Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id);
+            
+            if ($Clave != $Perfil[0]->Clave) {
+                // Se actualiza si la clave es distinta a la obtenida del perfil modificado
+                if ($Estado == 0) {
+                    $Clave = SHA1(MD5($Clave));
+                } else {
+                    $Clave = SHA1($Clave);
+                }
+            }
+            $this->Crud_User->UpdateUsuario($Id, $Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id);
             echo json_encode(array("msg" => "Usuario Actualizado!!"));
         } else {
             echo json_encode(array("msg" => "No se pude Actualizar!!"));
@@ -110,4 +116,26 @@ class Usuario extends CI_Controller
     {
         echo json_encode($this->Crud_User->JoinUsuarioDepto());
     }
+    public function BuscarUsuario()
+    {
+        $Rut = $this->input->post('rut');
+        if (isset($Rut)) {
+            echo json_encode($this->Crud_User->FindUsuario($Rut));
+        } else {
+            echo json_encode(array("msg"=> "Usuario no Encontrado"));
+        }
+    }
+    public function ValidarUsuario()
+    {
+        $Rut = $this->input->post('rut');
+        $Clave = $this->input->post('clave');
+        if (isset($Rut) && isset($Clave)) {
+            $Perfil = $this->Crud_User->FindUsuario($Rut);
+            echo json_encode($Perfil);
+        } else {
+            echo json_encode(array("msg"=> "Usuario o Contraseña Erronea"));
+        }
+    }
 }
+
+// 0acc00bf8abac7533d0e07b01b8079fb6ec4b4c5
