@@ -10,6 +10,11 @@ class Usuario extends CI_Controller
     }
     #################--->           usuarios Crud tabla            <---#################
 
+    public function Test()
+    {
+        echo "Hola Prueba";
+    }
+
     public function VerUsuario()
     {
         echo json_encode($this->Crud_User->SelectUsuarios());
@@ -76,7 +81,7 @@ class Usuario extends CI_Controller
         $Departamento_Id = $this->input->post("depto_id");
      
         $Perfil = $this->Crud_User->FindUsuario($Rut);
-        print_r($Materno);
+        // print_r($Materno);
 
         if (isset($Id) || isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno)
         || isset($Materno) || isset($Mail) || isset($Estado) || isset($Departamento_Id)) {
@@ -88,17 +93,12 @@ class Usuario extends CI_Controller
             // <option value="4">Inactivo</option>
 
             //cifra la contraseña con la funcion y la retorna cifrada segun su estado
-            $Clave = LockPass($Clave, $Estado);
-
-            if ($Clave != $Perfil[0]->Clave) {
-                // Se actualiza si la clave es distinta a la obtenida del perfil en la base de datos
-                if ($Estado == 0) {
-                    $Clave = SHA1(MD5($Clave));
-                } else {
-                    $Clave = SHA1($Clave);
-                }
+            if ($Perfil[0]->Estado == 0) {
+                $Clave = SHA1(MD5($Clave));
+            } else {
+                $Clave = SHA1($Clave);
             }
-        
+
             $this->Crud_User->UpdateUsuario($Id, $Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id);
             echo json_encode(array("msg" => "Usuario Actualizado!!"));
         } else {
@@ -111,7 +111,7 @@ class Usuario extends CI_Controller
         
         if (isset($Id)) {
             /*Nombre Crud Función->*/$this->Crud_User->DeleteUsuario($Id);
-            echo json_encode(array("msg"=> "Eliminación de Usuario Completa"));
+            echo json_encode(array("msg"=> "Eliminacion de Usuario Completa"));
         } else {
             echo json_encode(array("msg"=> "Usuario no Eliminado"));
         }
@@ -135,33 +135,25 @@ class Usuario extends CI_Controller
         $Clave = $this->input->post('clave');
         if (isset($Rut) && isset($Clave)) {
             $Perfil = $this->Crud_User->FindUsuario($Rut);
-            $Clave = LockPass($Perfil[0]->Clave, $Perfil[0]->Estado);
-            $Perfil = $this->Crud_User->LoginSession($Rut, $Clave);
-            session_start();
-            $_SESSION["User"] = $Perfil;
-        } else {
-            echo json_encode(array("msg"=> "Usuario o Contraseña Erronea"));
+            if (strlen($Rut) > 8) {
+                // echo json_encode("0");
+                // echo json_encode($Perfil);
+                // ciframos la contraseña que llega desde el login
+                if ($Perfil[0]->Estado == 0) {
+                    $Clave = SHA1(MD5($Clave));
+                } else {
+                    $Clave = SHA1($Clave);
+                }
+                if ($Perfil = $this->Crud_User->LoginSession($Rut, $Clave)) {
+                    echo json_encode(array("msg"=> "Sesion Iniciada", "ruta" => "Usuario"));
+                    session_start();
+                    $_SESSION["User"] = $Perfil;
+                } else {
+                    echo json_encode(array("msg"=> "Usuario No Registrado o Clave Incorrecta"));
+                }
+            } else {
+                echo json_encode(array("msg"=> "Faltan Caracteres"));
+            }
         }
-    }
-    public function LockPass($Clave, $Estado)
-    {
-        // Tipo de usuario clasificación
-        // <option value="0">Admin</option>
-        // <option value="1">Básico</option>
-        // <option value="2">Intermedio</option>
-        // <option value="3">Avanzado</option>
-        // <option value="4">Inactivo</option>
-        
-        if ($Estado == 0) {
-            $Clave = SHA1(MD5($Clave));
-        } else {
-            $Clave = SHA1($Clave);
-        }
-       
-      
-        return $Clave;
     }
 }
-
-// 0acc00bf8abac7533d0e07b01b8079fb6ec4b4c5
-// 7c4a8d09ca3762af61e59520943dc26494f8941b

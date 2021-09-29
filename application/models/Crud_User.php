@@ -34,7 +34,20 @@ class Crud_User extends CI_Model
    
     public function UpdateUsuario($Id, $Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id)
     {
-        $datos = array(
+        if ($Clave == '') {
+            $datos = array(
+            "Id" => $Id,
+            "Rut" => $Rut,
+            "Primero" => $Primero,
+            "Segundo" => $Segundo,
+            "Paterno" => $Paterno,
+            "Materno" => $Materno,
+            "Mail"=> $Mail,
+            "Estado" =>$Estado,
+            "Departamento_Id" => $Departamento_Id
+        );
+        } else {
+            $datos = array(
             "Id" => $Id,
             "Rut" => $Rut,
             "Primero" => $Primero,
@@ -46,6 +59,8 @@ class Crud_User extends CI_Model
             "Estado" =>$Estado,
             "Departamento_Id" => $Departamento_Id
         );
+        }
+    
         $this->db->where("Id", $Id);
         return $this->db->update("usuarios", $datos);
     }

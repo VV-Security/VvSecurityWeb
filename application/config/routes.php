@@ -41,6 +41,10 @@ $route['Usuario'] = 'Vistas/Usuarios';
 #|#####################################################################################################|
 #|#####################################################################################################|
 
+
+$route['test'] = 'Usuario/Test';
+
+
 #######################------> My Controllers <--------###################
 
     #------------> Servicios_Basicos CRUD <--------------#
@@ -158,6 +162,7 @@ $route['Usuario'] = 'Vistas/Usuarios';
     $route['deleteUser'] = 'Usuario/EliminarUsuario';
     $route['userJoinDepto'] = 'Usuario/UnirUsuarioDepto';
     $route['findUser'] = 'Usuario/BuscarUsuario';
+    $route['BEGIN'] = 'Usuario/ValidarUsuario';
    
     #------------> Departamentos CRUD <--------------#
 

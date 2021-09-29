@@ -104,13 +104,14 @@
                     <img class="mb-4" src="<?php echo base_url() ?>assets/img/Logo.png" alt="" width="200">
                     <h1 class="h3 mb-3 font-weight-normal text-white"> Iniciar Sesión</h1>
                     <label for="inputEmail" class="sr-only">Usuario</label>
-                    <input type="email" v-model="rut" id="inputEmail" class="form-control my-2"
-                        placeholder="Rut Usuario" required="" autofocus="">
+                    <input type="text" v-model="rut" id="inputEmail" class="form-control my-2" placeholder="Rut Usuario"
+                        required="" autofocus="">
                     <label for="inputPassword" class="sr-only">Contraseña</label>
                     <input type="password" v-model="clave" id="inputPassword" class="form-control"
                         placeholder="Contraseña" required="">
                     <br>
-                    <button class="btn btn-lg btn-primary btn-block text-white" onclick="ej()" type="submit">Iniciar
+                    <button class="btn btn-lg btn-primary btn-block text-white" @click="LoginUser()"
+                        type="submit">Iniciar
                         sesión</button>
                 </form>
             </div>
@@ -151,28 +152,6 @@
             </div>
         </div>
 </body>
-
-<script>
-function ej() {
-
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    })
-
-    Toast.fire({
-        icon: 'success',
-        title: 'todo en orden'
-    })
-}
-</script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/JsVueLogin.js"></script>
 
 </html>

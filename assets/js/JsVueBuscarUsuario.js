@@ -84,9 +84,6 @@ var vm = new Vue({
 			param.append("clave", this.InfoModal.Clave3);
 			param.append("estado", this.InfoModal.Estado);
 			param.append("depto_id", this.InfoModal.Id_Departamento);
-
-			// bootbox.alert("" + this.InfoModal.Id_User);
-
 			axios
 				.post(url, param)
 				.then(res => {
@@ -189,15 +186,17 @@ var vm = new Vue({
 					.post(url, param)
 					.then(res => {
 						this.msg = res.data;
+						this.CargarUsuarios();
 						bootbox.alert("" + this.msg.msg);
-						this.CargarUsuarios;
 					})
 					.catch(error => {
 						console.log(error);
 					});
+				this.CargarUsuarios();
 			} else {
 				bootbox.alert("No Eliminado");
 			}
+			this.CargarUsuarios();
 		},
 		validaRut: function(rutCompleto) {
 			if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rutCompleto)) return false;
@@ -259,7 +258,7 @@ var vm = new Vue({
 		},
 		primero: function() {
 			if (this.Primero == "") {
-				this.ValidacionPrimero = "Ingrese un Nombre porfavor";
+				this.ValidacionPrimero = "Ingrese un Nombre por favor";
 			} else {
 				this.ValidacionPrimero = "";
 			}
