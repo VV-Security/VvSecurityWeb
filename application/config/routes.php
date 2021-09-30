@@ -163,6 +163,7 @@ $route['test'] = 'Usuario/Test';
     $route['userJoinDepto'] = 'Usuario/UnirUsuarioDepto';
     $route['findUser'] = 'Usuario/BuscarUsuario';
     $route['BEGIN'] = 'Usuario/ValidarUsuario';
+    $route['EXIT'] = 'Usuario/Salir';
    
     #------------> Departamentos CRUD <--------------#
 

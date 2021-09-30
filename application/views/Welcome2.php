@@ -131,7 +131,7 @@ header .overlay {
                 <div class="col-md-4">
                     <a href="http://localhost/VvSecurityWeb/index.php/TrackGuard">
                         <i class="fas fa-map-marker-alt fa-3x red-text"></i>
-                        <h5 class="font-weight-bold my-4 white-text">Segimiento por GPS</h5>
+                        <h5 class="font-weight-bold my-4 white-text">Seguimiento por GPS</h5>
                     </a>
                 </div>
                 <!-- Grid column -->
@@ -163,7 +163,7 @@ header .overlay {
                 <div class="col-md-4">
                     <a href="http://localhost/VvSecurityWeb/index.php/SmartPanic">
                         <i class="fas fa-laptop fa-3x blue-text"></i>
-                        <h5 class="font-weight-bold my-4 white-text ">Softwares de monitoreo</h5>
+                        <h5 class="font-weight-bold my-4 white-text ">Software de monitoreo</h5>
                     </a>
                 </div>
                 <!-- Grid column -->

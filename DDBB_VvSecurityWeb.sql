@@ -90,7 +90,11 @@ create table Requerimiento(
 );
 
 	INSERT INTO Requerimiento (Nombre,Observacion,Fecha_Ing,Fecha_Fin, Respuesta)
-	 VALUES ('Nombre requerimiento TEST','Observacion requerimiento TEST','2021/03/12','2021/03/13', 'Test Respuesta');
+	 VALUES ('Ingresado Requerimiento','Ingresado de Observacion requerimiento','2021/03/12','2021/03/13', 'Respuesta Ingresado Requerimiento');
+INSERT INTO Requerimiento (Nombre,Observacion,Fecha_Ing,Fecha_Fin, Respuesta)
+	 VALUES ('Procesado Requerimiento','Procesado la Observacion requerimiento','2021/03/13','2021/03/14', 'Respuesta Procesado Requerimiento');
+INSERT INTO Requerimiento (Nombre,Observacion,Fecha_Ing,Fecha_Fin, Respuesta)
+	 VALUES ('Finalizado Requerimiento','Finalizado de Observacion requerimiento','2021/03/15','2021/03/16', 'Respuesta Finalizado Requerimiento');
 
 
 create table Empresas_CtrlRoll(
@@ -113,7 +117,9 @@ create table Estados(
 	constraint pk_Estados primary key(Id)
 );
 
-insert into Estados(nombre) values('Activo');
+insert into Estados (nombre) values('Ingresado');
+insert into Estados (nombre) values('Procesado');
+insert into Estados (nombre) values('Finalizado');
 
 create table Matriz_Requerimientos(
 	Id int not null auto_increment,
@@ -129,7 +135,21 @@ create table Matriz_Requerimientos(
 );
 
 INSERT INTO Matriz_Requerimientos (EmpresaCtrlRoll_Id, Requerimiento_Id, Estado_Id)
-													 VALUES (1      					 , 1 							 , 1);
+			  			   VALUES (1 				 , 1 			   , 1);
+INSERT INTO Matriz_Requerimientos (EmpresaCtrlRoll_Id, Requerimiento_Id, Estado_Id)
+			  			   VALUES (8 				 ,  2			   , 2);
+ INSERT INTO Matriz_Requerimientos (EmpresaCtrlRoll_Id, Requerimiento_Id, Estado_Id)
+			  			   VALUES (10 				 ,  4			   , 3);
+INSERT INTO Matriz_Requerimientos (EmpresaCtrlRoll_Id, Requerimiento_Id, Estado_Id)
+			  			   VALUES (12 				 ,  3			   , 3);
+							 INSERT INTO Matriz_Requerimientos (EmpresaCtrlRoll_Id, Requerimiento_Id, Estado_Id)
+			  			   VALUES (39 				 , 1 			   , 1);
+INSERT INTO Matriz_Requerimientos (EmpresaCtrlRoll_Id, Requerimiento_Id, Estado_Id)
+			  			   VALUES (29 				 ,  2			   , 2);
+							 INSERT INTO Matriz_Requerimientos (EmpresaCtrlRoll_Id, Requerimiento_Id, Estado_Id)
+			  			   VALUES (40 				 ,  4			   , 3);
+							 INSERT INTO Matriz_Requerimientos (EmpresaCtrlRoll_Id, Requerimiento_Id, Estado_Id)
+			  			   VALUES (40 				 ,  3			   , 3)
 
 create table Persona_Natural(
 	Id int not null auto_increment,

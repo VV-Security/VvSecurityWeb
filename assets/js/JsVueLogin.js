@@ -4,7 +4,6 @@ new Vue({
 		//datos qiue recibe desde la pagina.php
 		rut: "",
 		clave: "",
-		rsp: "",
 		info: {}
 	},
 	created: function() {
@@ -25,9 +24,9 @@ new Vue({
 				.post(url, param)
 				.then(res => {
 					this.info = res.data;
-					// alert(this.info.msg);
 					if (this.info.ruta == "Usuario") {
-						window.location.href = res.data.ruta;
+						this.Notificacion();
+						window.location.href = this.info.ruta;
 					} else {
 						this.Notificacion();
 					}
@@ -41,7 +40,7 @@ new Vue({
 				toast: true,
 				position: "top-end",
 				showConfirmButton: false,
-				timer: 3000,
+				timer: 5000,
 				timerProgressBar: true,
 				didOpen: toast => {
 					toast.addEventListener("mouseenter", Swal.stopTimer);
@@ -49,10 +48,22 @@ new Vue({
 				}
 			});
 
-			Toast.fire({
-				icon: "warning",
-				title: this.info.msg
-			});
+			if (this.info.msg == "Sesion Iniciada") {
+				Toast.fire({
+					icon: "success",
+					title: this.info.msg
+				});
+			} else if (this.info.msg == "Clave Incorrecta") {
+				Toast.fire({
+					icon: "error",
+					title: this.info.msg
+				});
+			} else {
+				Toast.fire({
+					icon: "info",
+					title: this.info.msg
+				});
+			}
 		}
 	}
 });

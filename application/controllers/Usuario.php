@@ -12,7 +12,8 @@ class Usuario extends CI_Controller
 
     public function Test()
     {
-        echo "Hola Prueba";
+        $User = $this->session->userdata('user');
+        print_r($User);
     }
 
     public function VerUsuario()
@@ -34,11 +35,7 @@ class Usuario extends CI_Controller
         if (isset($Rut) || isset($Primero) || isset($Segundo) || isset($Paterno)
         || isset($Materno) || isset($Clave) || isset($Mail) || isset($Estado)
         || isset($Departamento_Id)) {
-            if ($Estado == 0) {
-                $Clave = SHA1(MD5($Clave));
-            } else {
-                $Clave = SHA1($Clave);
-            }
+            $Clave = SHA1(MD5($Clave));
             // Tipo de usuario clasificación
             // <option value="0">Admin</option>
             // <option value="1">Básico</option>
@@ -93,11 +90,7 @@ class Usuario extends CI_Controller
             // <option value="4">Inactivo</option>
 
             //cifra la contraseña con la funcion y la retorna cifrada segun su estado
-            if ($Perfil[0]->Estado == 0) {
-                $Clave = SHA1(MD5($Clave));
-            } else {
-                $Clave = SHA1($Clave);
-            }
+            $Clave = SHA1(MD5($Clave));
 
             $this->Crud_User->UpdateUsuario($Id, $Rut, $Primero, $Segundo, $Paterno, $Materno, $Clave, $Mail, $Estado, $Departamento_Id);
             echo json_encode(array("msg" => "Usuario Actualizado!!"));
@@ -134,26 +127,23 @@ class Usuario extends CI_Controller
         $Rut = $this->input->post('rut');
         $Clave = $this->input->post('clave');
         if (isset($Rut) && isset($Clave)) {
-            $Perfil = $this->Crud_User->FindUsuario($Rut);
-            if (strlen($Rut) > 8) {
-                // echo json_encode("0");
-                // echo json_encode($Perfil);
-                // ciframos la contraseña que llega desde el login
-                if ($Perfil[0]->Estado == 0) {
-                    $Clave = SHA1(MD5($Clave));
-                } else {
-                    $Clave = SHA1($Clave);
-                }
+            if ($Perfil = $this->Crud_User->FindUsuario($Rut)) {
+                $Clave = SHA1(MD5($Clave));
                 if ($Perfil = $this->Crud_User->LoginSession($Rut, $Clave)) {
-                    echo json_encode(array("msg"=> "Sesion Iniciada", "ruta" => "Usuario"));
-                    session_start();
-                    $_SESSION["User"] = $Perfil;
+                    $this->session->set_userdata('user', $Perfil);
+                    echo json_encode(array("msg"=> "Sesion Iniciada","ruta" => "Usuario"));
                 } else {
-                    echo json_encode(array("msg"=> "Usuario No Registrado o Clave Incorrecta"));
+                    echo json_encode(array("msg"=> "Clave Incorrecta"));
                 }
             } else {
-                echo json_encode(array("msg"=> "Faltan Caracteres"));
+                echo json_encode(array("msg"=> "Faltan Datos"));
             }
         }
+    }
+    public function Salir()
+    {
+        $this->session->sess_destroy();
+        
+        redirect('Login', 'refresh');
     }
 }

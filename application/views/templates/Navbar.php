@@ -11,11 +11,11 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/compiled-4.9.0.min.css">
-       <!--Estilos propios -->
+    <!--Estilos propios -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 
 
@@ -50,7 +50,7 @@
                                 visión</a>
                             <a class="dropdown-item"
                                 href="<?php echo site_url() ?>/Nosotros#Organigrama">Organigrama</a>
-                                <a class="dropdown-item"
+                            <a class="dropdown-item"
                                 href="<?php echo site_url() ?>/Nosotros#Responsabilidad">Responsabilidad Corporativa</a>
                             <a class="dropdown-item" href="<?php echo site_url() ?>/Sucursales">Sucursales</a>
                     </li>
@@ -104,7 +104,7 @@
                                 seguridad</a>
                             <a class="dropdown-item" href="<?php echo site_url() ?>/ssppz">Supervisor de
                                 zona</a>
-                           <!-- <a class="dropdown-item" href="<?php echo site_url() ?>/Capacitaciones">Capacitaciones</a> --->
+                            <!-- <a class="dropdown-item" href="<?php echo site_url() ?>/Capacitaciones">Capacitaciones</a> --->
                     </li>
 
                     <li class="nav-item dropdown">
@@ -115,6 +115,10 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="<?php echo site_url() ?>/Requerimientos">requerimientos</a>
                             <a class="dropdown-item" href="<?php echo site_url() ?>/Contactar">Contactar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo site_url() ?>/Login"><i class="fas fa-user-lock"></i>
+                        </a>
                     </li>
 
                 </ul>

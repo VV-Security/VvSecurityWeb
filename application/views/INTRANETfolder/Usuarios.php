@@ -93,9 +93,9 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                         <button type="button" @click="Insertar()" class="btn btn-primary">Guardar</button>
                     </div>
-                    <pre>
+                    <!-- <pre>
                         {{$data}}
-                    </pre>
+                    </pre> -->
                 </div>
             </div>
         </div>
@@ -151,9 +151,9 @@
                 </tbody>
             </table>
             <!-- Tabla con datos-->
-            <pre>
+            <!-- <pre>
                 {{$data}}
-                </pre>
+                </pre> -->
 
             <!-- Modal Modificar-->
 
